@@ -2,23 +2,8 @@
   <title>Logd App</title>
 </head>
 <body>
-<div class="container"><h1>This is the logd app</h1>
+<div class="container">
 {{> newPost}}
 {{> posts}}
 </div>
 </body>
-
-
-<template name="newPost">
-  <form class="new-post-form">
-    <input type="text" name="content" placeholder="New post..." />
-  </form>
-</template>
-
-<template name="posts">
-<ul>
-  {{#each allPosts}}
-  <li>{{content}}</li>
-  {{/each}}
-</ul>
-</template>
