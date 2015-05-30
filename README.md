@@ -1,0 +1,1 @@
+Logd app built with [Meteor](http://meteor.com)
