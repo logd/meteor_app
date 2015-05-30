@@ -1,7 +1,6 @@
 <template name="posts">
-<ul>
   {{#each allPosts}}
-  <li>{{#markdown}}{{content}}{{/markdown}}</li>
+  <p>{{#markdown}}{{content}}{{/markdown}}</p>
+  <hr>
   {{/each}}
-</ul>
 </template>

@@ -1,5 +1,9 @@
   Meteor.subscribe("posts");
 
+  Meteor.marked.setOptions({
+    smartypants: true
+    });
+
 
   // Template.body.helpers({
   //   posts:
