@@ -1,7 +1,7 @@
 <template name="posts">
 <ul>
   {{#each allPosts}}
-  <li>{{content}}</li>
+  <li>{{#markdown}}{{content}}{{/markdown}}</li>
   {{/each}}
 </ul>
 </template>
