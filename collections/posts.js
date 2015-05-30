@@ -1,9 +1,10 @@
+Posts = new Mongo.Collection('posts');
 
-// Post Fields
-// _ID
-// content
-// author
-// dateCreated
-// dateUpdated
-
-PostsCollection = new Mongo.Collection('posts');
+Meteor.methods({
+  newPost: function(postContent){
+    Posts.insert({
+      content: postContent,
+      createdAt: new Date()
+    });
+  }
+});
