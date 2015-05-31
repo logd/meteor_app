@@ -1,6 +1,7 @@
 <template name="posts">
   {{#each allPosts}}
   <p>{{#markdown}}{{content}}{{/markdown}}</p>
+   <button class="delete" id="{{_id}}">&times;</button>
   <hr>
   {{/each}}
 </template>

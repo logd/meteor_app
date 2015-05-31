@@ -6,5 +6,17 @@ Meteor.methods({
       content: postContent,
       createdAt: new Date()
     });
+  },
+  deletePost: function(postId){
+    Posts.remove(postId);
+
+    // only allow owner to check off a private task
+    // if (task.private && task.owner !== Meteor.userId()) {
+    //   throw new Meteor.error("not-authorized");
+    // }
+
+    // if(confirm("Delete this task?")) {
+      // Tasks.remove(taskId);
+    // }
   }
 });

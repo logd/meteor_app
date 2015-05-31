@@ -1,8 +1,17 @@
-  Meteor.subscribe("posts");
+Meteor.subscribe("posts");
 
-  Meteor.marked.setOptions({
-    smartypants: true
-    });
+  // Template.posts.helpers({
+  //   beforeRemove: function(){
+  //     return function (collection, id) {
+  //         if(confirm("Really delete this post?")){
+  //           this.remove();
+  //         }
+  //     };
+  //   }
+  // });
+  // Meteor.marked.setOptions({
+  //   smartypants: true
+  //   });
 
 
   // Template.body.helpers({
