@@ -1,7 +1,24 @@
 <template name="posts">
   {{#each allPosts}}
-  <p>{{#markdown}}{{content}}{{/markdown}}</p>
-   <button class="delete" id="{{_id}}">&times;</button>
+  {{#if editable}}
+    <input type="text" data-id="{{_id}}" value="{{content}}" placeholder="Empty post...">
+  {{else}}
+  <p class="editable">{{#markdown}}{{content}}{{/markdown}}</p>
+  <p>Created: {{livestamp createdAt}}</p>
+  <button class="delete">&times;</button> | <button class="edit"><i class="fa fa-pencil"></i></button>
+  {{/if}}
   <hr>
   {{/each}}
 </template>
+
+<!-- <template name="item">
+  <div class="item">
+    <span>{{itemText}}</span>
+    <span class="glyphicon glyphicon-pencil item-edit" aria-hidden="true"></span>
+  </div>
+  <div class="mod-table">
+    {{#if editMode}}
+      {{> modTable}}
+    {{/if}}
+  </div>
+</template> -->

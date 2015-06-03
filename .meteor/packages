@@ -9,3 +9,7 @@ coffeescript
 twbs:bootstrap
 chuangbo:marked
 fortawesome:fontawesome
+reactive-var
+less
+mrt:moment
+copleykj:livestamp

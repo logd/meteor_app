@@ -11,7 +11,7 @@ Template.newPost.events({
 
       if(returns_qty == 2){
         console.log("returns qty: " + returns_qty);
-        var postContentFormatted = postContent.replace(/(?:\r\n|\r|\n)/g, '<br />');
+        // var postContentFormatted = postContent.replace(/(?:\r\n|\r|\n)/g, '<br />');
         Meteor.call('newPost', postContent);
         event.target.value = "";
         returns_qty = 0;
