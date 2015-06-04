@@ -1,6 +1,6 @@
 <template name="posts">
   {{#each allPosts}}
-  {{#if editable}}
+  {{#if editMode}}
     <input type="text" data-id="{{_id}}" value="{{content}}" placeholder="Empty post...">
   {{else}}
   <p class="editable">{{#markdown}}{{content}}{{/markdown}}</p>

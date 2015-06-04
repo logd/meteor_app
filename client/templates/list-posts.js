@@ -1,12 +1,20 @@
-// Template.posts.created=function(){
-//   this.editMode=new ReactiveVar(false);
-// };
+Template.posts.created = function(){
+  this.editMode = new ReactiveVar(true);
+};
+
+// Template.post.onCreated(function() {
+//   this.editable = new ReactiveVar;
+//   this.editable.set(this.data.color1);
+// });
 // Session.set(key, value);
  // Session.set("editable", false);
 
 Template.posts.helpers({
   allPosts: function() {
     return Posts.find({}, {sort: {createdAt: -1}});
+  },
+  isEditMode: function(){
+    return this.editMode = true;
   }
 
   // editable: function(){
@@ -18,11 +26,6 @@ Template.posts.helpers({
   // }
 });
 
-Template.post.onCreated(function() {
-  this.editable = new ReactiveVar;
-  this.editable.set(this.data.color1);
-});
-
 Template.posts.events({
   "click .delete": function() {
 
@@ -31,6 +34,9 @@ Template.posts.events({
     }
   },
   'click .editable' : function(event){
+    console.log("edit was clicked for: " + this.content);
+
+    // event.targeteditMode.set(true);
 
      // Session.set("editable", true);
 
