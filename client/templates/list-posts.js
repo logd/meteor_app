@@ -1,5 +1,5 @@
 Template.posts.created = function(){
-  this.currentlyEditing = new ReactiveVar(false);
+  this.whichPost = new ReactiveVar(false);
 };
 
 // Template.post.onCreated(function() {
@@ -13,10 +13,10 @@ Template.posts.helpers({
   allPosts: function() {
     return Posts.find({}, {sort: {createdAt: -1}});
   },
-  isEditing: function(){
+  makeEditable: function(){
     // console.log(currentlyEditing);
 
-   return this._id === Template.instance().currentlyEditing.get();
+   return this._id === Template.instance().whichPost.get();
   }
   // ,
   //  editMode:function(){
@@ -32,6 +32,7 @@ Template.posts.events({
     }
   },
   'click .edit' : function(){
-    Template.instance().currentlyEditing.set(this._id);
+    Template.instance().whichPost.set(this._id);
   }
+
 });

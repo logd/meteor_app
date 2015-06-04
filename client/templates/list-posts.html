@@ -1,7 +1,8 @@
 <template name="posts">
   {{#each allPosts}}
-  {{#if isEditing}}
-    <input type="text" data-id="{{_id}}" value="{{content}}" placeholder="Empty post...">
+  {{#if makeEditable}}
+    <input class="editing" type="text" data-id="{{_id}}" value="{{content}}" placeholder="Empty post...">
+    <button class="cancel">Cancel</button>
   {{else}}
   <p>{{#markdown}}{{content}}{{/markdown}}</p>
   <p>Created: {{livestamp createdAt}}</p>
