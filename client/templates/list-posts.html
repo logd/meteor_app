@@ -1,9 +1,9 @@
 <template name="posts">
   {{#each allPosts}}
-  {{#if editMode}}
+  {{#if isEditing}}
     <input type="text" data-id="{{_id}}" value="{{content}}" placeholder="Empty post...">
   {{else}}
-  <p class="editable">{{#markdown}}{{content}}{{/markdown}}</p>
+  <p>{{#markdown}}{{content}}{{/markdown}}</p>
   <p>Created: {{livestamp createdAt}}</p>
   <button class="delete">&times;</button> | <button class="edit"><i class="fa fa-pencil"></i></button>
   {{/if}}

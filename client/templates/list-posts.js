@@ -1,5 +1,5 @@
 Template.posts.created = function(){
-  this.editMode = new ReactiveVar(true);
+  this.currentlyEditing = new ReactiveVar(false);
 };
 
 // Template.post.onCreated(function() {
@@ -13,13 +13,11 @@ Template.posts.helpers({
   allPosts: function() {
     return Posts.find({}, {sort: {createdAt: -1}});
   },
-  isEditMode: function(){
-    return this.editMode = true;
-  }
+  isEditing: function(){
+    // console.log(currentlyEditing);
 
-  // editable: function(){
-  //  return Session.get("TargetValue" + this._id);
-  // }
+   return this._id === Template.instance().currentlyEditing.get();
+  }
   // ,
   //  editMode:function(){
   //   return this.instance().editMode.get();
@@ -33,15 +31,7 @@ Template.posts.events({
        Meteor.call("deletePost", this._id);
     }
   },
-  'click .editable' : function(event){
-    console.log("edit was clicked for: " + this.content);
-
-    // event.targeteditMode.set(true);
-
-     // Session.set("editable", true);
-
-    // console.log("content: " + this.content);
-
-      // return Session.set("TargetValue" + t.data._id,true)//hide the span and we set the input 
+  'click .edit' : function(){
+    Template.instance().currentlyEditing.set(this._id);
   }
 });
