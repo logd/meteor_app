@@ -7,6 +7,12 @@ Meteor.methods({
       createdAt: new Date()
     });
   },
+  updatePost: function(postContent){
+    Posts.update({
+      content: postContent,
+      updatedAt: new Date()
+    });
+  },
   deletePost: function(postId){
     Posts.remove(postId);
 

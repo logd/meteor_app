@@ -1,6 +1,6 @@
 <template name="posts">
   {{#each allPosts}}
-  {{#if makeEditable}}
+      {{#if isEditable}}
     <input class="editing" type="text" data-id="{{_id}}" value="{{content}}" placeholder="Empty post...">
     <button class="cancel">Cancel</button>
   {{else}}
@@ -8,7 +8,6 @@
   <p>Created: {{livestamp createdAt}}</p>
   <button class="delete">&times;</button> | <button class="edit"><i class="fa fa-pencil"></i></button>
   {{/if}}
-  <hr>
   {{/each}}
 </template>
 
