@@ -1,5 +1,13 @@
 var returns_qty = 0
 
+Template.newPost.onRendered(function(){
+    $('#content').autosize();
+});
+
+Template.newPost.onDestroyed(function(){
+    // remove autosize
+});
+
 Template.newPost.events({
   "keyup .new-post-form": function(event){
     var postContent = event.target.value;
