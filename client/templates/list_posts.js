@@ -23,7 +23,7 @@ Template.posts.events({
        Meteor.call("deletePost", this._id);
     }
   },
-   'click .edit' : function(event, template){
+   'click .editable' : function(event, template){
     Template.instance().currentlyEditing.set(this._id);
  
   },

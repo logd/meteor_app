@@ -5,7 +5,7 @@ Template.newPost.onRendered(function(){
 });
 
 Template.newPost.onDestroyed(function(){
-    // remove autosize
+    // remove autosize 
 });
 
 Template.newPost.events({
@@ -23,6 +23,7 @@ Template.newPost.events({
         Meteor.call('newPost', postContent);
         event.target.value = "";
         returns_qty = 0;
+        // remove autosize 
         return false
       } 
     }  else {

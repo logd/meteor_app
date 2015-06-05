@@ -1,12 +1,17 @@
 <template name="posts">
   {{#each allPosts}}
       {{#if isEditable}}
-    <input class="update-post-content" type="text" data-id="{{_id}}" value="{{content}}" placeholder="Empty post...">
-    <button class="done">Done</button>
+      <form>
+    <textarea autofocus="autofocus" cols="50" id="content" name="content" class="update-post-content" type="text" value="{{content}}" placeholder="Empty post...">
+</textarea>
+<button class="done">Done</button>
+  </form>
+   <!--  <input class="update-post-content" type="text" data-id="{{_id}}" value="{{content}}" placeholder="Empty post...">
+    <button class="done">Done</button> -->
   {{else}}
-  <p>{{#markdown}}{{content}}{{/markdown}}</p>
+  <p class="editable">{{#markdown}}{{content}}{{/markdown}}</p>
   <p>Created: {{livestamp createdAt}}</p>
-  <button class="delete">&times;</button> | <button class="edit"><i class="fa fa-pencil"></i></button>
+  <button class="delete">&times;</button>
   {{/if}}
   {{/each}}
 </template>
