@@ -56,8 +56,26 @@ Template.posts.events({
     Template.instance().currentlyEditing.set(this._id);
  
   },
-    "click .cancel": function(event,template) {
+    "click .done": function(event,template) {
     Template.instance().currentlyEditing.set(null);
+  },
+    "keyup .update-post-content": function(event) {
+      // Players.update(Session.get("currentPlayer"), {$inc: {score: 5}});
+
+      var postId = Template.instance().currentlyEditing.get();
+      // console.log("post id: " + postId);
+      var postContent = event.target.value; 
+
+      // postProperties = {
+      //   content: postContent,
+      //   updatedAt: new Date()
+      // }
+
+      Meteor.call('updatePost', postId, postContent);
+
+      // Posts.update(postId, {$set: postProperties});  
+
+            
   }
   // ,
   // 'click .edit' : function(){
