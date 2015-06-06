@@ -5,6 +5,10 @@ Template.posts.onCreated(function () {
   // GalleryTemplates.push(this);
 });
 
+Template.posts.onRendered(function(){
+    $('.autosize').autosize();
+});
+
 Template.posts.helpers({
   allPosts: function() {
     return Posts.find({}, {sort: {createdAt: -1}});

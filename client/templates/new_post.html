@@ -1,7 +1,12 @@
 <template name="newPost">
+{{#if showSearch}}
+<p>search form</p>
+{{else}}
   <form class="new-post-form">
-    <textarea autofocus="autofocus" cols="50" id="content" name="content" placeholder="New post...">
+    <textarea autofocus="autofocus" class="autosize" cols="50" name="content" placeholder="New post...">
 </textarea>
   </form>
-  <p>Double Return to add...</p>
+  <p class="meta-text">Double Return to add...</p>
+  <button class="search"><i class="fa fa-search"></i></button>
+  {{/if}}
 </template>
