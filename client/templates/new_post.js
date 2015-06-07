@@ -10,6 +10,14 @@ Template.newPost.onRendered(function(){
     $('.autosize').autosize();
 });
 
+Template.newPost.helpers({
+  showSearch: function() {
+    // return true or false
+    return Template.instance().showSearch.get();
+}
+
+});
+
 // Template.body.onRendered(function(){
 //     $('.autosize').autosize();
 // });
@@ -42,9 +50,11 @@ Template.newPost.events({
         // console.log("reset returns qty");
     }
   },
-  'click .search' : function(event){
+  'click .search' : function(event, t){
      console.log("clicked search");
-      Template.instance().showSearch.set(true);
+      console.log(t);
+     
+      t.showSearch.set(true);
 
    // this.showSearch.set(true);
  
