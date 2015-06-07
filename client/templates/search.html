@@ -1,0 +1,12 @@
+<template name="search">
+{{> esInput index="posts" placeholder="Search..."}}
+<ul>
+  {{#esEach index="posts"}}
+  <li>{{#markdown}}{{content}}{{/markdown}}</li>
+  {{/esEach}}
+</ul>
+{{#ifEsHasNoResults index="posts"}}
+        <div class="no-results">No results found!</div>
+{{/ifEsHasNoResults}}
+<hr>
+</template>

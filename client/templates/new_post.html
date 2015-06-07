@@ -1,6 +1,11 @@
 <template name="newPost">
 {{#if showSearch}}
-<p>search form</p>
+{{> esInput index="posts" placeholder="Search..."}}
+<ul>
+  {{#esEach index="players"}}
+  <li>{{content}}</li>
+  {{/esEach}}
+</ul>
 {{else}}
   <form class="new-post-form">
     <textarea autofocus="autofocus" class="autosize" cols="50" name="content" placeholder="New post...">
