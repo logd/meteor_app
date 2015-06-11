@@ -1,4 +1,6 @@
-<template name="posts">
+<template name="postsList">
+{{> newPost}}
+<hr>
   {{#each allPosts}}
       {{#if isEditable}}
   <form class="update-post-content">
@@ -6,7 +8,13 @@
 <button class="done">Done</button>
   </form>
   {{else}}
-  <button class="delete icon-button pull-right gray">&times;</button> <p class="editable">{{#markdown}}{{content}}{{/markdown}}</p>
+  <button class="delete icon-button pull-right gray">&times;</button> 
+  <p class="editable">{{#markdown}}{{content}}{{/markdown}}</p>
+  <ul>
+  {{#each tags}}
+  <li>{{this}}</li>
+  {{/each}}
+  </ul>
  <p class="meta-text">Created: {{livestamp createdAt}}</p>  
   {{/if}}
   <hr />

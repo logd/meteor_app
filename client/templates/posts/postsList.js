@@ -1,15 +1,15 @@
-Template.posts.onCreated(function () {
+Template.postsList.onCreated(function () {
   this.currentlyEditing = new ReactiveVar(null);
 
   // register this template within some central store
   // GalleryTemplates.push(this);
 });
 
-Template.posts.onRendered(function(){
+Template.postsList.onRendered(function(){
     $('.autosize').autosize();
 });
 
-Template.posts.helpers({
+Template.postsList.helpers({
   allPosts: function() {
     return Posts.find({}, {sort: {createdAt: -1}});
   },
@@ -20,7 +20,7 @@ Template.posts.helpers({
 
 });
 
-Template.posts.events({
+Template.postsList.events({
   "click .delete": function() {
 
     if (confirm("Are you sure?")) {
@@ -40,6 +40,5 @@ Template.posts.events({
       var postContent = event.target.value;      
       Meteor.call('updatePost', postId, postContent);            
   }
-
-
 });
+

@@ -7,7 +7,6 @@
 meteor-platform
 coffeescript
 twbs:bootstrap
-chuangbo:marked
 fortawesome:fontawesome
 reactive-var
 less
@@ -15,3 +14,8 @@ mrt:moment
 copleykj:livestamp
 copleykj:jquery-autosize
 matteodem:easy-search
+iron:router
+sacha:spin
+markdown
+msavin:mongol
+underscore
