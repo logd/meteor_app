@@ -13,6 +13,9 @@ Template.postsList.helpers({
   allPosts: function() {
     return Posts.find({}, {sort: {createdAt: -1}});
   },
+  postsFilteredByTag: function(selectedTag) {
+    return Posts.find({tag:selectedTag}, {sort: {createdAt: -1}});
+  },
   isEditable: function() {
     // return true or false
     return this._id === Template.instance().currentlyEditing.get();
@@ -39,6 +42,11 @@ Template.postsList.events({
       var postId = Template.instance().currentlyEditing.get();
       var postContent = event.target.value;      
       Meteor.call('updatePost', postId, postContent);            
+  },
+    "click .tag-filter": function(e) {
+      e.preventDefault();
+      var selectedTag = $(e.target).text();      
+      // console.log($(e.target).text());           
   }
 });
 
