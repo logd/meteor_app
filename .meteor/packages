@@ -20,4 +20,8 @@ markdown
 msavin:mongol
 underscore
 accounts-password
-useraccounts:bootstrap
+accounts-facebook
+accounts-google
+accounts-ui
+accounts-github
+accounts-twitter
