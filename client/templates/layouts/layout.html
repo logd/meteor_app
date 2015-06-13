@@ -1,5 +1,5 @@
-<template name="appHeader">
-  <nav class="navbar navbar-default" role="navigation"> 
+<template name="layout">
+   <nav class="navbar navbar-default" role="navigation"> 
       <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigation">
         <span class="sr-only">Toggle navigation</span>
@@ -11,8 +11,11 @@
       </div>
        <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav navbar-right">
-       (login buttons)
+     (login buttons)
       </ul>
     </div>
   </nav>
+  <div class="container" id="main">
+{{> yield}}
+</div>
 </template>
