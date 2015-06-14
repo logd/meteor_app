@@ -14,9 +14,10 @@
 
 // HOMEPAGE
 // rename route to homepage?
-Router.route('/', function (){
-    this.render('home');
-});
+// after adding a controller: Router.route('/', { controller: 'HomeController' });
+// can then also switched to named routes:
+Router.route('/', { name: 'home' });
+
 
 // LOGIN
 // Will this be needed

@@ -1,3 +1,7 @@
 <template name="home">
+{{#if currentUser}}
+(listing of my recent posts)
+{{else}}
    <p>Just notes</p>
+{{/if}}
 </template>
