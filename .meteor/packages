@@ -6,10 +6,8 @@
 
 meteor-platform
 coffeescript
-twbs:bootstrap
 fortawesome:fontawesome
 reactive-var
-less
 mrt:moment
 copleykj:livestamp
 copleykj:jquery-autosize
@@ -21,4 +19,6 @@ msavin:mongol
 underscore
 accounts-google
 accounts-ui
-useraccounts:bootstrap
+semantic:ui
+useraccounts:semantic-ui
+flemay:less-autoprefixer
