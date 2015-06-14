@@ -11,7 +11,7 @@ Template.postsList.onRendered(function(){
 
 Template.postsList.helpers({
   myPosts: function() {
-    return Posts.find({userId: Meteor.userId()}, {sort: {createdAt: -1}});
+    return Posts.find({authorId: Meteor.userId()}, {sort: {createdAt: -1}});
   },
   postsFilteredByTag: function(selectedTag) {
     return Posts.find({tag:selectedTag}, {sort: {createdAt: -1}});

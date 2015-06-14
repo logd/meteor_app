@@ -1,22 +1,35 @@
-// Router.onBeforeAction(function () {
-//   // all properties available in the route function
-//   // are also available here such as this.params
+Router.onBeforeAction(function () {
+  // all properties available in the route function
+  // are also available here such as this.params
 
-//   if (!Meteor.userId()) {
-//     // if the user is not logged in, render the Login template
-//     this.render('login');
-//   } else {
-//     // otherwise don't hold up the rest of hooks or our route/action function
-//     // from running
-//     this.next();
-//   }
-// });
+  if (!Meteor.userId()) {
+    // if the user is not logged in, render the Login template
+    this.render('login');
+  } else {
+    // otherwise don't hold up the rest of hooks or our route/action function
+    // from running
+    this.next();
+  }
+});
 
 // HOMEPAGE
 // rename route to homepage?
 // after adding a controller: Router.route('/', { controller: 'HomeController' });
 // can then also switched to named routes:
-Router.route('/', { name: 'home' });
+Router.route('/', {name: 'home'}, function() {
+
+ if (!Meteor.userId()) {
+   this.redirect('/login');
+
+ } else if (Posts.find( { _id:Meteor.userId() } ).count() === 0) {
+    this.redirect('/new');
+
+ } else{
+    this.render('postsList');
+ };
+ 
+
+});
 
 
 // LOGIN
@@ -28,7 +41,7 @@ Router.route('/login', function(){
 
 // NEW POST
 // Use Random.id([6]) while found in user ids
-Router.route('/:token_id/new', { name: 'newPost'});
+Router.route('/new', { name: 'newPost'});
 
 
 // POST DETAIL

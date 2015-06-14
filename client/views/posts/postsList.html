@@ -1,7 +1,7 @@
 <template name="postsList">
 {{> newPost}}
 <hr>
-  {{#each allPosts}}
+  {{#each myPosts}}
       {{#if isEditable}}
   <form class="update-post-content">
     <textarea class="autosize" cols="50" id="content" name="content" placeholder="New post...">{{content}}</textarea>
@@ -15,7 +15,7 @@
   <li><a href="#" class="tag-filter">{{this}}</a></li>
   {{/each}}
   </ul>
- <p class="meta-text">Created: {{livestamp createdAt}}</p>  
+ <p class="meta-text">Created: {{livestamp createdAt}} by {{authorId}}</p>  
   {{/if}}
   <hr />
   {{/each}}
