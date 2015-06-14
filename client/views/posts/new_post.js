@@ -47,7 +47,7 @@ Template.newPost.events({
         //tags = postContent.match(hashtagPattern);
         //if (tags.length > 0) Meteor.call('upsertTags', tags);
         // WAIT FOR METEOR TAGS UPSERT TO FINISH?
-        Meteor.call('newPost', postContent, tags);
+        Meteor.call('newPost', postContent, authorID, tags);
          
         // TODO: remove autosize 
         //return false // why is this here?

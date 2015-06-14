@@ -10,8 +10,8 @@ Template.postsList.onRendered(function(){
 });
 
 Template.postsList.helpers({
-  allPosts: function() {
-    return Posts.find({}, {sort: {createdAt: -1}});
+  myPosts: function() {
+    return Posts.find({userId: Meteor.userId()}, {sort: {createdAt: -1}});
   },
   postsFilteredByTag: function(selectedTag) {
     return Posts.find({tag:selectedTag}, {sort: {createdAt: -1}});
