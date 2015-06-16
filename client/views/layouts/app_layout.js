@@ -9,17 +9,17 @@
     // this.$('.toggle.button').removeClass('disabled');
     // this.$('#app-menu').sidebar('toggle');
 
-    this.$('.ui.sidebar')
-      .sidebar('attach events', '.launch.button')
-    ;
+ 
 
-    this.$(".dropdown").dropdown();
+    // this.$(".dropdown").dropdown();
 
   });
 
-    Template.ApplicationLayout.onRendered(function(){
+  // Template.appLayout.onRendered(function(){
 
-    // SEMANTIC UI Components
-    this.$(".dropdown").dropdown();
+  //   this.$('#app-menu').sidebar('attach events', '.launch.button');
 
-  });
+  //   // SEMANTIC UI Components
+  //   // this.$(".dropdown").dropdown();
+
+  // });

@@ -2,9 +2,10 @@ Router.onBeforeAction(function () {
   // all properties available in the route function
   // are also available here such as this.params
 
-  if (!Meteor.userId()) {
+  if (!Meteor.userId() && (Router.current().route.getName() !== 'login')) {
     // if the user is not logged in, render the Login template
-    this.render('login');
+    // this.render('login');
+    this.redirect('login');
   } else {
     // otherwise don't hold up the rest of hooks or our route/action function
     // from running
@@ -16,12 +17,14 @@ Router.onBeforeAction(function () {
 // rename route to homepage?
 // after adding a controller: Router.route('/', { controller: 'HomeController' });
 // can then also switched to named routes:
-Router.route('/', {name: 'home'}, function() {
+Router.route('/', function() {
 
- if (!Meteor.userId()) {
-   this.redirect('/login');
+ // if (!Meteor.userId()) {
+ //   // this.redirect('/login');
 
- } else if (Posts.find( { _id:Meteor.userId() } ).count() === 0) {
+ // } else 
+
+ if (Posts.find( { _id:Meteor.userId() } ).count() === 0) {
     this.redirect('/new');
 
  } else{
@@ -34,8 +37,9 @@ Router.route('/', {name: 'home'}, function() {
 
 // LOGIN
 // Will this be needed
-Router.route('/login', function(){
-   this.render('login');
+Router.route('/login', { name: 'login'}, function(){
+   this.layout('UtilityLayout');
+   // this.render('login');
 });
 
 
