@@ -1,6 +1,16 @@
 <template name="AppLayout">
+  <div class="ui top attached menu">
+   <a id="foo" class="item">
+      <i class="sidebar icon"></i>
+      Menu
+    </a> 
+  </div>
+  <div class="ui sidebar menu">
+   This is the sidebar content
+  </div>
   <div class="pusher ui grid centered">
-      <div class="ten wide column">
+       <div class="ten wide column">
+       
           {{> yield}}    
       </div>
   </div>

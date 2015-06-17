@@ -1,4 +1,15 @@
-  Template.body.onRendered(function(){
+Template.AppLayout.onRendered(function(){
+
+    this.$('#foo').sidebar('toggle');
+
+    // this.$('.sidebar').sidebar('toggle');
+
+    // SEMANTIC UI Components
+    // this.$(".dropdown").dropdown();
+
+  });
+
+  // Template.body.onRendered(function(){
 
 
     // this.$('.sidebar').sidebar('toggle');
@@ -12,14 +23,5 @@
  
 
     // this.$(".dropdown").dropdown();
-
-  });
-
-  // Template.appLayout.onRendered(function(){
-
-  //   this.$('#app-menu').sidebar('attach events', '.launch.button');
-
-  //   // SEMANTIC UI Components
-  //   // this.$(".dropdown").dropdown();
 
   // });

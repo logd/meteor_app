@@ -21,10 +21,7 @@ LoginController = RouteController.extend({
   }
 });
 
-// HOMEPAGE
-// rename route to homepage?
-// after adding a controller: Router.route('/', { controller: 'HomeController' });
-// can then also switched to named routes:
+
 Router.route('/', function() {
 
  // if (!Meteor.userId()) {
