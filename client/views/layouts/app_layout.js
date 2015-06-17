@@ -12,7 +12,7 @@ Template.AppLayout.onRendered(function(){
 Template.AppLayout.events({
     "click .sidebar-toggle": function(e,t){
       e.preventDefault();
-      t.$("#wrapper").toggleClass("toggled");
+      t.$(".app-container").toggleClass("toggled");
     }
   });
 
