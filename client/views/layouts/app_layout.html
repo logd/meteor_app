@@ -1,24 +1,54 @@
 <template name="AppLayout">
-  <div class="ui top attached menu">
-   <a id="foo" class="item">
-      <i class="sidebar icon"></i>
-      Menu
-    </a> 
-  </div>
-  <div class="ui sidebar menu">
-   This is the sidebar content
-  </div>
-  <div class="pusher ui grid centered">
+<div id="wrapper">
+      <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Dashboard</a>
+                </li>
+                <li>
+                    <a href="#">Shortcuts</a>
+                </li>
+                <li>
+                    <a href="#">Overview</a>
+                </li>
+                <li>
+                    <a href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#">About</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+      <div class="ui grid centered">
        <div class="ten wide column">
-       
+       <a href="#menu-toggle" class="sidebar-toggle" id="menu-toggle">Toggle Menu</a>
           {{> yield}}    
       </div>
-  </div>
-    <footer class="ui inverted footer">
-      <div class="ui centered grid">
-        <div class="ten wide column">
-        <p>Use markdown and basic html.</p>
-        </div>
       </div>
-    </footer>
+      <footer class="ui inverted footer">
+        <div class="ui centered grid">
+          <div class="ten wide column">
+          <p>Use markdown and basic html.</p>
+          </div>
+        </div>
+      </footer>
+    </div> <!-- /#page-content-wrapper -->
+  </div><!-- /#wrapper -->
+
 </template>

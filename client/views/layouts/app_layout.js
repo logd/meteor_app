@@ -1,6 +1,6 @@
 Template.AppLayout.onRendered(function(){
 
-    this.$('#foo').sidebar('toggle');
+    // this.$('#foo').sidebar('toggle');
 
     // this.$('.sidebar').sidebar('toggle');
 
@@ -8,6 +8,14 @@ Template.AppLayout.onRendered(function(){
     // this.$(".dropdown").dropdown();
 
   });
+
+Template.AppLayout.events({
+    "click .sidebar-toggle": function(e,t){
+      e.preventDefault();
+      t.$("#wrapper").toggleClass("toggled");
+    }
+  });
+
 
   // Template.body.onRendered(function(){
 
