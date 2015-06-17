@@ -13,6 +13,14 @@ Router.onBeforeAction(function () {
   }
 });
 
+LoginController = RouteController.extend({
+  layoutTemplate:'UtilityLayout',
+  template:'login',
+  action: function(){
+    this.render();
+  }
+});
+
 // HOMEPAGE
 // rename route to homepage?
 // after adding a controller: Router.route('/', { controller: 'HomeController' });
@@ -37,9 +45,9 @@ Router.route('/', function() {
 
 // LOGIN
 // Will this be needed
-Router.route('/login', { name: 'login'}, function(){
-   this.layout('UtilityLayout');
-   // this.render('login');
+Router.route('/login', {
+   name: 'login',
+   controller: 'LoginController'
 });
 
 

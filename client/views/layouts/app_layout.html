@@ -1,7 +1,14 @@
 <template name="AppLayout">
   <div class="pusher ui grid centered">
-    <div class="ten wide column">
-      {{> yield}}    
-    </div>
+      <div class="ten wide column">
+          {{> yield}}    
+      </div>
   </div>
+    <footer class="ui inverted footer">
+      <div class="ui centered grid">
+        <div class="ten wide column">
+        <p>Use markdown and basic html.</p>
+        </div>
+      </div>
+    </footer>
 </template>
