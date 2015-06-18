@@ -19,7 +19,5 @@ msavin:mongol
 underscore
 accounts-google
 accounts-ui
-semantic:ui
 useraccounts:semantic-ui
-flemay:less-autoprefixer
 meteorhacks:zones
