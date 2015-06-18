@@ -7,6 +7,8 @@ Template.AppLayout.onRendered(function(){
     // SEMANTIC UI Components
     // this.$(".dropdown").dropdown();
 
+    // this.$('#sidebar').sidebar('attach events', '#sidebar-button');
+
   });
 
 Template.AppLayout.events({
@@ -14,6 +16,11 @@ Template.AppLayout.events({
       e.preventDefault();
       t.$(".app-container").toggleClass("toggled");
     }
+
+    // "click .ui.sidebar": function(e,t){
+    //   e.preventDefault();
+    //   t.sidebar('attach events', '.launch.button');
+    // }
   });
 
 
