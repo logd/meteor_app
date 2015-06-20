@@ -10,14 +10,32 @@ body { margin: 0; padding: 0; }
 // APP CONTAINER
 // _________________________
 .app-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  height: 100%;
+  // display: flex;
+  // flex-direction: column;
 
   // TOGGLE SIDEBAR
   padding-left: 0;
   transition: all 0.5s ease;
 }
+
+//  TOGGLE
+// _________________________
+
+.app-container.toggled {
+  padding-left: 250px;
+
+  .app-nav-container {
+    width: 250px;
+    overflow-x: hidden;
+  }
+
+  .content-container {
+    position: absolute;
+    margin-right: -250px;
+  }
+}
+
 
 //  APP NAV - DEFAULT
 // _________________________
@@ -29,6 +47,7 @@ body { margin: 0; padding: 0; }
     width: 0;
     height: 100%;
     margin-left: -250px;
+    padding: 0;
     overflow-y: auto;
     transition: all 0.5s ease;
 
@@ -36,20 +55,10 @@ body { margin: 0; padding: 0; }
       position: absolute;
       top: 0;
       width: 250px;
+      height: 100%;
       margin: 0;
       padding: 0;
     }
-}
-
-//  APP NAV - TOGGLE
-// _________________________
-
-.app-container.toggled {
-  padding-left: 250px;
-
-  .app-nav-container {
-    width: 250px;
-  }
 }
 
 
@@ -57,9 +66,14 @@ body { margin: 0; padding: 0; }
 // _________________________
 
 .content-container {
-  flex: 1;
+  // flex: 1;
   display: flex;
   flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: .5em;
+    margin: 0;
 }
 
 
