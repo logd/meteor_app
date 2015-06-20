@@ -1,14 +1,34 @@
-/*  APP LEVEL
-____________________ */
 
+// STANDARD COLORS
+// ____________________________
+
+$off-black: #333333;
+$steel-gray:  #666666;
+$light-gray: #D5D5D5;
+$very-light-gray: #F5F5F5;
+
+
+// BASE COLORS
+// ____________________________
 body {
-   color:#333333;
-   background-color: #E6E6E6;
+   color:$off-black;
+   background-color: $light-gray;
   }
+
 .app-container {
-  background-color: #FFFFFF;
+  background-color: white;
 }
 
-// .app-nav, .main-content {
-//   background:  #E6E6E6
-// }
+// APP HEADER
+// ____________________________
+.content-header {
+  background-color: $very-light-gray;
+}
+
+// COMPONENTS
+// ____________________________
+
+
+.fa {
+  color: #C2C2C2; // icons
+}

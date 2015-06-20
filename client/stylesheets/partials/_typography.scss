@@ -1,7 +1,29 @@
+// STANDARD FONT SIZES
+// ____________________________
+
+$small-text: .7em;
+
+
+// BASE
+// ____________________________
 body {
+   font-family: Arial, Helvetica, sans-serif;
    font-size: 17px;
   }
 
+
+// HEADINGS
+// ____________________________
  .content-header h1 {
     display: inline;
+    color: $steel-gray;
+  }
+
+
+// INLINE TEXT
+// ____________________________
+
+  .meta-info {
+    color: $light-gray;
+    font-size: $small-text;
   }
