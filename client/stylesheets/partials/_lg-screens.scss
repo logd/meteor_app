@@ -1,0 +1,21 @@
+//   Layout for 768px and wider
+//______________________________
+
+@media all and (min-width: 768px) {
+
+  .app-container {
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .app-nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .user-nav {
+    // TODO: what is default for "self flex"?
+    display: block;
+  }
+}

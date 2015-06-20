@@ -1,0 +1,17 @@
+// http://thesassway.com/beginner/how-to-structure-a-sass-project
+
+@import "partials/variables";
+@import "partials/base";
+@import "partials/sm-and-medium-screens";
+@import "partials/lg-screens";
+@import "partials/colors";
+@import "partials/typography";
+@import "partials/forms";
+
+
+/*  PROTOTYPE HELPERS
+____________________ */
+
+div, header, nav, footer {
+  border: 1px solid #ccc;
+}

@@ -1,21 +1,30 @@
 <template name="AppLayout">
 <div class="app-container">
   {{> AppNav}}
-    <!-- Page Content -->
-  <div class="app-content-wrapper">
-    <div class="ui grid centered">
-      <div class="ten wide column">
-       <button class="sidebar-toggle ui button"><i class="sidebar icon"></i></button>
-          {{> yield}}
+
+  {{! *** APP CONTENT *** }}
+  <div class="content-container">
+
+     {{! *** APP HEADER *** }}
+    <header class="content-header">
+      <div class="header-left">
+        <button class="app-nav-toggle">
+          <i class="fa fa-bars"></i>
+        </button>
       </div>
-    </div>
-    <footer class="ui inverted footer">
-      <div class="ui centered grid">
-        <div class="ten wide column">
-          <p>Use markdown and basic html.</p>
-        </div>
+      <div class="content-info">
+        <h1>Page Title</h1>
+        <p class="meta-info">Use markdown and basic html.</p>
       </div>
-    </footer>
-  </div><!-- /.app-content-wrapper -->
-  </div><!-- /.app-container -->
+      <div class="user-nav header-right">
+        <i class="fa fa-user"></i>
+      </div>
+    </header>
+   
+    {{! *** MAIN CONTENT *** }}
+    <div class="main-content">
+       {{> yield}}
+    </div>    
+  </div>{{! /.content-container}}
+</div>{{! /.app-container}}
 </template>

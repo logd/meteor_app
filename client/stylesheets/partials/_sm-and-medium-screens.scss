@@ -1,0 +1,96 @@
+//  
+// Layout for smaller than 800px
+// _________________________
+
+// BASE
+// _________________________
+html, body { height: 100%; }
+body { margin: 0; padding: 0; }
+
+// APP CONTAINER
+// _________________________
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  // TOGGLE SIDEBAR
+  padding-left: 0;
+  transition: all 0.5s ease;
+}
+
+//  APP NAV - DEFAULT
+// _________________________
+
+.app-nav-container {
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    transition: all 0.5s ease;
+
+    .app-nav {
+      position: absolute;
+      top: 0;
+      width: 250px;
+      margin: 0;
+      padding: 0;
+    }
+}
+
+//  APP NAV - TOGGLE
+// _________________________
+
+.app-container.toggled {
+  padding-left: 250px;
+
+  .app-nav-container {
+    width: 250px;
+  }
+}
+
+
+//  CONTENT CONTAINER
+// _________________________
+
+.content-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+
+//  CONTENT HEADER
+// _________________________
+
+.content-header {
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  height: 5em;
+}
+.header-left {
+  width: 5em;
+}
+.content-info {
+  width: 100%;
+}
+.user-nav {
+  display: none;
+}
+
+
+//  MAIN CONTENT
+// _________________________
+
+.main-content {
+  flex: 1;
+}
+
+  
+
+
