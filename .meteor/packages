@@ -21,3 +21,5 @@ accounts-google
 accounts-ui
 useraccounts:semantic-ui
 meteorhacks:zones
+flemay:less-autoprefixer
+fourseven:scss
