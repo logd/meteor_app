@@ -1,25 +1,14 @@
 <template name="AppLayout">
 
 <div class="app-container">
-  <div class="app-nav-container">
-  <nav class="app-nav">
-      <p>App Nav</p>
-       <div>(close icon)</div>
-    <section>[User Nav (responsive view only)]</section>
-    <section>[Search Form]</section>
-    <section>[New Note]</section>
-    <section>[Recent Tags]</section>
-    <section>[Recent Notes]</section>
-    <footer>About, Contact, Twitter</footer>
-    </nav>
-</div>
+  {{> AppNav}}
 
   {{! *** APP CONTENT *** }}
   <div class="content-container">
 
      {{! *** APP HEADER *** }}
     <header class="content-header">
-      <div class="header-left">
+      <div class="app-nav-toggle">
         <button class="app-nav-toggle">
           <i class="fa fa-bars"></i>
         </button>
