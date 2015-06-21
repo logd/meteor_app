@@ -1,5 +1,12 @@
 <template name="postsList">
-{{> newPost}}
+{{#if showSearch}}
+{{> esInput index="posts" placeholder="Search..."}}
+<ul>
+  {{#esEach index="players"}}
+  <li>{{content}}</li>
+  {{/esEach}}
+</ul>
+{{/if}}
 <hr>
   {{#each myPosts}}
       {{#if isEditable}}

@@ -1,16 +1,5 @@
 <template name="newPost">
-{{#if showSearch}}
-{{> esInput index="posts" placeholder="Search..."}}
-<ul>
-  {{#esEach index="players"}}
-  <li>{{content}}</li>
-  {{/esEach}}
-</ul>
-{{else}}
-  <form class="new-post-form get-tag ui form">
-   <textarea placeholder="Write something..." class="autosize" cols="50" name="content"></textarea>
+  <form class="new-post-form get-tag">
+   <textarea class="post-content" placeholder="Write something..." cols="50" name="content"></textarea>
   </form>
-  <p class="meta-text">Double Return to add...</p>
-  <button class="search"><i class="fa fa-search"></i></button>
-  {{/if}}
 </template>

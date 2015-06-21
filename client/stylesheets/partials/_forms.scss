@@ -11,3 +11,15 @@ button {
   }
 }
 
+form {
+  .post-content {
+    font-size: $editor-text;
+    height: 100%;
+    width: 100%;
+    padding: .5em 1em 1em .5em;
+    border:none;
+    outline: none;
+    overflow: auto;
+  }
+}
+
