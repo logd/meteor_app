@@ -11,7 +11,9 @@ button {
   }
 }
 
-form {
+form.post {
+  height: 100%;
+  
   .post-content {
     font-size: $editor-text;
     height: 100%;

@@ -112,7 +112,11 @@ body { margin: 0; padding: 0; }
 // _________________________
 
 .main-content {
-  // flex: 1;
+  // flex: 2;
+  height: 100%;
+  // margin: 0;
+  // padding: 0;
+  overflow-y: hidden;
 }
 
   
