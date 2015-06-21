@@ -5,9 +5,9 @@ Template.postsList.onCreated(function () {
   // GalleryTemplates.push(this);
 });
 
-Template.postsList.onRendered(function(){
-    $('.autosize').autosize();
-});
+// Template.postsList.onRendered(function(){
+//     $('.autosize').autosize();
+// });
 
 Template.postsList.helpers({
   myPosts: function() {
@@ -15,11 +15,12 @@ Template.postsList.helpers({
   },
   postsFilteredByTag: function(selectedTag) {
     return Posts.find({tag:selectedTag}, {sort: {createdAt: -1}});
-  },
-  isEditable: function() {
-    // return true or false
-    return this._id === Template.instance().currentlyEditing.get();
-}
+  }
+//   ,
+//   isEditable: function() {
+//     // return true or false
+//     return this._id === Template.instance().currentlyEditing.get();
+// }
 
 });
 

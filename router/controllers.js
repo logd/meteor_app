@@ -13,3 +13,10 @@ PostController = RouteController.extend({
     this.render();
   }
 });
+
+PostsListController = RouteController.extend({
+  template:'postsList',
+  action: function(){
+    this.render();
+  }
+});

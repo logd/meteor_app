@@ -34,6 +34,16 @@ Router.route('/new', {
    controller: 'PostController'
 });
 
+// POSTS LIST
+Router.route('/posts', {
+   name: 'postsList',
+   controller: 'PostsListController'
+});
+
+
+
+Router.route('/posts/', { name: 'posts'});
+
 
 // NEW POST
 // Use Random.id([6]) while found in user ids
@@ -45,9 +55,6 @@ Router.route('/new', {
 
 // // EDIT POST
 // Router.route('/:token_id/:post_title/edit', { name: 'editPost'});
-
-// // POSTS LIST
-// Router.route('/:token_id/posts/', { name: 'posts'});
 
 // // POSTS LIST - FILTERED
 // Router.route('/:token_id/posts/sx-wizard', { name: 'postsListFiltered'});

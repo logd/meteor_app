@@ -1,41 +1,14 @@
 <template name="postsList">
-{{#if showSearch}}
-{{> esInput index="posts" placeholder="Search..."}}
-<ul>
-  {{#esEach index="players"}}
-  <li>{{content}}</li>
-  {{/esEach}}
-</ul>
-{{/if}}
-<hr>
   {{#each myPosts}}
-      {{#if isEditable}}
-  <form class="update-post-content">
-    <textarea class="autosize" cols="50" id="content" name="content" placeholder="New post...">{{content}}</textarea>
-<button class="done">Done</button>
-  </form>
-  {{else}}
   <button class="delete icon-button pull-right gray">&times;</button> 
   <p class="editable">{{#markdown}}{{content}}{{/markdown}}</p>
   <ul>
   {{#each tags}}
-  <li><a href="#" class="tag-filter">{{this}}</a></li>
+  <li><a href="#" class="tag-filter">{{this}}</a>
+  </li>
   {{/each}}
   </ul>
- <p class="meta-text">Created: {{livestamp createdAt}}</p>  
-  {{/if}}
+ <p class="meta-text">Created: {{livestamp createdAt}}</p>
   <hr />
   {{/each}}
 </template>
-
-<!-- <template name="item">
-  <div class="item">
-    <span>{{itemText}}</span>
-    <span class="glyphicon glyphicon-pencil item-edit" aria-hidden="true"></span>
-  </div>
-  <div class="mod-table">
-    {{#if editMode}}
-      {{> modTable}}
-    {{/if}}
-  </div>
-</template> -->
