@@ -21,6 +21,7 @@ Template.newPost.events({
     var hashtagPattern = /#[A-Za-z0-9_]*/gi;
     var postContent = event.target.value;
     var raw_tags = tags = [];
+    var postTitle = "";
   
     function removeFirstChar(str){
       return str.substr(1, str.length);
@@ -28,14 +29,21 @@ Template.newPost.events({
    
     // if return key was entered
     if(event.which === 13){
-      returns_qty+=1;
+
+       console.log("each line: " + postContent.split("\n"));
 
         if(postContent.trim() === null || postContent.trim() === ""){
           Template.instance().contentIsEmpty.set(true);
           console.log(Template.instance().contentIsEmpty.get());
+          returns_qty = 0;
         } else {
           Template.instance().contentIsEmpty.set(false);
           console.log(Template.instance().contentIsEmpty.get());
+          console.log("returns: " + returns_qty);
+
+
+          // only count returns qty if content is not empty, ie user just hit return twice without typing any text
+          returns_qty+=1;
         };
 
       if(returns_qty == 2){
@@ -46,14 +54,20 @@ Template.newPost.events({
         tags = _.map(raw_tags, function(tag) {
           return removeFirstChar(tag);
         })
-
         console.log(tags);
+
+        // create post title
+        var contentLines = postContent.split("\n");
+
+        // set post title as first 50 chars of first line
+        postTitle = ( contentLines[0].length > 50  ?  contentLines[0].substring(0,50) : contentLines[0] );
+    
 
         // were any tags added?
         //tags = postContent.match(hashtagPattern);
         //if (tags.length > 0) Meteor.call('upsertTags', tags);
         // WAIT FOR METEOR TAGS UPSERT TO FINISH?
-        Meteor.call('createPost', postContent, tags);
+        Meteor.call('createPost', postContent, postTitle, tags);
         Router.go('postsList');
 
          

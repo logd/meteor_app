@@ -1,5 +1,6 @@
 <template name="postsList">
   {{#each myPosts}}
+  <h2>Title: {{title}}</h2>
   <button class="delete icon-button pull-right gray">&times;</button> 
   <p class="editable">{{#markdown}}{{content}}{{/markdown}}</p>
   <ul>
