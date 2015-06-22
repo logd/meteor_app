@@ -20,3 +20,15 @@ PostsListController = RouteController.extend({
     this.render();
   }
 });
+
+// need to pass the params through here?
+ShowPostController = RouteController.extend({
+  layoutTemplate:'PostLayout',
+  template:'show_post',
+  data: function() {
+    return Posts.findOne(this.params._id);
+  },
+  action: function(){
+    this.render();
+  }
+});

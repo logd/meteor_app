@@ -40,9 +40,15 @@ Router.route('/posts', {
    controller: 'PostsListController'
 });
 
+// SHOW POST
+Router.route('/posts/:_id', {
+   name: 'show_post',
+   controller: 'ShowPostController'
+});
 
 
-Router.route('/posts/', { name: 'posts'});
+// POST DETAIL
+// Router.route('/:token_id/:post_title', { name: 'postDetail'});
 
 
 // NEW POST
