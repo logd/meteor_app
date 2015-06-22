@@ -14,7 +14,6 @@ copleykj:jquery-autosize
 matteodem:easy-search
 iron:router
 sacha:spin
-markdown
 msavin:mongol
 underscore
 accounts-google
@@ -24,3 +23,4 @@ meteorhacks:zones
 flemay:less-autoprefixer
 fourseven:scss
 service-configuration
+chuangbo:marked

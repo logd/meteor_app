@@ -1,4 +1,4 @@
-"use strict";
+// "use strict";
 // Meteor.startup(function() {
 //    $('body').addClass('pushable');
 // });
