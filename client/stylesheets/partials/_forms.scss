@@ -11,6 +11,15 @@ button {
   }
 }
 
+// where does this belong?
+.icon-link {
+  color: $light-gray;
+  &:visited, &:active {
+    color: $light-gray;
+  }
+
+}
+
 form.post {
   height: 100%;
   
