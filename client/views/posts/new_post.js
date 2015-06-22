@@ -2,8 +2,8 @@ var returns_qty = 0;
 
 
 Template.newPost.onCreated(function () {
-   this.showSearch = new ReactiveVar(false);
-//   this.showSearch = new ReactiveVar(null);
+   this.contentIsEmpty = new ReactiveVar(false);
+
 });
 
 Template.newPost.onRendered(function(){
@@ -11,11 +11,9 @@ Template.newPost.onRendered(function(){
 });
 
 Template.newPost.helpers({
-  showSearch: function() {
-    // return true or false
-    return Template.instance().showSearch.get();
-}
-
+  contentIsEmpty: function() {
+    return Template.instance().contentIsEmpty.get();
+  }
 });
 
 Template.newPost.events({
@@ -23,7 +21,7 @@ Template.newPost.events({
     var hashtagPattern = /#[A-Za-z0-9_]*/gi;
     var postContent = event.target.value;
     var raw_tags = tags = [];
-
+  
     function removeFirstChar(str){
       return str.substr(1, str.length);
     };
@@ -31,6 +29,14 @@ Template.newPost.events({
     // if return key was entered
     if(event.which === 13){
       returns_qty+=1;
+
+        if(postContent.trim() === null || postContent.trim() === ""){
+          Template.instance().contentIsEmpty.set(true);
+          console.log(Template.instance().contentIsEmpty.get());
+        } else {
+          Template.instance().contentIsEmpty.set(false);
+          console.log(Template.instance().contentIsEmpty.get());
+        };
 
       if(returns_qty == 2){
 
