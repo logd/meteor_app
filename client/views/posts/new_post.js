@@ -48,6 +48,8 @@ Template.newPost.events({
         //if (tags.length > 0) Meteor.call('upsertTags', tags);
         // WAIT FOR METEOR TAGS UPSERT TO FINISH?
         Meteor.call('createPost', postContent, tags);
+        Router.go('postsList');
+
          
         // TODO: remove autosize 
         //return false // why is this here?

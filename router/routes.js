@@ -31,7 +31,7 @@ Router.route('/login', {
 // NEW POST
 Router.route('/new', {
    name: 'newPost',
-   controller: 'PostController'
+   controller: 'NewPostController'
 });
 
 // POSTS LIST

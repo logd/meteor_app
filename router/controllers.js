@@ -6,9 +6,9 @@ LoginController = RouteController.extend({
   }
 });
 
-PostController = RouteController.extend({
+NewPostController = RouteController.extend({
   layoutTemplate:'PostLayout',
-  template:'postContent',
+  template:'newPost',
   action: function(){
     this.render();
   }
