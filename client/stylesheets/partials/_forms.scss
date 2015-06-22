@@ -4,9 +4,14 @@ button {
   &.icon-button {
     background-color: transparent;
     border:none;
+    color: $light-gray;
 
     &:focus {
      outline: 0;
+    }
+
+    i:hover {
+      color: $steel-gray;
     }
   }
 }
@@ -17,7 +22,9 @@ button {
   &:visited, &:active {
     color: $light-gray;
   }
-
+  &:hover {
+    color: $steel-gray;
+  }
 }
 
 form.post {
