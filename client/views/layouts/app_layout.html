@@ -14,18 +14,44 @@
         </button>
       </div>
       <div class="content-info">
-        <div class="page-title"><h1>Logd</h1></div>
-          <div class="meta-info"></div>
+        
+       <!--  <div class="page-title"><h1>Logd</h1></div> -->
+          <div class="meta-info"> Meta info, eg last saved, help tips
+          </div>
       </div>
       <div class="header-right">
-         <a href="{{pathFor 'newPost'}}" class="icon-link"><i class="fa fa-plus fa-2x"></i></a> 
+    <!--      <a href="{{pathFor 'newPost'}}" class="icon-link"><i class="fa fa-plus fa-2x"></i></a>  -->
+         <button class="icon-button">
+          <i class="fa fa-check fa-3x"></i>
+        </button>
       </div>
     </header>
    
     {{! *** MAIN CONTENT *** }}
-    <div class="main-content">
+    <div class="post-content">
        {{> yield}}
-    </div>    
+    </div>
+
+ {{! *** POST FOOTER *** }}
+       <footer class="post-footer">
+      
+      <section class="delete-post">
+        <button class="delete icon-button">
+          <i class="fa fa-trash-o fa-2x"></i>
+        </button>
+      </section>
+      
+      <section class="future-options">
+        {{! eg share this, or add collaborators }}
+      </section>
+
+      <section class="new-post">
+        <button class="icon-button">
+          <i class="fa fa-plus fa-2x"></i>
+        </button>
+      </section>
+    </footer>
+
   </div>{{! /.content-container}}
 </div>{{! /.app-container}}
 </template>
