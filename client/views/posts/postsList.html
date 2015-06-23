@@ -1,14 +1,21 @@
 <template name="postsList">
   {{#each myPosts}}
-  <h2><a href="{{pathFor 'show_post'}}">{{title}}</a></h2>
-  <button class="delete icon-button pull-right gray">&times;</button> 
-  <ul>
-  {{#each tags}}
-  <li><a href="#" class="tag-filter">{{this}}</a>
-  </li>
-  {{/each}}
-  </ul>
- <p class="meta-info">Created: {{livestamp createdAt}}</p>
-  <hr />
+    <div class="post-list-item">
+      <div class="post-title">
+        <h2><a href="{{pathFor 'show_post'}}">{{title}}</a></h2>
+        <ul class="horizontal meta-info">
+          {{#each tags}}
+            <li><a href="#" class="tag-filter">{{this}}</a></li>
+          {{/each}}
+            <li>Created: {{livestamp createdAt}}</li>
+        </ul>
+      </div>
+      <div class="delete-post">
+        <button class="delete icon-button">
+          <i class="fa fa-times fa-2x"></i>
+        </button>
+      </div>
+    </div>
+    <hr />
   {{/each}}
 </template>

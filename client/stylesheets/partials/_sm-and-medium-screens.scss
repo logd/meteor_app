@@ -81,6 +81,7 @@ body { margin: 0; padding: 0; }
   flex-direction:row;
   align-items: center;
   justify-content: flex-start;
+  padding-right: $app-padding-right-mobile;
 
   height: 5em;
 }
@@ -114,8 +115,8 @@ body { margin: 0; padding: 0; }
 .main-content {
   // flex: 2;
   height: 100%;
-  // margin: 0;
-  // padding: 0;
+  padding-left: $app-padding-left-mobile;
+  padding-right: $app-padding-right-mobile;
   overflow-y: hidden;
 }
 

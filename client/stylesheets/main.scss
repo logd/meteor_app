@@ -46,9 +46,34 @@ ____________________ */
 }
 
 
-/*  PROTOTYPE HELPERS
+/*  POSTS LIST
 ____________________ */
 
-// div, header, nav, footer {
-//   border: 1px solid #ccc;
-// }
+
+.post-list-item {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  
+  .post-title {
+    flex: 1;
+
+    h2 {
+    margin-bottom: 0;
+   }
+
+  }
+  .delete-post {
+    flex-basis: 3em;
+  }
+}
+
+/*  HELPERS
+____________________ */
+
+ul.horizontal {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
