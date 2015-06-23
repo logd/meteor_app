@@ -1,5 +1,5 @@
 Template.postsList.onCreated(function () {
-  this.currentlyEditing = new ReactiveVar(null);
+  // this.currentlyEditing = new ReactiveVar(null);
 
   // register this template within some central store
   // GalleryTemplates.push(this);

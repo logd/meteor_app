@@ -21,9 +21,16 @@
       </div>
       <div class="header-right">
     <!--      <a href="{{pathFor 'newPost'}}" class="icon-link"><i class="fa fa-plus fa-2x"></i></a>  -->
-         <button class="icon-button">
+     {{#if foo}}
+       <button class="done icon-button">
           <i class="fa fa-check fa-3x"></i>
         </button>
+      {{else}}
+      <button class="edit icon-button">
+          <i class="fa fa-pencil fa-3x"></i>
+        </button>
+      {{/if}}
+         
       </div>
     </header>
    
@@ -46,9 +53,10 @@
       </section>
 
       <section class="new-post">
-        <button class="icon-button">
+            <a href="{{pathFor 'newPost'}}" class="icon-link"><i class="fa fa-plus fa-2x"></i></a> 
+      <!--   <button class="icon-button">
           <i class="fa fa-plus fa-2x"></i>
-        </button>
+        </button> -->
       </section>
     </footer>
 

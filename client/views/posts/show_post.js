@@ -3,7 +3,7 @@ Template.show_post.helpers({
     return Posts.findOne(this.params._id);
   },
   postTitle: function() {
-    
+    // display post Title in header
   }
 
 });
