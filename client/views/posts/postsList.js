@@ -48,6 +48,10 @@ Template.postsList.events({
       e.preventDefault();
       var selectedTag = $(e.target).text();      
       // console.log($(e.target).text());           
+  },
+    "click .show-post": function(e,t){
+  // TODO: reference specific template rather than use global
+  $(".app-container").toggleClass("toggled");
   }
 });
 

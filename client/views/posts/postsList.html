@@ -2,7 +2,7 @@
   {{#each myPosts}}
     <div class="post-list-item">
       <div class="post-title">
-        <h2><a href="{{pathFor 'show_post'}}">{{title}}</a></h2>
+        <h2><a class="show-post" href="{{pathFor 'show_post'}}">{{title}}</a></h2>
         <ul class="horizontal meta-info">
           {{#each tags}}
             <li><a href="#" class="tag-filter">{{this}}</a></li>
@@ -10,11 +10,11 @@
             <li>Created: {{livestamp createdAt}}</li>
         </ul>
       </div>
-      <div class="delete-post">
+      <!-- <div class="delete-post">
         <button class="delete icon-button">
           <i class="fa fa-times fa-2x"></i>
         </button>
-      </div>
+      </div> -->
     </div>
     <hr />
   {{/each}}

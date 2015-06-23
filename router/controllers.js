@@ -7,7 +7,7 @@ LoginController = RouteController.extend({
 });
 
 NewPostController = RouteController.extend({
-  layoutTemplate:'PostLayout',
+  layoutTemplate:'AppLayout',
   template:'newPost',
   action: function(){
     this.render();
@@ -23,7 +23,7 @@ PostsListController = RouteController.extend({
 
 // need to pass the params through here?
 ShowPostController = RouteController.extend({
-  layoutTemplate:'PostLayout',
+  layoutTemplate:'AppLayout',
   template:'show_post',
   data: function() {
     return Posts.findOne(this.params._id);
