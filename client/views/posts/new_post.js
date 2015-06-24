@@ -1,27 +1,33 @@
 var returns_qty = 0;
 
 
-Template.newPost.onCreated(function () {
-   this.contentIsEmpty = new ReactiveVar(false);
-
+Template.new_post.onCreated(function () {
+   this.contentIsEmpty = new ReactiveVar(true);
+   this.isEditing = new ReactiveVar(true);
 });
 
-Template.newPost.onRendered(function(){
+Template.new_post.onRendered(function(){
     $('.autosize').autosize();
 });
 
-Template.newPost.helpers({
-  contentIsEmpty: function() {
-    return Template.instance().contentIsEmpty.get();
-  }
+Template.new_post.helpers({
+  // contentIsEmpty: function() {
+  //   return Template.instance().contentIsEmpty.get();
+  // }
 });
 
-Template.newPost.events({
+Template.new_post.events({
   "keyup .new-post-form": function(event){
     var hashtagPattern = /#[A-Za-z0-9_]*/gi;
     var postContent = event.target.value;
     var raw_tags = tags = [];
     var postTitle = "";
+
+     if(postContent.trim() === null || postContent.trim() === ""){
+        Session.set("postHasContent", false);
+      } else {
+        Session.set("postHasContent", true);
+      };
   
     function removeFirstChar(str){
       return str.substr(1, str.length);
@@ -33,12 +39,13 @@ Template.newPost.events({
        console.log("each line: " + postContent.split("\n"));
 
         if(postContent.trim() === null || postContent.trim() === ""){
-          Template.instance().contentIsEmpty.set(true);
-          console.log(Template.instance().contentIsEmpty.get());
+          // Template.instance().contentIsEmpty.set(true);
+  
+          // console.log(Template.instance().contentIsEmpty.get());
           returns_qty = 0;
         } else {
-          Template.instance().contentIsEmpty.set(false);
-          console.log(Template.instance().contentIsEmpty.get());
+          // Template.instance().contentIsEmpty.set(false);
+          // console.log(Template.instance().contentIsEmpty.get());
           console.log("returns: " + returns_qty);
 
 

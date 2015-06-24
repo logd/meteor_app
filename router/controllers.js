@@ -8,8 +8,12 @@ LoginController = RouteController.extend({
 
 NewPostController = RouteController.extend({
   layoutTemplate:'AppLayout',
-  template:'newPost',
+  template:'new_post',
   action: function(){
+    Session.set({
+      "isEditing": true,
+      "postHasContent":false
+    });
     this.render();
   }
 });

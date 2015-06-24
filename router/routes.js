@@ -15,9 +15,12 @@ Router.onBeforeAction(function () {
 // HOMEPAGE
 Router.route('/', function() {
  if (Posts.find( { _id:Meteor.userId() } ).count() === 0) {
+
     this.redirect('/new');
  } else{
-    this.render('postsList');
+
+  //TODO: this needs to change, since post list is in the sidebar
+    this.render('posts_list');
  };
 });
 
@@ -28,16 +31,16 @@ Router.route('/login', {
    controller: 'LoginController'
 });
 
-// NEW POST
-Router.route('/new', {
-   name: 'newPost',
-   controller: 'NewPostController'
+// LIST POSTS LIST
+Router.route('/posts', {
+   name: 'posts_list',
+   controller: 'PostsListController'
 });
 
-// POSTS LIST
-Router.route('/posts', {
-   name: 'postsList',
-   controller: 'PostsListController'
+// NEW POST
+Router.route('/new', {
+   name: 'new_post',
+   controller: 'NewPostController'
 });
 
 // SHOW POST
@@ -46,24 +49,11 @@ Router.route('/posts/:_id', {
    controller: 'ShowPostController'
 });
 
-
-// POST DETAIL
-// Router.route('/:token_id/:post_title', { name: 'postDetail'});
-
-
-// NEW POST
-// Use Random.id([6]) while found in user ids
-// Router.route('/new', { name: 'newPost'});
-
-
-// POST DETAIL
-// Router.route('/:token_id/:post_title', { name: 'postDetail'});
-
-// // EDIT POST
-// Router.route('/:token_id/:post_title/edit', { name: 'editPost'});
-
-// // POSTS LIST - FILTERED
-// Router.route('/:token_id/posts/sx-wizard', { name: 'postsListFiltered'});
+// EDIT POST
+Router.route('/posts/:_id/edit', {
+   name: 'edit_post',
+   controller: 'ShowPostController'
+});
 
 
 
