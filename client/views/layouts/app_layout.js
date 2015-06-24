@@ -66,5 +66,12 @@ Template.AppLayout.events({
       "postHasContent":true
     });
     Router.go('edit_post', {_id: Router.current().params._id });
+  },
+    "click .delete": function() {
+
+    if (confirm("Are you sure?")) {
+       Meteor.call("deletePost", Router.current().params._id);
+        Router.go('new_post');
+    }
   }
 });

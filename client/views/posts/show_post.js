@@ -1,4 +1,4 @@
-Template.show_post.helpers({
+Template.show_post.events({
   // showPost: function() {
   //   return Session.set("isEditing", false);
   //   return Posts.findOne(this.params._id);
