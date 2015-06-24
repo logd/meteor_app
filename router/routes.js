@@ -11,7 +11,6 @@ Router.onBeforeAction(function () {
   }
 });
 
-
 // HOMEPAGE
 Router.route('/', function() {
  if (Posts.find( { _id:Meteor.userId() } ).count() === 0) {

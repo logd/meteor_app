@@ -61,9 +61,10 @@ Template.AppLayout.events({
      // need to wait for and pass in the id for this post
   },
   "click .edit": function(e,t){
+    Session.set({
+      "isEditing": true,
+      "postHasContent":true
+    });
     Router.go('edit_post', {_id: Router.current().params._id });
-
-    // console.log(Router.current().params._id);
-  
   }
 });

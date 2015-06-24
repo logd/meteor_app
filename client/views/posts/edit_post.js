@@ -4,7 +4,6 @@
 
 Template.edit_post.helpers({
   editPost: function() {
-    return Session.set("isEditing", true);
     return Posts.findOne(this.params._id);
   }
 });
