@@ -43,17 +43,30 @@ Router.route('/new', {
    controller: 'NewPostController'
 });
 
+
 // SHOW POST
 Router.route('/posts/:_id', {
    name: 'show_post',
    controller: 'ShowPostController'
 });
 
+// // SHOW POST
+// Router.route('/posts/:_id',function(){
+//   this.render('show_post', {
+//     data: function() {
+//       return Posts.findOne(this.params._id);
+//     }
+//   }, { name: 'show_post'});
+// });
+
+
+
+
 // EDIT POST
-Router.route('/posts/:_id/edit', {
-   name: 'edit_post',
-   controller: 'ShowPostController'
-});
+// Router.route('/posts/:_id/edit', {
+//    name: 'edit_post',
+//    controller: 'ShowPostController'
+// });
 
 
 

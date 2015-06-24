@@ -1,3 +1,0 @@
-// BaseController = RouteController.extend({
-
-// });

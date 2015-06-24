@@ -1,4 +1,4 @@
-Template.postsList.onCreated(function () {
+Template.posts_list.onCreated(function () {
   // this.currentlyEditing = new ReactiveVar(null);
 
   // register this template within some central store
@@ -9,12 +9,12 @@ Template.postsList.onCreated(function () {
 //     $('.autosize').autosize();
 // });
 
-Template.postsList.helpers({
+Template.posts_list.helpers({
   myPosts: function() {
     return Posts.find({authorId: Meteor.userId()}, {sort: {createdAt: -1}});
   },
   postsFilteredByTag: function(selectedTag) {
-    return Posts.find({tag:selectedTag}, {sort: {createdAt: -1}});
+    return Posts.find({ tag:selectedTag }, { sort: {createdAt: -1 }});
   }
 //   ,
 //   isEditable: function() {
@@ -24,7 +24,7 @@ Template.postsList.helpers({
 
 });
 
-Template.postsList.events({
+Template.posts_list.events({
   "click .delete": function() {
 
     if (confirm("Are you sure?")) {
@@ -32,15 +32,15 @@ Template.postsList.events({
     }
   },
    'click .editable' : function(event, template){
-    Template.instance().currentlyEditing.set(this._id);
+    // Template.instance().currentlyEditing.set(this._id);
  
   },
     "click .done": function(event,template) {
-    Template.instance().currentlyEditing.set(null);
+    // Template.instance().currentlyEditing.set(null);
   },
     "keyup .update-post-content": function(event) {
     
-      var postId = Template.instance().currentlyEditing.get();
+      // var postId = Template.instance().currentlyEditing.get();
       var postContent = event.target.value;      
       Meteor.call('updatePost', postId, postContent);            
   },

@@ -1,9 +1,10 @@
 var returns_qty = 0;
+var postTitle = "";
 
 
 Template.new_post.onCreated(function () {
-   this.contentIsEmpty = new ReactiveVar(true);
-   this.isEditing = new ReactiveVar(true);
+   // this.contentIsEmpty = new ReactiveVar(true);
+   // this.isEditing = new ReactiveVar(true);
 });
 
 Template.new_post.onRendered(function(){
@@ -18,10 +19,7 @@ Template.new_post.helpers({
 
 Template.new_post.events({
   "keyup .new-post-form": function(event){
-    var hashtagPattern = /#[A-Za-z0-9_]*/gi;
     var postContent = event.target.value;
-    var raw_tags = tags = [];
-    var postTitle = "";
 
      if(postContent.trim() === null || postContent.trim() === ""){
         Session.set("postHasContent", false);
@@ -75,7 +73,7 @@ Template.new_post.events({
         //if (tags.length > 0) Meteor.call('upsertTags', tags);
         // WAIT FOR METEOR TAGS UPSERT TO FINISH?
         Meteor.call('createPost', postContent, postTitle, tags);
-        Router.go('postsList');
+        Router.go('show_post');
 
          
         // TODO: remove autosize 
@@ -88,16 +86,38 @@ Template.new_post.events({
       // if some other key was entered reset
       returns_qty = 0;
     };
-  },
-  'click .search' : function(event, t){
-     console.log("clicked search");
-      console.log(t);
-     
-      t.showSearch.set(true);
-
-   // this.showSearch.set(true);
- 
   }
+  // ,
+  // 'click .done' : function(event, t){
+  //   // need to detect this click event within AppLayout
+  //    var postContent = event.target.value;
+  //    console.log(postContent);
+  //    raw_tags = postContent.match(hashtagPattern);
+  //       // tags = _.map(raw_tags, removeFirstChar(raw_tags[i]));
+
+  //   tags = _.map(raw_tags, function(tag) {
+  //       return removeFirstChar(tag);
+  //   });
+
+  //    // create post title
+  //    var contentLines = postContent.split("\n");
+
+  //     // set post title as first 50 chars of first line
+  //     postTitle = ( contentLines[0].length > 50  ?  contentLines[0].substring(0,50) : contentLines[0] );
+    
+  //     Meteor.call('createPost', postContent, postTitle, tags);
+  //       Router.go('show_post');
+  // }
+  // ,
+  // 'click .search' : function(event, t){
+  //    console.log("clicked search");
+  //     console.log(t);
+     
+  //     t.showSearch.set(true);
+
+  //  // this.showSearch.set(true);
+ 
+  // }
   });
 
  // var tag_ids = [];

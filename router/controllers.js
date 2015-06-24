@@ -19,15 +19,13 @@ NewPostController = RouteController.extend({
 });
 
 PostsListController = RouteController.extend({
-  template:'postsList',
+  template:'posts_list',
   action: function(){
     this.render();
   }
 });
 
-// need to pass the params through here?
 ShowPostController = RouteController.extend({
-  layoutTemplate:'AppLayout',
   template:'show_post',
   data: function() {
     return Posts.findOne(this.params._id);
@@ -36,3 +34,15 @@ ShowPostController = RouteController.extend({
     this.render();
   }
 });
+
+// need to pass the params through here?
+// ShowPostController = RouteController.extend({
+//   layoutTemplate:'AppLayout',
+//   template:'show_post',
+//   data: function() {
+//     return Posts.findOne(this.params._id);
+//   },
+//   action: function(){
+//     this.render();
+//   }
+// });
