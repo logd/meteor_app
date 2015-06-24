@@ -59,6 +59,11 @@ Template.AppLayout.events({
     //     Router.go('show_post', post);
     // Meteor.call('createPost', postContent, postTitle, tags);
      // need to wait for and pass in the id for this post
-    
+  },
+  "click .edit": function(e,t){
+    Router.go('edit_post', {_id: Router.current().params._id });
+
+    // console.log(Router.current().params._id);
+  
   }
 });
