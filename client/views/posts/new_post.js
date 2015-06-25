@@ -21,11 +21,7 @@ Template.new_post.events({
   "keyup .new-post-form": function(event){
     var postContent = event.target.value;
 
-     if(postContent.trim() === null || postContent.trim() === ""){
-        Session.set("postHasContent", false);
-      } else {
-        Session.set("postHasContent", true);
-      };
+     
   
     function removeFirstChar(str){
       return str.substr(1, str.length);
