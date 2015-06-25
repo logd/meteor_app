@@ -1,6 +1,5 @@
 var returns_qty = 0;
-var postTitle = "";
-
+// var postTitle = "";
 
 Template.new_post.onCreated(function () {
    // this.contentIsEmpty = new ReactiveVar(true);
@@ -20,12 +19,8 @@ Template.new_post.helpers({
 Template.new_post.events({
   "keyup .new-post-form": function(event){
     var postContent = event.target.value;
-
-     
-  
-    function removeFirstChar(str){
-      return str.substr(1, str.length);
-    };
+    // var raw_tags = tags = [];
+   var postTitle = "";
    
     // if return key was entered
     if(event.which === 13){
@@ -49,13 +44,15 @@ Template.new_post.events({
 
       if(returns_qty == 2){
 
-        raw_tags = postContent.match(hashtagPattern);
+        var postTags = Logd.tags.getHashTags(postContent);
+
+        // raw_tags = postContent.match(Logd.hashtagPattern);
         // tags = _.map(raw_tags, removeFirstChar(raw_tags[i]));
 
-        tags = _.map(raw_tags, function(tag) {
-          return removeFirstChar(tag);
-        })
-        console.log(tags);
+        // tags = _.map(raw_tags, function(tag) {
+        //   return Logd.removeFirstChar(tag);
+        // })
+        console.log(postTags);
 
         // create post title
         var contentLines = postContent.split("\n");
@@ -68,8 +65,21 @@ Template.new_post.events({
         //tags = postContent.match(hashtagPattern);
         //if (tags.length > 0) Meteor.call('upsertTags', tags);
         // WAIT FOR METEOR TAGS UPSERT TO FINISH?
-        Meteor.call('createPost', postContent, postTitle, tags);
-        Router.go('show_post');
+
+        var postAttributes = {
+          title: postTitle,
+          content: postContent,
+          tags: postTags 
+        };
+
+        Meteor.call('postInsert', postAttributes, function(error, result){
+          if (error){
+            alert(error.reason);
+          } else {
+             Router.go('show_post', { _id: result._id });
+          }
+        });
+       
 
          
         // TODO: remove autosize 
@@ -83,45 +93,5 @@ Template.new_post.events({
       returns_qty = 0;
     };
   }
-  // ,
-  // 'click .done' : function(event, t){
-  //   // need to detect this click event within AppLayout
-  //    var postContent = event.target.value;
-  //    console.log(postContent);
-  //    raw_tags = postContent.match(hashtagPattern);
-  //       // tags = _.map(raw_tags, removeFirstChar(raw_tags[i]));
-
-  //   tags = _.map(raw_tags, function(tag) {
-  //       return removeFirstChar(tag);
-  //   });
-
-  //    // create post title
-  //    var contentLines = postContent.split("\n");
-
-  //     // set post title as first 50 chars of first line
-  //     postTitle = ( contentLines[0].length > 50  ?  contentLines[0].substring(0,50) : contentLines[0] );
-    
-  //     Meteor.call('createPost', postContent, postTitle, tags);
-  //       Router.go('show_post');
-  // }
-  // ,
-  // 'click .search' : function(event, t){
-  //    console.log("clicked search");
-  //     console.log(t);
-     
-  //     t.showSearch.set(true);
-
-  //  // this.showSearch.set(true);
- 
-  // }
   });
-
- // var tag_ids = [];
-    // var tag = null;
-
-    // // now, need to get the ids for the tags and insert with PostContent
-    // for (var i = 0; i < tags.length; i++) {
-    //   tag = Tags.find({tag:tag[i]});
-    //   tag_ids.push(tag._id);    
-    // } 
 
