@@ -49,17 +49,6 @@ Router.route('/posts/:_id', {
    controller: 'ShowPostController'
 });
 
-
-EditPostController = RouteController.extend({
-  template:'edit_post',
-  data: function() {
-    return Posts.findOne(this.params._id);
-  },
-  action: function(){
-    this.render();
-  }
-});
-
 // EDIT POST
 Router.route('/posts/:_id/edit', {
    name: 'edit_post',

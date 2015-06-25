@@ -22,7 +22,10 @@ Template.edit_post.events({
   "keyup .post-form" : function(){
     var postContent = event.target.value;
 
-    console.log(Logd.removeFirstChar(postContent));
+    //
+    // edit icon should switch to done icon
+    // want to support all the same functionality as for new post here, except the Meteor call will be to upsert
+    // do I want to explore
 
   }
 });

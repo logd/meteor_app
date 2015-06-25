@@ -31,6 +31,24 @@ ShowPostController = RouteController.extend({
     return Posts.findOne(this.params._id);
   },
   action: function(){
+    Session.set({
+      "isEditing": false,
+      "postHasContent":true
+    });
+    this.render();
+  }
+});
+
+EditPostController = RouteController.extend({
+  template:'edit_post',
+  data: function() {
+    return Posts.findOne(this.params._id);
+  },
+  action: function(){
+    Session.set({
+      "isEditing": true,
+      "postHasContent":true
+    });
     this.render();
   }
 });
