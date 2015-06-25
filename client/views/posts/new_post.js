@@ -41,6 +41,12 @@ Template.new_post.events({
           tags: postTags 
         };
 
+        // if Session.get("newPost")
+        // call PostInsert
+        // else call postUpdate
+        // new method: add tags unless found
+        // no, not that simple: for create, creating on double-return (or shift + return), for edit, updating on keyup?
+
         Meteor.call('postInsert', postAttributes, function(error, result){
           if (error){
             alert(error.reason);

@@ -11,6 +11,7 @@ NewPostController = RouteController.extend({
   template:'new_post',
   action: function(){
     Session.set({
+      "newPost": true,
       "isEditing": true,
       "postHasContent":false
     });
