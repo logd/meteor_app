@@ -8,7 +8,11 @@ Template.edit_post.helpers({
   }
 });
 
-// Template.edit_post.events({
-// });
+Template.edit_post.events({
+  "keyup .post-form" : function(){
+    var postContent = event.target.value;
+    
+  }
+});
  
 

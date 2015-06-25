@@ -1,14 +1,3 @@
-Template.posts_list.onCreated(function () {
-  // this.currentlyEditing = new ReactiveVar(null);
-
-  // register this template within some central store
-  // GalleryTemplates.push(this);
-});
-
-// Template.postsList.onRendered(function(){
-//     $('.autosize').autosize();
-// });
-
 Template.posts_list.helpers({
   myPosts: function() {
     return Posts.find({authorId: Meteor.userId()}, {sort: {createdAt: -1}});
@@ -51,6 +40,7 @@ Template.posts_list.events({
   },
     "click .show-post": function(e,t){
   // TODO: reference specific template rather than use global
+ 
   $(".app-container").toggleClass("toggled");
   }
 });

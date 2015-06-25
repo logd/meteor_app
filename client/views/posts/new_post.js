@@ -7,9 +7,9 @@ Template.new_post.onCreated(function () {
    // this.isEditing = new ReactiveVar(true);
 });
 
-Template.new_post.onRendered(function(){
-    $('.autosize').autosize();
-});
+// Template.new_post.onRendered(function(){
+//     $('.autosize').autosize();
+// });
 
 Template.new_post.helpers({
   // contentIsEmpty: function() {

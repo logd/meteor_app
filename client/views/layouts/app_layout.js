@@ -65,6 +65,7 @@ Template.AppLayout.events({
       "isEditing": true,
       "postHasContent":true
     });
+    
     Router.go('edit_post', {_id: Router.current().params._id });
   },
     "click .delete": function() {
