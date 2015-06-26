@@ -22,9 +22,9 @@ Template.AppLayout.events({
   t.$(".app-container").toggleClass("toggled");
   },
   "click .done-editing" : function(e,t){
-    var postContent = $('#postContent').val();
+    e.preventDefault();
 
-    //TODO: explicitly set done link to disabled state if postContent is Empty
+    var postContent = $('#postContent').val();
 
     // unless postContent is empty
     if(!Logd.posts.postIsEmpty(postContent)){
@@ -50,11 +50,7 @@ Template.AppLayout.events({
     };
   },
   "click .edit": function(e,t){
-    // Session.set({
-    //   "isEditing": true,
-    //   "postHasContent":true
-    // });
-    
+   e.preventDefault();
     Router.go('edit_post', {_id: Router.current().params._id });
   },
     "click .delete": function() {

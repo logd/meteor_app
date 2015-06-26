@@ -1,15 +1,12 @@
 Router.onBeforeAction(function () {
-// all properties available in the route function are also available here such as this.params
-
-
-// if not signed in and not currently at /login, redirect to/login
   if (!Meteor.userId() && (Router.current().route.getName() !== 'login')) {
     this.redirect('login');
   } else {
-    // otherwise continue
     this.next();
   }
 });
+
+Router.onBeforeAction('dataNotFound', {only: 'show_post'});
 
 // HOMEPAGE
 Router.route('/', function() {

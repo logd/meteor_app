@@ -4,7 +4,7 @@ Router.configure({
     return Meteor.subscribe('posts');
   },
   loadingTemplate: 'Loading',
-  notFoundTemplate: 'NotFoundLayout'
+  notFoundTemplate: 'NotFound'
 });
 
 
