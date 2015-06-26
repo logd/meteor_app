@@ -22,9 +22,35 @@ Template.AppLayout.events({
   t.$(".app-container").toggleClass("toggled");
   },
   "click .done-editing" : function(e,t){
-    
+    var postContent = $('#postContent').val();
 
-    Router.go('show_post', {_id: Router.current().params._id });
+    //TODO: explicitly set done link to disabled state if postContent is Empty
+
+    // unless postContent is empty
+    if(!Logd.posts.postIsEmpty(postContent)){
+
+      var postTitle = Logd.posts.postTitleFromFirstLine(postContent);
+
+      var postTags = Logd.tags.getHashTags(postContent);
+
+      var postAttributes = {
+        postId: Router.current().params._id,
+        title: postTitle,
+        content: postContent,
+        tags: postTags 
+      };
+
+      Meteor.call('updatePost', postAttributes, function(error, result){
+        if (error){
+          alert(error.reason);
+        } else {
+          Router.go('show_post', { _id: Router.current().params._id });
+        };
+      });         
+    };
+
+
+    // Router.go('show_post', {_id: Router.current().params._id });
   },
   "click .edit": function(e,t){
     // Session.set({
