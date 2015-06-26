@@ -48,9 +48,6 @@ Template.AppLayout.events({
         };
       });         
     };
-
-
-    // Router.go('show_post', {_id: Router.current().params._id });
   },
   "click .edit": function(e,t){
     // Session.set({
