@@ -42,23 +42,26 @@
 
  {{! *** POST FOOTER *** }}
        <footer class="post-footer">
-      
+   
       <section class="delete-post">
+      {{#unless isNewPost}}
         <button class="delete icon-button">
           <i class="fa fa-trash-o fa-2x"></i>
         </button>
+          {{/unless}}
       </section>
-      
+    
+          
       <section class="future-options">
         {{! eg share this, or add collaborators }}
       </section>
-
+    
       <section class="new-post">
+        {{#unless isNewPost}}
             <a href="{{pathFor 'new_post'}}" class="icon-link"><i class="fa fa-plus fa-2x"></i></a> 
-      <!--   <button class="icon-button">
-          <i class="fa fa-plus fa-2x"></i>
-        </button> -->
+        {{/unless}}
       </section>
+   
     </footer>
 
   </div>{{! /.content-container}}

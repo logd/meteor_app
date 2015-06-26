@@ -13,7 +13,10 @@ Template.AppLayout.helpers({
   },
     postHasContent: function() {
     return Session.get("postHasContent");
-  }
+  },
+    isNewPost: function() {
+      return Router.current().route.getName() === "new_post" ? true : false;
+    }
 });
 
 Template.AppLayout.events({
