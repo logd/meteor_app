@@ -28,8 +28,11 @@ PostsListController = RouteController.extend({
 
 ShowPostController = RouteController.extend({
   template:'show_post',
+  waitOn: function () {
+    return Meteor.subscribe('posts', this.params._id); 
+  },
   data: function() {
-    return Posts.findOne(this.params._id);
+    return Posts.findOne({ _id: this.params._id });
   },
   action: function(){
     Session.set({
@@ -42,8 +45,11 @@ ShowPostController = RouteController.extend({
 
 EditPostController = RouteController.extend({
   template:'edit_post',
+  waitOn: function () {
+    return Meteor.subscribe('posts', this.params._id); 
+  },
   data: function() {
-    return Posts.findOne(this.params._id);
+    return Posts.findOne({ _id: this.params._id });
   },
   action: function(){
     Session.set({

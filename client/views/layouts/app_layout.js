@@ -31,6 +31,12 @@ Template.AppLayout.helpers({
           return post.title;
           break;
 
+        case "show_post":
+          var post = Posts.findOne({ _id: Router.current().params._id });
+
+          return post.title;
+          break;
+
         default :
           return "Logd";
           break;
