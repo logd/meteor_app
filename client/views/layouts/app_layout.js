@@ -18,10 +18,6 @@ Template.AppLayout.helpers({
      pageTitle: function() {
 
       if(Router.current().route.getName() !== null){
-      //   return "no name found";
-      // } else {
-
-            //TODO: refactor this to be a Logd.setPageTitle function
         switch(Router.current().route.getName()){
 
           case "new_post":
@@ -30,6 +26,7 @@ Template.AppLayout.helpers({
 
           case "edit_post":
             var post = Posts.findOne({ _id: Router.current().params._id });
+            // TODO: wait for post to be found before returning, else this may generate intermittent errors
             return post.title;
             break;
 
@@ -56,16 +53,14 @@ Template.AppLayout.events({
   "click .done-editing" : function(e,t){
     e.preventDefault();
 
-    var postContent = $('#postContent').val();
+    var postContent = $('textarea.post-content').val();
+    // console.log(postContent);
 
     // unless postContent is empty
-    if(!Logd.posts.postIsEmpty(postContent)){
-
-      var postTitle = Logd.posts.postTitleFromFirstLine(postContent);
+    if(Logd.posts.notEmpty(postContent)){
       var postTags = Logd.tags.getHashTags(postContent);
       var postAttributes = {
         postId: Router.current().params._id,
-        title: postTitle,
         content: postContent,
         tags: postTags 
       };

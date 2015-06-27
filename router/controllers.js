@@ -62,7 +62,7 @@ EditPostController = RouteController.extend({
     return Posts.findOne({ _id: this.params._id });
   },
   action: function(){
-    this.state.set('pageTitle', 'edit_post');
+    // this.state.set('pageTitle', 'edit_post');
     Session.set({
       "isEditing": true,
       "postHasContent":true
