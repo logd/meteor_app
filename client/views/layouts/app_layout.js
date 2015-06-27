@@ -16,6 +16,25 @@ Template.AppLayout.helpers({
   },
     isNewPost: function() {
       return Router.current().route.getName() === "new_post" ? true : false;
+    },
+     pageTitle: function() {
+
+      //TODO: refactor this to be a Logd.setPageTitle function
+      switch(Router.current().route.getName()){
+
+        case "new_post":
+          return "New post...";
+          break;
+
+        case "edit_post":
+          var post = Posts.findOne({ _id: Router.current().params._id });
+          return post.title;
+          break;
+
+        default :
+          return "Logd";
+          break;
+      }
     }
 });
 
@@ -33,9 +52,7 @@ Template.AppLayout.events({
     if(!Logd.posts.postIsEmpty(postContent)){
 
       var postTitle = Logd.posts.postTitleFromFirstLine(postContent);
-
       var postTags = Logd.tags.getHashTags(postContent);
-
       var postAttributes = {
         postId: Router.current().params._id,
         title: postTitle,
@@ -51,13 +68,18 @@ Template.AppLayout.events({
         };
       });         
     };
-  },
-  "click .edit": function(e,t){
+  }
+  // ,
+  // "click .post-content-button": function(e,t){
+  //  e.preventDefault();
+  //   Router.go('edit_post', {_id: Router.current().params._id });
+  // }
+  , "click .edit": function(e,t){
    e.preventDefault();
     Router.go('edit_post', {_id: Router.current().params._id });
   },
     "click .delete": function() {
-
+    e.preventDefault();
     if (confirm("Are you sure?")) {
        Meteor.call("deletePost", Router.current().params._id);
         Router.go('new_post');
