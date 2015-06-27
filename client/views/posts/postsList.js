@@ -3,7 +3,7 @@ Template.posts_list.helpers({
     return Posts.find({authorId: Meteor.userId()}, {sort: {createdAt: -1}});
   },
   postsFilteredByTag: function(selectedTag) {
-    return Posts.find({ tag:selectedTag }, { sort: {createdAt: -1 }});
+    return Posts.find({ tags:selectedTag }, { sort: {createdAt: -1 }});
   }
 //   ,
 //   isEditable: function() {
@@ -35,8 +35,11 @@ Template.posts_list.events({
   },
     "click .tag-filter": function(e) {
       e.preventDefault();
-      var selectedTag = $(e.target).text();      
-      // console.log($(e.target).text());           
+      var tag =  $(e.target).text();
+      Session.set("tag-search", tag);
+      // var selectedTag = $(e.target).text();      
+      // console.log($(e.target).text()); 
+      Router.go('search', { query: tag });          
   },
     "click .show-post": function(e,t){
   // TODO: reference specific template rather than use global

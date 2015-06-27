@@ -5,7 +5,7 @@
         <h2><a class="show-post" href="{{pathFor 'show_post'}}">{{title}}</a></h2>
         <ul class="horizontal meta-info">
           {{#each tags}}
-            <li><a href="#" class="tag-filter"><span class="tag">{{this}}</span></a></li>
+            <li><a href="#" class="tag"><span class="tag-filter">{{this}}</span></a></li>
           {{/each}}
         </ul>
         <p class="meta-info">Created: {{livestamp createdAt}}</p>

@@ -1,12 +1,27 @@
 <template name="search">
+<ul class="no-bullet">
+  {{#each postsFilteredByTag}}
+  <li>{{#markdown}}{{this.title}}{{/markdown}}</li>
+  {{/each}}
+</ul>
+</template>
+
+<!-- NOT IN USE -->
+<template name="es-search">
 {{> esInput index="posts" placeholder="Search..."}}
+<hr />
 <ul>
   {{#esEach index="posts"}}
   <li>{{#markdown}}{{content}}{{/markdown}}</li>
   {{/esEach}}
 </ul>
 {{#ifEsHasNoResults index="posts"}}
-        <div class="no-results">No results found!</div>
+<div class="no-results">
+  <p>Sorry, no matches found :-/</p>
+</div>
 {{/ifEsHasNoResults}}
-<hr>
+
+{{#ifEsIsSearching index="players"}}
+        <div>Searching...</div>
+{{/ifEsIsSearching}}
 </template>

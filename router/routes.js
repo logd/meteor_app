@@ -52,4 +52,10 @@ Router.route('/posts/:_id/edit', {
    controller: 'EditPostController'
 });
 
+// Search Results
+Router.route('/search/:query', {
+   name: 'search',
+   controller: 'SearchController'
+});
+
 

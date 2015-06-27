@@ -24,12 +24,14 @@ Template.new_post.events({
     // on return, if post is not empty, create post and go to edit post view
     if(event.which === 13){
       var postTitle = Logd.posts.getTitleFromContent(postContent).title;
+      var postTags = Logd.tags.getHashTags(postTitle);
 
       // postContent = Logd.posts.getTitleFromContent(postContent).content;
 
-      // var postTags = Logd.tags.getHashTags(postContent);
+    
       var postAttributes = {
-        title: postTitle
+        title: postTitle,
+        tags: postTags
         // ,
         // content: postContent,
         // tags: postTags 

@@ -71,6 +71,14 @@ EditPostController = RouteController.extend({
   }
 });
 
+
+SearchController = RouteController.extend({
+  template:'search',
+  action: function(){
+    this.render();
+  }
+});
+
 // need to pass the params through here?
 // ShowPostController = RouteController.extend({
 //   layoutTemplate:'AppLayout',
