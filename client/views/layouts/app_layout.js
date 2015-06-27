@@ -36,6 +36,11 @@ Template.AppLayout.helpers({
             return post.title;
             break;
 
+          case "search":
+           var title = "#" + Session.get("tag-search");
+            return  title;
+            break;
+
           default :
             return "Logd";
             break;
