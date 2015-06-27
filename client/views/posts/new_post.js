@@ -18,18 +18,21 @@ Template.new_post.onCreated(function () {
 Template.new_post.events({
   "keyup .new-post-form": function(e,t){
     e.preventDefault();
-    var postContent = $('#postContent').val();
+    var postContent = event.target.value;
+    // console.log(postContent);
   
     // on return, if post is not empty, create post and go to edit post view
-    if(event.which === 13 && !Logd.posts.postIsEmpty(postContent)){
-      var postTitle = Logd.posts.postTitleFromFirstLine(postContent);
+    if(event.which === 13){
+      var postTitle = Logd.posts.getTitleFromContent(postContent).title;
 
-      // now that I have put the first line into the post title, remove the first line from postContent
-      var postTags = Logd.tags.getHashTags(postContent);
+      // postContent = Logd.posts.getTitleFromContent(postContent).content;
+
+      // var postTags = Logd.tags.getHashTags(postContent);
       var postAttributes = {
-        title: postTitle,
-        content: postContent,
-        tags: postTags 
+        title: postTitle
+        // ,
+        // content: postContent,
+        // tags: postTags 
       };
 
       Meteor.call('postInsert', postAttributes, function(error, result){

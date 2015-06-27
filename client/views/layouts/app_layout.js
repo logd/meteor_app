@@ -19,28 +19,31 @@ Template.AppLayout.helpers({
     },
      pageTitle: function() {
 
-      //TODO: refactor this to be a Logd.setPageTitle function
-      switch(Router.current().route.getName()){
+      // if(Router.current().route.getName() != ""){
+            //TODO: refactor this to be a Logd.setPageTitle function
+        switch(Router.current().route.getName()){
 
-        case "new_post":
-          return "New post...";
-          break;
+          case "new_post":
+            return "New post...";
+            break;
 
-        case "edit_post":
-          var post = Posts.findOne({ _id: Router.current().params._id });
-          return post.title;
-          break;
+          case "edit_post":
+            var post = Posts.findOne({ _id: Router.current().params._id });
+            return post.title;
+            break;
 
-        case "show_post":
-          var post = Posts.findOne({ _id: Router.current().params._id });
+          case "show_post":
+            var post = Posts.findOne({ _id: Router.current().params._id });
 
-          return post.title;
-          break;
+            return post.title;
+            break;
 
-        default :
-          return "Logd";
-          break;
-      }
+          default :
+            return "Logd";
+            break;
+        }
+
+      // };
     }
 });
 
