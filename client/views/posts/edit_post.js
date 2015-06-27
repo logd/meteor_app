@@ -1,6 +1,12 @@
-// Template.edit_post.onRendered(function(){
-//     $('.autosize').autosize();
-// });
+Template.edit_post.onRendered(function(){
+    // $('.autosize').autosize();
+
+   this.$('.post-content').focus();
+
+    // if(input){
+    //     input.focus()
+    // }
+});
 
 Template.edit_post.helpers({
 });

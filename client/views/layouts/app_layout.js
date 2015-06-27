@@ -1,11 +1,9 @@
-Template.AppLayout.onCreated(function () {
-  // this.isEditing = new ReactiveVar(false);
+// var logd_route_name;
 
-  // register this template within some central store
-  // GalleryTemplates.push(this);
-  // PostTemplates.push(this);
-
-});
+// Template.AppLayout.onRendered(function(){
+//   logd_route_name =  Router.current().route.getName();
+//   // Session.set("route_name", Router.current().route.getName());
+// });
 
 Template.AppLayout.helpers({
     isEditing: function() {
@@ -19,7 +17,10 @@ Template.AppLayout.helpers({
     },
      pageTitle: function() {
 
-      // if(Router.current().route.getName() != ""){
+      if(Router.current().route.getName() !== null){
+      //   return "no name found";
+      // } else {
+
             //TODO: refactor this to be a Logd.setPageTitle function
         switch(Router.current().route.getName()){
 
@@ -43,7 +44,7 @@ Template.AppLayout.helpers({
             break;
         }
 
-      // };
+      };
     }
 });
 

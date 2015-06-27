@@ -1,8 +1,9 @@
 Router.configure({
+  // controller: 'ApplicationController',
   layoutTemplate: 'AppLayout',
-  // waitOn: function() {
-  //   return Meteor.subscribe('posts');
-  // },
+  waitOn: function() {
+    return Meteor.subscribe('posts');
+  },
   loadingTemplate: 'Loading',
   notFoundTemplate: 'NotFound'
 });

@@ -1,3 +1,13 @@
+// ApplicationController = RouteController.extend({
+//   layoutTemplate:'ApplicationLayout',
+//   template:'AppLayout',
+//   action: function(){
+//     this.render();
+//   }
+// });
+
+// Router.onBeforeAction('dataNotFound', {only: 'show_post'});
+
 LoginController = RouteController.extend({
   layoutTemplate:'UtilityLayout',
   template:'login',
@@ -52,10 +62,11 @@ EditPostController = RouteController.extend({
     return Posts.findOne({ _id: this.params._id });
   },
   action: function(){
+    this.state.set('pageTitle', 'edit_post');
     Session.set({
       "isEditing": true,
       "postHasContent":true
-    });
+  });
     this.render();
   }
 });
