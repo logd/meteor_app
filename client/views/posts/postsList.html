@@ -5,10 +5,10 @@
         <h2><a class="show-post" href="{{pathFor 'show_post'}}">{{title}}</a></h2>
         <ul class="horizontal meta-info">
           {{#each tags}}
-            <li><a href="#" class="tag-filter">{{this}}</a></li>
+            <li><a href="#" class="tag-filter"><span class="tag">{{this}}</span></a></li>
           {{/each}}
-            <li>Created: {{livestamp createdAt}}</li>
         </ul>
+        <p class="meta-info">Created: {{livestamp createdAt}}</p>
       </div>
       <!-- <div class="delete-post">
         <button class="delete icon-button">

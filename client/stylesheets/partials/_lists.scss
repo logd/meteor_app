@@ -1,0 +1,19 @@
+ul.horizontal {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  li {
+    display: inline;
+    padding-right: 5px;
+  }  
+}
+
+/*  HELPERS
+____________________ */
+
+// ul.horizontal {
+//   list-style-type: none;
+//   margin-left: 0;
+//   padding-left: 0;
+// }

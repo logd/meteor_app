@@ -30,3 +30,9 @@ body {
   p.meta-info {
     font-size: $small-text;
   }
+
+  .tag {
+    &:before {
+      content: "#";
+    }
+  }

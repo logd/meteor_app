@@ -7,6 +7,7 @@
 @import "partials/colors";
 @import "partials/typography";
 @import "partials/forms";
+@import "partials/lists";
 
 
 /*  POSTS VIEW LAYOUT - MOBILE
@@ -69,13 +70,3 @@ ____________________ */
     flex-basis: 3em;
   }
 }
-
-/*  HELPERS
-____________________ */
-
-ul.horizontal {
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 0;
-}
-
