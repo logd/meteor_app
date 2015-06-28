@@ -29,6 +29,19 @@ NewPostController = RouteController.extend({
   }
 });
 
+PostTitleController = RouteController.extend({
+  layoutTemplate:'PostLayout',
+  template:'post_title',
+  action: function(){
+    Session.set({
+      "newPost": true,
+      "isEditing": true,
+      "postHasContent":false
+    });
+    this.render();
+  }
+});
+
 PostsListController = RouteController.extend({
   template:'posts_list',
   action: function(){

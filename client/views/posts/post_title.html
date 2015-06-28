@@ -1,0 +1,9 @@
+<template name="post_title">
+  {{#if editPostTitle}}
+    <form>
+      <textarea class="post-title" cols="50" autofocus>{{title}}</textarea>
+    </form>     
+  {{else}}
+    <h1>{{title}}</h1>
+  {{/if}}
+</template>
