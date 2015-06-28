@@ -1,0 +1,30 @@
+<template name="home">
+  {{! *** APP HEADER *** }}
+  <header class="home">
+    {{! *** User Nav *** }}
+    <div class="header-left">
+     {{! User Avatar}}         
+    </div>
+    <div class="header-center">
+      <h1 class="meta-info">{{! username}}</h1>  
+    </div>
+
+    {{! New Post}} 
+    <div class="header-right new-post">
+      <a href="{{pathFor 'new_post'}}" class="icon-link" title="New Post">
+        <i class="fa fa-plus fa-2x"></i>
+      </a>         
+    </div>
+  </header>
+  <section class="recent-tags">{{! recent tags }}</section>
+  <section class="posts-list">{{> postsList}}</section>
+  
+  {{! * FOOTER * }}
+  <footer class="home">
+    <ul class="horizontal">
+      <li>About</li>
+      <li>Contact</li>
+      <li>Twitter</li>
+    </ul>
+  </footer>
+</template>
