@@ -74,7 +74,11 @@ EditPostController = RouteController.extend({
 
 SearchController = RouteController.extend({
   template:'search',
+  data: function() {
+    return Posts.find({ tags: this.params.tags });
+  },
   action: function(){
+    Session.set("page_title", this.params.tags );
     this.render();
   }
 });

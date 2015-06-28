@@ -37,7 +37,7 @@ Template.AppLayout.helpers({
             break;
 
           case "search":
-           var title = "#" + Session.get("tag-search");
+           var title = "#" + Session.get("page_title");
             return  title;
             break;
 

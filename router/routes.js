@@ -42,8 +42,8 @@ Router.route('/new', {
 
 // SHOW POST
 Router.route('/posts/:_id', {
-   name: 'show_post',
-   controller: 'ShowPostController'
+   name: 'show_post'
+   // controller: 'ShowPostController'
 });
 
 // EDIT POST
@@ -53,9 +53,9 @@ Router.route('/posts/:_id/edit', {
 });
 
 // Search Results
-Router.route('/search/:query', {
-   name: 'search',
-   controller: 'SearchController'
+Router.route('/search/:tags', {
+  name: 'search',
+  controller: 'SearchController'
 });
 
 

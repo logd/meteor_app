@@ -1,9 +1,10 @@
 Template.search.helpers({
-  postsFilteredByTag: function() {
-    var selectedTag = Session.get("tag-search");
-    console.log(selectedTag);
-    return Posts.find({ tags:selectedTag }, { sort: {createdAt: -1 }});
-  }
+  // searchResults: function() {
+  //   var query = Router.current().params.foo
+  //   console.log(query);
+  //   Session.set("page_title", query);
+  //   return Posts.find({ tags:query }, { sort: {createdAt: -1 }});
+  // }
 });
 
 Template.search.events({

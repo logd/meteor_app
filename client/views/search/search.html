@@ -1,6 +1,6 @@
 <template name="search">
 <ul class="no-bullet">
-  {{#each postsFilteredByTag}}
+  {{#each this}}
   <h2><a class="show-post" href="{{pathFor 'show_post'}}">{{#markdown}}{{this.title}}{{/markdown}}</a></h2>
   <li></li>
   {{/each}}
