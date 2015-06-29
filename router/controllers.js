@@ -1,22 +1,13 @@
-// ApplicationController = RouteController.extend({
-//   layoutTemplate:'ApplicationLayout',
-//   template:'AppLayout',
-//   action: function(){
-//     this.render();
-//   }
-// });
-
-// Router.onBeforeAction('dataNotFound', {only: 'show_post'});
 HomeController = RouteController.extend({
   template:'home',
   action: function(){
-    // if (Posts.find( { _id:Meteor.userId() } ).count() === 0) {
-    //   this.redirect('/new');
+    if (Posts.find( { authorId : Meteor.userId() } ).count() === 0) {
+      this.redirect('/new');
 
-    // } else {
+    } else {
 
       this.render();
-    // }
+    }
   }
 });
 
@@ -38,18 +29,6 @@ NewPostController = RouteController.extend({
   }
 });
 
-// PostTitleController = RouteController.extend({
-//   layoutTemplate:'post_layout',
-//   template:'post_title',
-//   action: function(){
-//     Session.set({
-//       "newPost": true,
-//       "isEditing": true,
-//       "postHasContent":false
-//     });
-//     this.render();
-//   }
-// });
 
 PostsListController = RouteController.extend({
   template:'posts_list',
@@ -85,11 +64,6 @@ EditPostController = RouteController.extend({
     return Posts.findOne({ _id: this.params._id });
   },
   action: function(){
-    // this.state.set('pageTitle', 'edit_post');
-  //   Session.set({
-  //     "isEditing": true,
-  //     "postHasContent":true
-  // });
     this.state.set('postTitleHasContent', true);
     this.render();
   }
@@ -106,15 +80,3 @@ SearchController = RouteController.extend({
     this.render();
   }
 });
-
-// need to pass the params through here?
-// ShowPostController = RouteController.extend({
-//   layoutTemplate:'AppLayout',
-//   template:'show_post',
-//   data: function() {
-//     return Posts.findOne(this.params._id);
-//   },
-//   action: function(){
-//     this.render();
-//   }
-// });
