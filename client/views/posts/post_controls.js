@@ -37,7 +37,7 @@ Template.post_controls.events({
 
 
 
-  //   Router.go('show_post', { _id: Router.current().params._id });
+    Router.go('show_post', { _id: Router.current().params._id });
 
 
    
