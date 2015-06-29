@@ -1,0 +1,14 @@
+<template name="post_controls">
+{{#if newPost}}
+  {{#if postTitleHasContent}}
+    <button class="done-editing icon-button">
+      <i class="fa fa-check fa-3x"></i>
+        </button>
+  {{/if}}
+{{/if}}
+{{#if editPostTitle}}
+    <button class="edit icon-button">
+      <i class="fa fa-pencil fa-3x"></i>
+    </button>
+  {{/if}}
+</template>

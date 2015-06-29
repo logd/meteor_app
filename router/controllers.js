@@ -7,6 +7,18 @@
 // });
 
 // Router.onBeforeAction('dataNotFound', {only: 'show_post'});
+HomeController = RouteController.extend({
+  template:'home',
+  action: function(){
+    // if (Posts.find( { _id:Meteor.userId() } ).count() === 0) {
+    //   this.redirect('/new');
+
+    // } else {
+
+      this.render();
+    // }
+  }
+});
 
 LoginController = RouteController.extend({
   layoutTemplate:'UtilityLayout',
@@ -17,30 +29,27 @@ LoginController = RouteController.extend({
 });
 
 NewPostController = RouteController.extend({
-  layoutTemplate:'AppLayout',
-  template:'new_post',
+  layoutTemplate: 'post_layout',
+  template:'edit_post',
   action: function(){
-    Session.set({
-      "newPost": true,
-      "isEditing": true,
-      "postHasContent":false
-    });
+    this.state.set('newPost', true);
+    this.state.set('editPostTitle', true);
     this.render();
   }
 });
 
-PostTitleController = RouteController.extend({
-  layoutTemplate:'PostLayout',
-  template:'post_title',
-  action: function(){
-    Session.set({
-      "newPost": true,
-      "isEditing": true,
-      "postHasContent":false
-    });
-    this.render();
-  }
-});
+// PostTitleController = RouteController.extend({
+//   layoutTemplate:'post_layout',
+//   template:'post_title',
+//   action: function(){
+//     Session.set({
+//       "newPost": true,
+//       "isEditing": true,
+//       "postHasContent":false
+//     });
+//     this.render();
+//   }
+// });
 
 PostsListController = RouteController.extend({
   template:'posts_list',

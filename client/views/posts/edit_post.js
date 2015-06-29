@@ -1,62 +1,49 @@
-Template.edit_post.onRendered(function(){
-    // $('.autosize').autosize();
-
-   this.$('.post-content').focus();
-
-    // if(input){
-    //     input.focus()
-    // }
+Template.edit_post.onCreated(function () {
+   // this.contentIsEmpty = new ReactiveVar(true);
+   // this.isEditing = new ReactiveVar(true);
 });
+
+// Template.new_post.onRendered(function(){
+//     $('.autosize').autosize();
+// });
 
 Template.edit_post.helpers({
+  newPost: function() {
+    return Iron.controller().state.get('newPost');
+  }
 });
+
 
 Template.edit_post.events({
-  // "input .post-form" : function(e, t){
-  //   var postContent = $('#postContent').val();
+  "keyup .new-post-form": function(e,t){
+    e.preventDefault();
+    var postContent = event.target.value;
+    // console.log(postContent);
+  
+    // on return, if post is not empty, create post and go to edit post view
+    if(event.which === 13){
+      var postTitle = Logd.posts.getTitleFromContent(postContent).title;
+      var postTags = Logd.tags.getHashTags(postTitle);
 
-  //   // on input, every 3 seconds, save changes
+      // postContent = Logd.posts.getTitleFromContent(postContent).content;
 
-  //   // Session.set('save-notice', "Saving changes...");
+    
+      var postAttributes = {
+        title: postTitle,
+        tags: postTags
+        // ,
+        // content: postContent,
+        // tags: postTags 
+      };
 
-  //   var autoSaveInterval = function(){
-  //     var timer;
-
-  //     this.set = function(saveForm) {
-  //       timer = Meteor.setTimeout(function() {
-  //         // saveFormCB();
-  //         Meteor.call(
-  //           'updatePost',
-  //           postAttributes,
-  //           function(error, result){
-  //             if (error){ alert(error.reason);}
-  //           });
-  //         }, 3000)
-  //     };
-
-  //     this.clear = function() {
-  //       Meteor.clearInterval(timer);
-  //     };
-
-  //       return this;    
-  //   }();
-
-  //    // Save user input after 3 seconds of not typing
-  //   autoSaveInterval.clear()
-
-  //   autoSaveInterval.set(function() {   
-  //     // We should update our document. 
-  //     // If update is successful, then
-  //     // Session.set('saving', 'All Changes Saved.'); 
-  //  });
-
-
-  //   //
-  //   // edit icon should switch to done icon
-  //   // want to support all the same functionality as for new post here, except the Meteor call will be to upsert
-  //   // do I want to explore
-
-  // }
+      Meteor.call('postInsert', postAttributes, function(error, result){
+        if (error){
+          alert(error.reason);
+        } else {
+           Router.go('edit_post', { _id: result._id });
+        }
+      });
+    }
+  }
 });
- 
 

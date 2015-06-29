@@ -6,25 +6,18 @@ Router.onBeforeAction(function () {
   }
 });
 
-Router.onBeforeAction('dataNotFound', {only: 'show_post'});
-
-// HOMEPAGE
-Router.route('/', function() {
- if (Posts.find( { _id:Meteor.userId() } ).count() === 0) {
-
-    this.redirect('/new');
- } else{
-
-  //TODO: this needs to change, since post list is in the sidebar
-    this.render('posts_list');
- };
-});
-
+// Router.onBeforeAction('dataNotFound', {only: 'show_post'});
 
 // LOGIN
 Router.route('/login', {
    name: 'login',
    controller: 'LoginController'
+});
+
+// HOME
+Router.route('/', {
+   name: 'home',
+   controller: 'HomeController'
 });
 
 // LIST POSTS LIST

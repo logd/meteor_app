@@ -1,7 +1,6 @@
-<template name="PostLayout">
+<template name="post_layout">
 
 <div class="app-container">
-  {{> AppNav}}
 
   {{! *** APP CONTENT *** }}
   <div class="content-container">
@@ -14,23 +13,10 @@
         </button>
       </div>
       <div class="content-info">  
-        <div class="page-title">
-          {{> yield "post_title"}}      
-        </div>
+       {{> post_title}}
       </div>
       <div class="header-right">
-     {{#if isEditing}}
-       {{#if postHasContent}}
-       <button class="done-editing icon-button">
-          <i class="fa fa-check fa-3x"></i>
-        </button>
-        {{/if}}
-      {{else}}
-      <button class="edit icon-button">
-          <i class="fa fa-pencil fa-3x"></i>
-        </button>
-      {{/if}}
-         
+      {{> post_controls}}
       </div>
     </header>
    

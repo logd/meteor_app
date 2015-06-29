@@ -6,15 +6,15 @@
 // });
 
 Template.AppLayout.helpers({
-    isEditing: function() {
-    return Session.get("isEditing");
-  },
-    postHasContent: function() {
-    return Session.get("postHasContent");
-  },
-    isNewPost: function() {
-      return Router.current().route.getName() === "new_post" ? true : false;
-    },
+  //   isEditing: function() {
+  //   return Session.get("isEditing");
+  // },
+  //   postHasContent: function() {
+  //   return Session.get("postHasContent");
+  // },
+  //   isNewPost: function() {
+  //     return Router.current().route.getName() === "new_post" ? true : false;
+  //   },
      pageTitle: function() {
 
       if(Router.current().route.getName() !== null){

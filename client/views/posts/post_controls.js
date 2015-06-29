@@ -1,4 +1,4 @@
-Template.new_post.onCreated(function () {
+Template.post_controls.onCreated(function () {
    // this.contentIsEmpty = new ReactiveVar(true);
    // this.isEditing = new ReactiveVar(true);
 });
@@ -7,16 +7,18 @@ Template.new_post.onCreated(function () {
 //     $('.autosize').autosize();
 // });
 
-// Template.new_post.helpers({
+Template.post_controls.helpers({
+  newPost: function() {
+    return Iron.controller().state.get('newPost');
+  },
+  postTitleHasContent: function() {
+    return Iron.controller().state.get('postTitleHasContent');
+  }
+});
 
-// });
 
-// Template.new_post.helpers({
-
-// });
-
-Template.new_post.events({
-  "keyup .new-post-form": function(e,t){
+Template.post_controls.events({
+  "keyup .post-form": function(e,t){
     e.preventDefault();
     var postContent = event.target.value;
     // console.log(postContent);
