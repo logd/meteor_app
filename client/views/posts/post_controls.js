@@ -12,11 +12,58 @@ Template.post_controls.helpers({
     } else {
         return false;
     };
+  },
+  showEdit: function() {
+    if(Router.current().route.getName() === 'show_post') {
+        return true;
+    } else {
+        return false;
+    };
   }
 });
 
 
 Template.post_controls.events({
+  "click .edit": function(e,t){
+    Router.go('edit_post', { _id: Router.current().params._id });
+  },
+    "click .done": function(e,t){
+  //      var postContent = $('textarea.post-content').val();
+  //   // console.log(postContent);
+
+  //     if(Router.current().route.getName() === 'new_post'){
+
+  //     } else {
+
+
+
+  //   Router.go('show_post', { _id: Router.current().params._id });
+
+
+   
+
+  //   // unless postContent is empty
+  //   if(Logd.posts.notEmpty(postContent)){
+  //     var postTags = Logd.tags.getHashTags(postContent);
+  //     var postAttributes = {
+  //       postId: Router.current().params._id,
+  //       content: postContent,
+  //       tags: postTags 
+  //     };
+
+  //     Meteor.call('updatePost', postAttributes, function(error, result){
+  //       if (error){
+  //         alert(error.reason);
+  //       } else {
+  //         Router.go('show_post', { _id: Router.current().params._id });
+  //       };
+  //     });         
+  //   };
+
+  //     };
+  // }
+  }
+
   // "keyup .post-form": function(e,t){
   //   e.preventDefault();
   //   var postContent = event.target.value;
