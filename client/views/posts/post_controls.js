@@ -13,6 +13,18 @@ Template.post_controls.helpers({
   },
   postTitleHasContent: function() {
     return Iron.controller().state.get('postTitleHasContent');
+  },
+  showDone: function() {
+    // if postTitleHasContent OR postHasContent
+    if( Iron.controller().state.get('postTitleHasContent') ||
+        Iron.controller().state.get('postHasContent') ) {
+
+        return true;
+
+       } else {
+         
+         return false;
+       }
   }
 });
 

@@ -1,10 +1,10 @@
 <template name="post_title">
     {{#if editPostTitle}}
       <form>
-        <textarea class="post-title" placeholder="New post..." cols="50" autofocus>{{title}}</textarea>
+        <textarea class="post-title" placeholder="New post..." cols="50">{{title}}</textarea>
       </form>     
     {{else}}
-      <h1>{{! title}} Show Post Title</h1>
+      <h1>{{title}}</h1>
     {{/if}}   
 </template>
 

@@ -30,7 +30,7 @@ LoginController = RouteController.extend({
 
 NewPostController = RouteController.extend({
   layoutTemplate: 'post_layout',
-  template:'edit_post',
+  template:'new_post',
   action: function(){
     this.state.set('newPost', true);
     this.state.set('editPostTitle', true);
@@ -76,6 +76,7 @@ ShowPostController = RouteController.extend({
 });
 
 EditPostController = RouteController.extend({
+  layoutTemplate: 'post_layout',
   template:'edit_post',
   waitOn: function () {
     return Meteor.subscribe('posts', this.params._id); 
@@ -85,10 +86,11 @@ EditPostController = RouteController.extend({
   },
   action: function(){
     // this.state.set('pageTitle', 'edit_post');
-    Session.set({
-      "isEditing": true,
-      "postHasContent":true
-  });
+  //   Session.set({
+  //     "isEditing": true,
+  //     "postHasContent":true
+  // });
+    this.state.set('postTitleHasContent', true);
     this.render();
   }
 });

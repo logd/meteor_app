@@ -1,7 +1,5 @@
 <template name="edit_post">
-{{#unless newPost}}
-    <form class="post new-post-form get-tag">
-   <textarea class="post-content" placeholder="Post Content..." cols="50" autofocus>{{! postContent}}</textarea>
+    <form class="post-form get-tag">
+   <textarea class="post-content" cols="50">{{content}}</textarea>
   </form>
-{{/unless}}
 </template>

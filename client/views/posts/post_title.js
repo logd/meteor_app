@@ -10,10 +10,7 @@ Template.post_title.onRendered(function(){
 
 Template.post_title.helpers({
   editPostTitle: function(){
-    var controller = Iron.controller();
-
-    // reactively return the value of postId
-    return controller.state.get('editPostTitle');
+    return Iron.controller().state.get('editPostTitle');
   }
 });
 
@@ -22,37 +19,35 @@ Template.post_title.events({
     e.preventDefault();
     var postTitle = event.target.value;
 
+    // check if post title has content
     if(Logd.posts.notEmpty(postTitle)){
-       return Iron.controller().state.set('postTitleHasContent', true);
+      Iron.controller().state.set('postTitleHasContent', true);
     } else {
       return Iron.controller().state.set('postTitleHasContent', false);
-    }
-    // console.log(postContent);
-  
-    // // on return, if post is not empty, create post and go to edit post view
-    // if(event.which === 13){
-    //   var postTitle = Logd.posts.getTitleFromContent(postContent).title;
-    //   var postTags = Logd.tags.getHashTags(postTitle);
-
-    //   // postContent = Logd.posts.getTitleFromContent(postContent).content;
-
+    };
+ 
+    // on typing return/enter key create post and go to edit post view
+    if(event.which === 13){
+      var postTags = Logd.tags.getHashTags(postTitle);
     
-    //   var postAttributes = {
-    //     title: postTitle,
-    //     tags: postTags
-    //     // ,
-    //     // content: postContent,
-    //     // tags: postTags 
-    //   };
+      var postAttributes = {
+        title: postTitle,
+        tags: postTags
+        // ,
+        // content: postContent,
+        // tags: postTags 
+      };
 
-    //   Meteor.call('postInsert', postAttributes, function(error, result){
-    //     if (error){
-    //       alert(error.reason);
-    //     } else {
-    //        Router.go('edit_post', { _id: result._id });
-    //     }
-    //   });
-    // }
+      Meteor.call('postInsert', postAttributes, function(error, result){
+        if (error){
+          alert(error.reason);
+        } else {
+          Iron.controller().state.set('editPostTitle', false);
+          Iron.controller().state.set('postHasContent', false);
+          Router.go('edit_post', { _id: result._id });
+        }
+      });
+    }
   }
 });
  

@@ -1,21 +1,27 @@
-Template.edit_post.onCreated(function () {
-   // this.contentIsEmpty = new ReactiveVar(true);
-   // this.isEditing = new ReactiveVar(true);
-});
-
-// Template.new_post.onRendered(function(){
-//     $('.autosize').autosize();
+// Template.edit_post.onCreated(function () {
+//    // this.contentIsEmpty = new ReactiveVar(true);
+//    // this.isEditing = new ReactiveVar(true);
 // });
 
+Template.edit_post.onRendered(function(){
+    // $('.autosize').autosize();
+
+   this.$('.post-content').focus();
+
+    // if(input){
+    //     input.focus()
+    // }
+});
+
 Template.edit_post.helpers({
-  newPost: function() {
-    return Iron.controller().state.get('newPost');
+  postHasContent: function() {
+    return Iron.controller().state.get('postHasContent');
   }
 });
 
 
 Template.edit_post.events({
-  "keyup .new-post-form": function(e,t){
+  "keyup .post-form": function(e,t){
     e.preventDefault();
     var postContent = event.target.value;
     // console.log(postContent);
