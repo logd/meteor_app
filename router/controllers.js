@@ -38,6 +38,7 @@ PostsListController = RouteController.extend({
 });
 
 ShowPostController = RouteController.extend({
+  layoutTemplate: 'post_layout',
   template:'show_post',
   waitOn: function () {
     return Meteor.subscribe('posts', this.params._id); 
