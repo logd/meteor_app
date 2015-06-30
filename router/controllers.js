@@ -55,6 +55,7 @@ EditPostController = RouteController.extend({
   },
   action: function(){
     this.state.set('postTitleHasContent', true);
+    this.state.set('editPostContent', true);
     this.render();
   }
 });

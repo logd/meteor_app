@@ -1,20 +1,33 @@
 <template name="edit_post">
-  <div class="post-container">
+ <form id="post-form" class="edit-post-title">
     <header class="post-header">
       <div class="header-left">
        {{> home_nav}}
       </div>
-      <div class="header-center">  
-        {{> post_title}}
+      <div class="header-center">
+        {{#if editPostTitle}}
+         
+            <textarea type="text" class="post-title create-post show-done" placeholder="New post...">{{title}}</textarea>    
+        {{else}}
+          <h1 class="post-title">{{title}}</h1>
+        {{/if}}  
       </div>
       <div class="header-right">
-        {{> post_controls}}
+          <button class="done-editing icon-button" alt="Done Editing" title="Done Editing">
+      <i class="fa fa-check fa-3x"></i>
+        </button>
+        {{#if showDone}}
+
+{{/if}}
+{{#if showEdit}}
+  <button class="edit-post icon-button" alt="Edit Post" title="Edit Post">
+    <i class="fa fa-pencil fa-3x"></i>
+  </button>
+{{/if}}
       </div>
     </header>
     <div class="post-content">
-      <form>
-        <textarea class="post-content" cols="50">{{content}}</textarea>
-      </form>
-    </div> 
-  </div>
+         <textarea id="post-content" class="post-content" cols="50">{{content}}</textarea>
+    </div>
+      </form>   
 </template>

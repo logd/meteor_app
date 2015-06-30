@@ -39,7 +39,6 @@ Template.new_post.events({
       if (error){
         alert(error.reason);
       } else {
-         console.log(result._id); 
         // Iron.controller().state.set('editPostTitle', false);
         // Iron.controller().state.set('postHasContent', false);
         Router.go('edit_post', { _id: result._id });
