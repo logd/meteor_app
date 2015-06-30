@@ -10,10 +10,10 @@ Template.edit_post.onRendered(function(){
 
 Template.edit_post.helpers({
   editingPostTitle: function() {
-    return Iron.controller().state.get('editingPostTitle');
+    return Session.get('editingPostTitle');
   },
   editingPostContent: function() {
-    return Iron.controller().state.get('editingPostContent');
+    return Session.get('editingPostContent');
   },
   
   // postHasContent: function() {
@@ -43,22 +43,73 @@ Template.edit_post.helpers({
 Template.edit_post.events({
   "click .edit-post-title": function(e,t){
     e.preventDefault();
-     Iron.controller().state.set('editingPostContent', false);
-     Iron.controller().state.set('editingPostTitle', true);
+
+    // if editing post content, then update that first
+    if (Session.get('editingPostContent')){
+      var postContent = $('#post-content').val();
+      console.log(postContent);
+      var postTags = Logd.tags.getHashTags(postContent);
     
+      var postAttributes = {
+        postId: Router.current().params._id,
+        content: postContent,
+        tags: postTags
+      };
+
+      Meteor.call('updatePostContent', postAttributes, function(error, result){
+        if (error){
+          alert(error.reason);
+        } else {
+        
+         Session.set('editingPostContent', false);
+         Session.set('editingPostTitle', true);
+        };
+      }); 
+    } else {
+        
+        Session.set('editingPostContent', false);
+        Session.set('editingPostTitle', true);
+    }
   },
     "click .edit-post-content": function(e,t){
     e.preventDefault();
-     Iron.controller().state.set('editingPostContent', true);
-     Iron.controller().state.set('editingPostTitle', false);
+
+    // if editing post title, then update that first
+    if (Session.get('editingPostTitle')){
+      var postTitle = $('#post-title').val();
+      console.log(postTitle);
+      var postTags = Logd.tags.getHashTags(postTitle);
+    
+      var postAttributes = {
+        postId: Router.current().params._id,
+        title: postTitle,
+        tags: postTags
+      };
+
+      Meteor.call('updatePostTitle', postAttributes, function(error, result){
+        if (error){
+          alert(error.reason);
+        } else {
+        
+         Session.set('editingPostTitle', false);
+         Session.set('editingPostContent', true);
+         
+        };
+      }); 
+    } else {
+        
+          Session.set('editingPostTitle', false);
+         Session.set('editingPostContent', true);
+    }
+  
     
   },
   "click .done-editing": function(e,t){
     e.preventDefault();
-    var postTitle = $('#post-title').val();
+    var postTitle = $('#post-title').val() || this.title;
     var postContent = $('#post-content').val()  || this.content;
 
-    console.log(postTitle);
+  
 
     //TODO: check if postTitle or postContent are empty
       // (postContent can be empty)
