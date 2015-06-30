@@ -9,10 +9,10 @@
 // });
 
 Meteor.startup(function () {
-  Session.setDefault({
-    "contentIsEmpty": false,
-    "isEditing": false
-  })
+  // Session.setDefault({
+  //   "contentIsEmpty": false,
+  //   "isEditing": false
+  // })
 });
 
 Meteor.subscribe("posts");

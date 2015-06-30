@@ -12,7 +12,7 @@ HomeController = RouteController.extend({
 });
 
 LoginController = RouteController.extend({
-  layoutTemplate:'UtilityLayout',
+  layoutTemplate:'CenteredLayout',
   template:'login',
   action: function(){
     this.render();

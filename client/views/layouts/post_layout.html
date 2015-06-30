@@ -1,29 +1,20 @@
 <template name="post_layout">
-
-<div class="app-container">
-
-  {{! *** APP CONTENT *** }}
-  <div class="content-container">
-
-    {{! *** POST HEADER *** }}
-    <header class="content-header">
-      <div class="app-nav-toggle">
-        <button class="back-to-home icon-button">
+  <div class="post-container">
+    <header class="post-header">
+      <div class="header-left">
+        <button class="back-to-home icon-button" title="Back to Homepage" alt="Back to Homepage">
           <i class="fa fa-chevron-left fa-3x"></i>
         </button>
       </div>
-      <div class="content-info">  
+      <div class="header-center">  
        {{> post_title}}
       </div>
       <div class="header-right">
-      {{> post_controls}}
+        {{> post_controls}}
       </div>
     </header>
-   
-    {{! *** MAIN CONTENT *** }}
     <div class="post-content">
-       {{> yield}}
+      {{> yield}}
     </div>
-  </div>{{! /.content-container}}
-</div>{{! /.app-container}}
+  </div>
 </template>

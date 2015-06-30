@@ -1,7 +1,4 @@
 Template.post_controls.helpers({
-  postTitleHasContent: function() {
-    return Iron.controller().state.get('postTitleHasContent');
-  },
   showDone: function() {
     if( Iron.controller().state.get('postTitleHasContent') ||
         Iron.controller().state.get('postHasContent') ) {
