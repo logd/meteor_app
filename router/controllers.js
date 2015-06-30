@@ -54,8 +54,14 @@ EditPostController = RouteController.extend({
     return Posts.findOne({ _id: this.params._id });
   },
   action: function(){
-    this.state.set('postTitleHasContent', true);
-    this.state.set('editPostContent', true);
+
+    if(!this.state.get('editingPostTitle')){
+      this.state.set('editingPostContent', true);
+    } else {
+      this.state.set('editingPostTitle', true);
+    }
+    // this.state.set('postTitleHasContent', true);
+    // this.state.set('editingPostContent', true);
     this.render();
   }
 });
