@@ -55,7 +55,7 @@ EditPostController = RouteController.extend({
   },
   action: function(){
 
-    if(!Session.get('editingPostTitle')){
+    if(Session.get('editingPostTitle') === false){
       Session.set('editingPostContent', true);
     } else {
       Session.set('editingPostTitle', true);
