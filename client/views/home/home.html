@@ -1,13 +1,10 @@
 <template name="home">
-  {{! *** APP HEADER *** }}
-  <header class="home">
-    {{! *** User Nav *** }}
+  <header class="content-header post-header home">
     <div class="header-left">
-     {{! User Avatar}}
-      <p>{{> loginButtons align="right"}}</p>     
+    &nbsp;    
     </div>
-    <div class="header-center">
-      <h1 class="meta-info">{{! username}}</h1>  
+    <div class="header-center page-title">
+      {{> loginButtons}} 
     </div>
     <div class="header-right">
       <a href="{{pathFor 'new_post'}}" class="icon-link" title="New Post">
@@ -16,8 +13,7 @@
     </div>
   </header>
   <hr />
-  <section class="recent-tags">{{! recent tags }}</section>
-  <section class="posts-list">{{> posts_list}}</section>
+  <section class="main-content posts-list">{{> posts_list}}</section>
 <!--   <footer class="home">
     <ul class="horizontal">
       <li>About</li>

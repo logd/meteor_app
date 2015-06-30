@@ -1,25 +1,35 @@
+Template.new_post.onRendered(function(){
+    // $('.autosize').autosize();
+
+   this.$('.post-title').focus();
+
+    // if(input){
+    //     input.focus()
+    // }
+});
+
 Template.new_post.helpers({
-  // postTitleHasContent: function() {
-  //   return Iron.controller().state.get('postTitleHasContent');
-  // }
+  postTitleHasContent: function() {
+    return Session.get('postTitleHasContent');
+  }
   // ,
   // editPostTitle: function(){
-  //   return Iron.controller().state.get('editPostTitle');
+  //   return Session.get('editPostTitle');
   // }
 });
 
 Template.new_post.events({
-  // "keyup .has-content": function(e,t){
-  //   e.preventDefault();
-  //   var postTitle = e.target.value;
+  "keyup .has-content": function(e,t){
+    e.preventDefault();
+    var postTitle = e.target.value;
 
-  //   if(Logd.posts.notEmpty(postTitle)){
-  //     Iron.controller().state.set('postTitleHasContent', true);
-  //   } else {
-  //     Iron.controller().state.set('postTitleHasContent', false);
-  //   };
-  // }
-  // ,
+    if(Logd.posts.notEmpty(postTitle)){
+      Session.set('postTitleHasContent', true);
+    } else {
+      Session.set('postTitleHasContent', false);
+    };
+  }
+  ,
   "keyup .create-post": function(e,t){
     e.preventDefault();
     var postTitle = $('#post-form textarea').val();
@@ -45,6 +55,25 @@ Template.new_post.events({
       }
     });
    }
+  },
+  "click .click-create-post": function(e,t){
+    e.preventDefault();
+    var postTitle = $('#post-title').val();    
+     var postTags = Logd.tags.getHashTags(postTitle);
+     
+    var postAttributes = {
+      title: postTitle,
+      tags: postTags
+    };
+
+    Meteor.call('postInsert', postAttributes, function(error, result){
+      if (error){
+        alert(error.reason);
+      } else {
+        Router.go('edit_post', { _id: result._id });
+      }
+    });
+   
   }
 });
  

@@ -22,8 +22,7 @@ LoginController = RouteController.extend({
 NewPostController = RouteController.extend({
   template:'new_post',
   action: function(){
-    this.state.set('newPost', true);
-    this.state.set('editPostTitle', true);
+    Session.set('postTitleHasContent', false);
     this.render();
   }
 });

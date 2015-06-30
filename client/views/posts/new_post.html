@@ -1,20 +1,26 @@
 <template name="new_post">
-  <div class="post-container">
-    <header class="post-header">
+ <form class="post-form">
+    <header class="content-header post-header">
       <div class="header-left">
        {{> home_nav}}
       </div>
-      <div class="header-center">  
-        <form id="post-form">
-          <textarea class="has-content create-post" placeholder="New post..."></textarea>
-        </form> 
+      <div class="header-center page-title">
+       <input id="post-title" type="text" class="has-content create-post post-title" placeholder="New post..." value="{{title}}" />
+       
+         <!--  <textarea class="has-content create-post" placeholder="New post..."></textarea> -->
       </div>
       <div class="header-right">
-        {{> post_controls}}
+        {{#if postTitleHasContent}}
+    <button class="click-create-post icon-button" alt="Done Editing" title="Done Editing">
+      <i class="fa fa-check fa-3x"></i>
+        </button>
+        {{/if}}
       </div>
     </header>
     <div class="post-content">
     {{! this block may not be necessary}}
     </div>
-  </div>
+   
+ </form>
+ 
 </template>
