@@ -1,7 +1,4 @@
 Template.post_controls.helpers({
-  newPost: function() {
-    return Iron.controller().state.get('newPost');
-  },
   postTitleHasContent: function() {
     return Iron.controller().state.get('postTitleHasContent');
   },
@@ -24,23 +21,55 @@ Template.post_controls.helpers({
 
 
 Template.post_controls.events({
-  "click .edit": function(e,t){
+  "click .edit-post": function(e,t){
     Router.go('edit_post', { _id: Router.current().params._id });
   },
-    "click .done": function(e,t){
-  //      var postContent = $('textarea.post-content').val();
-  //   // console.log(postContent);
+    "click .done-editing": function(e,t){
+      var postTitle = $('.post-title').val();
 
-  //     if(Router.current().route.getName() === 'new_post'){
+      if(Iron.controller().state.get('newPost')){
 
-  //     } else {
+        var postTags = Logd.tags.getHashTags(postTitle);
+    
+        var postAttributes = {
+          title: postTitle,
+          tags: postTags
+        };
 
+        Meteor.call('postInsert', postAttributes, function(error, result){
+          if (error){
+            alert(error.reason);
+          } else {
+            Iron.controller().state.set('editPostTitle', false);
+            Iron.controller().state.set('postHasContent', false);
+            Router.go('edit_post', { _id: result._id });
+          }
+        });
 
+      } else {
 
-    Router.go('show_post', { _id: Router.current().params._id });
-
-
+        var postContent = $('.post-content').val();
+        var postTitleTags = Logd.tags.getHashTags(postTitle);
+        var postContentTags = Logd.tags.getHashTags(postContent);
+        var postTags = postTitleTags.concat(postContentTags);
    
+        var postAttributes = {
+          postId: Router.current().params._id,
+          title: postTitle,
+          content: postContent,
+          tags: postTags 
+        };
+
+        Meteor.call('updatePost', postAttributes, function(error, result){
+          if (error){
+            alert(error.reason);
+          } else {
+            Router.go('show_post', { _id: Router.current().params._id });
+          };
+        });         
+      };   
+    }
+});
 
   //   // unless postContent is empty
   //   if(Logd.posts.notEmpty(postContent)){
@@ -62,7 +91,7 @@ Template.post_controls.events({
 
   //     };
   // }
-  }
+
 
   // "keyup .post-form": function(e,t){
   //   e.preventDefault();
@@ -93,5 +122,4 @@ Template.post_controls.events({
   //     });
   //   }
   // }
-});
 

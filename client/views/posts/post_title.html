@@ -1,7 +1,7 @@
 <template name="post_title">
     {{#if editPostTitle}}
       <form>
-        <textarea class="post-title" placeholder="New post..." cols="50">{{title}}</textarea>
+        <input type="text" value="{{title}}" class="post-title submit-post show-done" placeholder="New post..." />
       </form>     
     {{else}}
       <h1>{{title}}</h1>
