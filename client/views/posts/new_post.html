@@ -1,2 +1,20 @@
 <template name="new_post">
+  <div class="post-container">
+    <header class="post-header">
+      <div class="header-left">
+       {{> home_nav}}
+      </div>
+      <div class="header-center">  
+        <form id="post-form">
+          <textarea class="has-content create-post" placeholder="New post..."></textarea>
+        </form> 
+      </div>
+      <div class="header-right">
+        {{> post_controls}}
+      </div>
+    </header>
+    <div class="post-content">
+    {{! this block may not be necessary}}
+    </div>
+  </div>
 </template>

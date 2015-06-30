@@ -1,8 +1,3 @@
-// Template.edit_post.onCreated(function () {
-//    // this.contentIsEmpty = new ReactiveVar(true);
-//    // this.isEditing = new ReactiveVar(true);
-// });
-
 Template.edit_post.onRendered(function(){
     // $('.autosize').autosize();
 

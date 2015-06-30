@@ -20,7 +20,6 @@ LoginController = RouteController.extend({
 });
 
 NewPostController = RouteController.extend({
-  layoutTemplate: 'post_layout',
   template:'new_post',
   action: function(){
     this.state.set('newPost', true);
@@ -29,16 +28,7 @@ NewPostController = RouteController.extend({
   }
 });
 
-
-PostsListController = RouteController.extend({
-  template:'posts_list',
-  action: function(){
-    this.render();
-  }
-});
-
 ShowPostController = RouteController.extend({
-  layoutTemplate: 'post_layout',
   template:'show_post',
   waitOn: function () {
     return Meteor.subscribe('posts', this.params._id); 
@@ -56,7 +46,6 @@ ShowPostController = RouteController.extend({
 });
 
 EditPostController = RouteController.extend({
-  layoutTemplate: 'post_layout',
   template:'edit_post',
   waitOn: function () {
     return Meteor.subscribe('posts', this.params._id); 
@@ -70,6 +59,12 @@ EditPostController = RouteController.extend({
   }
 });
 
+PostsListController = RouteController.extend({
+  template:'posts_list',
+  action: function(){
+    this.render();
+  }
+});
 
 SearchController = RouteController.extend({
   template:'search',

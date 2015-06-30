@@ -17,48 +17,48 @@ Template.post_title.helpers({
   }
 });
 
-Template.post_title.events({
-  "input .show-done": function(e,t){
-    e.preventDefault();
-    var postTitle = e.target.value;
+// Template.post_title.events({
+//   "input .show-done": function(e,t){
+//     e.preventDefault();
+//     var postTitle = e.target.value;
 
-    if(Logd.posts.notEmpty(postTitle)){
-      Iron.controller().state.set('postTitleHasContent', true);
-    } else {
-      Iron.controller().state.set('postTitleHasContent', false);
-    };
-  },
-  "keyup .create-post": function(e,t){
-    e.preventDefault();
-    var postTitle = e.target.value;
-    console.log(postTitle);
-    var code = e.keyCode || e.which;
+//     if(Logd.posts.notEmpty(postTitle)){
+//       Iron.controller().state.set('postTitleHasContent', true);
+//     } else {
+//       Iron.controller().state.set('postTitleHasContent', false);
+//     };
+//   },
+//   "keyup .create-post": function(e,t){
+//     e.preventDefault();
+//     var postTitle = e.target.value;
+//     console.log(postTitle);
+//     var code = e.keyCode || e.which;
     
-   if(e.which === 13){
-    e.preventDefault();
+//    if(e.which === 13){
+//     e.preventDefault();
 
-    console.log("you hit return");
+//     console.log("you hit return");
 
-    // var postTags = Logd.tags.getHashTags(postTitle);
+//     // var postTags = Logd.tags.getHashTags(postTitle);
   
-    // var postAttributes = {
-    //   title: postTitle,
-    //   tags: postTags
-    // };
+//     // var postAttributes = {
+//     //   title: postTitle,
+//     //   tags: postTags
+//     // };
 
     
 
-    // Meteor.call('postInsert', postAttributes, function(error, result){
-    //   if (error){
-    //     alert(error.reason);
-    //   } else {
-    //     Iron.controller().state.set('editPostTitle', false);
-    //     Iron.controller().state.set('postHasContent', false);
-    //     Router.go('edit_post', { _id: result._id });
-    //   }
-    // });
-   }
-  }
-});
+//     // Meteor.call('postInsert', postAttributes, function(error, result){
+//     //   if (error){
+//     //     alert(error.reason);
+//     //   } else {
+//     //     Iron.controller().state.set('editPostTitle', false);
+//     //     Iron.controller().state.set('postHasContent', false);
+//     //     Router.go('edit_post', { _id: result._id });
+//     //   }
+//     // });
+//    }
+//   }
+// });
  
 
