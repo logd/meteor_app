@@ -1,13 +1,13 @@
 <template name="edit_post">
- <div class="post-container">
- <form id="post-form">
-    <header class="post-header">
+ <form id="post-form" class="post-form">
+    <header class="content-header">
       <div class="header-left">
        {{> home_nav}}
       </div>
-      <div class="header-center">
+      <div class="header-center page-title">
         {{#if editingPostTitle}}
-          <textarea id="post-title" class="post-title create-post show-done" placeholder="New post...">{{title}}</textarea>    
+         <input type="text" id="post-title" class="post-title create-post show-done" placeholder="New post..." value="{{title}}" /> 
+         <!--  <textarea id="post-title" class="post-title create-post show-done" placeholder="New post...">{{title}}</textarea>  -->   
         {{else}}
         <div class="edit-post-title editable-text"><h1 class="post-title">{{title}}</h1></div>
         {{/if}}  
@@ -18,16 +18,15 @@
         </button>
       </div>
     </header>
-    <div class="post-content">
+    <div class="main-content">
     {{#if editingPostContent}}
          <textarea id="post-content" class="post-content" cols="50">{{content}}</textarea>
          {{else}}
-         <div class="edit-post-content editable-text">
+         <div class="edit-post-content editable-text post-content">
             {{#markdown}}{{content}}{{/markdown}}
          </div>
           
          {{/if}}
     </div>
       </form>
-      </div> 
 </template>

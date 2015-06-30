@@ -86,8 +86,12 @@ body { margin: 0; padding: 0; }
 
   height: 5em;
 }
-.app-nav-toggle {
-  width: 5em;
+.page-title {
+  flex: 1;
+}
+
+.app-nav-toggle, .header-left {
+  width: 3em;
 }
 .content-info {
   display: flex;

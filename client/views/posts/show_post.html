@@ -1,18 +1,18 @@
 <template name="show_post">
-  <div class="post-container">
-    <header class="post-header">
+    <header class="content-header post-header">
       <div class="header-left">
        {{> home_nav}}
       </div>
-      <div class="header-center">
-          <h1 class="post-title">{{title}}</h1>
+      <div class="header-center page-title">
+          <h1 class=" post-title">{{title}}</h1>
       </div>
       <div class="header-right">
         {{> post_controls}}
       </div>
     </header>
-    <div class="post-content">
+    <div class="main-content">
+      <div class="post-content">
       {{#markdown}}{{content}}{{/markdown}}
+      </div>
     </div> 
-  </div>
 </template>

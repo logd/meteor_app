@@ -27,7 +27,7 @@ button {
   }
 }
 
-form.post {
+form.post-form {
   height: 100%;
   
   textarea {
@@ -39,7 +39,27 @@ form.post {
     outline: none;
     overflow: auto;
   }
+  input {
+    font-size: $editor-text;
+    font-weight: bold;
+    color: $steel-gray;
+    height: 100%;
+    width: 100%;
+    padding: .5em 1em .75em .5em;
+    border:none;
+    outline: none;
+    overflow: auto;
+  }
+  .main-content .post-content {
+    height: 100%;
+    width: 100%;
+    font-size: $editor-text;
+  }
 }
+
+  .main-content .post-content {
+    font-size: $editor-text;
+  }
 
 .editable-text {
   cursor: pointer;
