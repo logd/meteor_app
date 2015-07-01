@@ -1,11 +1,6 @@
 Template.edit_post.onRendered(function(){
     // $('.autosize').autosize();
-
    this.$('#post_content').focus();
-
-    // if(input){
-    //     input.focus()
-    // }
 });
 
 Template.edit_post.helpers({
@@ -64,7 +59,7 @@ Template.edit_post.events({
          Session.set('editingPostTitle', true);
         };
       });
-      
+
     } else {
         
         Session.set('editingPostContent', false);
@@ -106,16 +101,18 @@ Template.edit_post.events({
   },
   "click .done-editing": function(e,t){
     e.preventDefault();
+    console.log('clicked done editing');
     var postTitle = $('#post-title').val() || this.title;
-    var postContent = $('#post-content').val()  || this.content;
+    var postContent = $('#post-content').val() || this.content || "";
 
-  
+    console.log(postTitle);
+    console.log(postContent);
 
-    //TODO: check if postTitle or postContent are empty
-      // (postContent can be empty)
-      // if postTitle is empty AND postContent is empty: 1) rename to "empty post"
-      // if postTitle is empty but not postContent:
-      // move first line from content to title
+    // //TODO: check if postTitle or postContent are empty
+    //   // (postContent can be empty)
+    //   // if postTitle is empty AND postContent is empty: 1) rename to "empty post"
+    //   // if postTitle is empty but not postContent:
+    //   // move first line from content to title
  
       var postTitleTags = Logd.tags.getHashTags(postTitle);
       var postContentTags = Logd.tags.getHashTags(postContent);
