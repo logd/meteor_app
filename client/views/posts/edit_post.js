@@ -1,7 +1,7 @@
 Template.edit_post.onRendered(function(){
     // $('.autosize').autosize();
 
-   this.$('.post-content').focus();
+   this.$('#post_content').focus();
 
     // if(input){
     //     input.focus()
@@ -47,9 +47,8 @@ Template.edit_post.events({
     // if editing post content, then update that first
     if (Session.get('editingPostContent')){
       var postContent = $('#post-content').val();
-      console.log(postContent);
       var postTags = Logd.tags.getHashTags(postContent);
-    
+
       var postAttributes = {
         postId: Router.current().params._id,
         content: postContent,
@@ -64,7 +63,8 @@ Template.edit_post.events({
          Session.set('editingPostContent', false);
          Session.set('editingPostTitle', true);
         };
-      }); 
+      });
+      
     } else {
         
         Session.set('editingPostContent', false);
