@@ -1,26 +1,20 @@
 <template name="new_post">
- <form id="post-form" onsubmit="event.preventDefault();">
-    <header class="content-header post-header">
-      <div class="header-left">
-       {{> home_nav}}
-      </div>
-      <div class="header-center page-title">
-       <input id="post-title" type="text" class="has-content create-post post-title" placeholder="New post..." value="{{content}}" />
-       
-  <!--         <textarea id="post-title" class="has-content create-post" placeholder="New post..."></textarea> -->
-      </div>
-      <div class="header-right">
-        {{#if postTitleHasContent}}
-    <button class="click-create-post icon-button" alt="Done Editing" title="Done Editing">
-      <i class="fa fa-check fa-3x"></i>
-        </button>
-        {{/if}}
-      </div>
-    </header>
-    <div class="post-content">
-    {{! this block may not be necessary}}
+  <header class="content-header post-header">
+    <div class="header-left">
+      {{> home_nav}}
     </div>
-   
- </form>
- 
+    <div class="header-center page-title">
+      <form id="post-form" onsubmit="event.preventDefault();">
+       <!--  <input id="post-title" type="text" class="has-content create-post post-title" placeholder="New post..." value="{{title}}" /> -->
+          <textarea id="post-title" class="has-content create-post" placeholder="New post...">{{title}}</textarea>
+      </form>
+    </div>
+    <div class="header-right">
+      {{#if postTitleHasContent}}
+        <button class="click-create-post icon-button" alt="Done Editing" title="Done Editing">
+          <i class="fa fa-check fa-3x"></i>
+        </button>
+      {{/if}}
+    </div>
+  </header>
 </template>
