@@ -1,3 +1,7 @@
+
+/*  BUTTONS
+____________________ */
+
 button {
   cursor: pointer;
 
@@ -16,16 +20,9 @@ button {
   }
 }
 
-// where does this belong?
-.icon-link {
-  color: $light-gray;
-  &:visited, &:active {
-    color: $light-gray;
-  }
-  &:hover {
-    color: $steel-gray;
-  }
-}
+
+/*  POST FORM
+____________________ */
 
 form.post-form {
   height: 100%;
@@ -57,10 +54,6 @@ form.post-form {
   }
 }
 
-  .main-content .post-content {
-    font-size: $editor-text;
-  }
-
-.editable-text {
-  cursor: pointer;
+.main-content .post-content {
+  font-size: $editor-text;
 }

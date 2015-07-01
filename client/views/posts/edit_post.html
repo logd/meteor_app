@@ -6,8 +6,7 @@
       </div>
       <div class="header-center page-title">
         {{#if editingPostTitle}}
-         <input type="text" id="post-title" class="post-title create-post show-done" placeholder="New post..." value="{{title}}" /> 
-         <!--  <textarea id="post-title" class="post-title create-post show-done" placeholder="New post...">{{title}}</textarea>  -->   
+         <input type="text" class="post-title create-post show-done" placeholder="Add a title..." value="{{title}}" /> 
         {{else}}
         <div class="edit-post-title editable-text"><h1 class="post-title">{{title}}</h1></div>
         {{/if}}  
@@ -20,12 +19,11 @@
     </header>
     <div class="main-content">
     {{#if editingPostContent}}
-         <textarea id="post-content" cols="50">{{content}}</textarea>
+         <textarea id="focus-hack" cols="50" class="post-content">{{content}}</textarea>
          {{else}}
          <div class="edit-post-content editable-text post-content">
             {{#markdown}}{{content}}{{/markdown}}
          </div>
-          
          {{/if}}
     </div>
       </form>

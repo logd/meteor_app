@@ -1,16 +1,12 @@
 Template.new_post.onRendered(function(){
   // $('.autosize').autosize();
-  // this.$('#post-title').focus();
+  this.$('.post-title').focus();
 });
 
 Template.new_post.helpers({
   postTitleHasContent: function() {
     return Session.get('postTitleHasContent');
   }
-  // ,
-  // editPostTitle: function(){
-  //   return Session.get('editPostTitle');
-  // }
 });
 
 
@@ -31,7 +27,8 @@ Template.new_post.events({
     };
   },
   "click .done-button": function(){
-    var postTitle = $('#post-title').val();    
+    var postTitle = $('.post-title').val();
+    console.log(postTitle);   
     var postTags = Logd.tags.getHashTags(postTitle);
      
     var postAttributes = {
@@ -71,22 +68,4 @@ Template.new_post.events({
    }
   }
 });
-
-
-
-// Template.new_post.events({
-//   "submit #post-form": function(e) {
-//      e.preventDefault();
-//       window.history.back();
-//     // event.preventDefault();
-//     console.log("you tried submitting the form");
-//      // return false;
-//   }
-
-
-
-   
-//   }
-// });
- 
 

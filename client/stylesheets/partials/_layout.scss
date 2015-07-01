@@ -1,0 +1,155 @@
+// BASE LAYOUT
+// 768px or smaller
+// __________________________________
+
+/* http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+  *, *:before, *:after {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; padding: 0; }
+
+
+// APP CONTAINER
+// _________________________
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+//  CONTENT HEADER
+// _________________________
+.content-header {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction:row;
+  align-items: center;
+  justify-content: flex-start;
+  padding-right: 1em;
+  height: 5em;
+
+  .header-left, .header-right {
+    width: 2em;
+  }
+  .header-center {
+    flex: 1;
+    padding-left: .5em;
+    padding-bottom: .1em;
+  }
+}
+
+//  MAIN CONTENT
+// _________________________
+
+.main-content {
+  height: 100%;
+  padding-left: $app-padding-left-mobile;
+  padding-right: $app-padding-right-mobile;
+  overflow-y: hidden;
+}
+
+
+//   Layout for 768px and wider
+//______________________________
+
+@media all and (min-width: 768px) {
+
+  .app-container {
+    display: flex;
+    flex-direction: row;
+    // padding-left: 250px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .app-nav-container {
+    position: static;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+
+    .app-nav {
+      position: relative;
+      padding: 10px;
+      width: 200px;
+    }
+  }
+
+  .content-container {
+    position: static;
+    width: 100%;
+  
+    .app-nav-toggle {
+      display: none;
+    }
+  }
+
+
+  .user-nav {
+    // TODO: what is default for "self flex"?
+    display: block;
+  }
+}
+
+
+// UNUSED?
+// ____________________
+
+// .content-info {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: flex-end;
+
+//   align-items: left;
+//   width: 100%;
+
+
+//   .meta-info {
+//     height: .2em;
+//   }
+// }
+// .user-nav {
+//   display: none;
+// }
+
+/*  POSTS VIEW LAYOUT - MOBILE
+____________________ */
+// .post-container {
+//   padding: .5em;
+//   background-color: #ffffff;
+//   height: 100%;
+//   width: 100%;
+//   overflow-y:hidden;
+//   display: flex;
+//   flex-direction: column;
+//   align-items:center;
+//   justify-content:center;
+// }
+
+ //   .meta-info, .future-options {
+ //    flex: 1;
+ //    text-align: center;
+ //  }
+
+ //  .back-nav, .edit-done, .delete-post, .new-post {
+ //    width: 4em;
+ //  }
+
+ //  .post-header, .post-footer {
+ //    display: flex;
+ //    flex-direction: row;
+ //    width: 100%;
+ //    align-items:center;
+ //  }
+
+
+ // .post-content {
+ //    flex: 1;
+ //    width: 100%;
+ //    height: 100%;
+ //  }

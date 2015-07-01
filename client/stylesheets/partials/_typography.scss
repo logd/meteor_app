@@ -15,7 +15,7 @@ body {
 
 // HEADINGS
 // ____________________________
- .content-header h1 {
+ header h1 {
     display: inline;
     color: $steel-gray;
   }
@@ -36,3 +36,17 @@ body {
       content: "#";
     }
   }
+
+.editable-text {
+  cursor: pointer;
+}
+
+.icon-link {
+  color: $light-gray;
+  &:visited, &:active {
+    color: $light-gray;
+  }
+  &:hover {
+    color: $steel-gray;
+  }
+}
