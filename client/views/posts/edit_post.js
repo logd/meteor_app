@@ -4,6 +4,9 @@ Template.edit_post.onRendered(function(){
 });
 
 Template.edit_post.helpers({
+  truncatedTitle: function() {
+    return Logd.posts.truncateTitle(this.title);
+  },
   editingPostTitle: function() {
     return Session.get('editingPostTitle');
   },
