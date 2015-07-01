@@ -1,3 +1,0 @@
-// Template.registerHelper('postTitle', function(){
-
-// });

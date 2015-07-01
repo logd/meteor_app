@@ -7,22 +7,3 @@
 </ul>
 </template>
 
-<!-- NOT IN USE -->
-<template name="TMP-es-search">
-{{> esInput index="posts" placeholder="Search..."}}
-<hr />
-<ul>
-  {{#esEach index="posts"}}
-  <li>{{#markdown}}{{content}}{{/markdown}}</li>
-  {{/esEach}}
-</ul>
-{{#ifEsHasNoResults index="posts"}}
-<div class="no-results">
-  <p>Sorry, no matches found :-/</p>
-</div>
-{{/ifEsHasNoResults}}
-
-{{#ifEsIsSearching index="players"}}
-        <div>Searching...</div>
-{{/ifEsIsSearching}}
-</template>
