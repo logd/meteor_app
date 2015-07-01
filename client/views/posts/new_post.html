@@ -1,13 +1,13 @@
 <template name="new_post">
- <form class="post-form">
+ <form id="post-form" onsubmit="event.preventDefault();">
     <header class="content-header post-header">
       <div class="header-left">
        {{> home_nav}}
       </div>
       <div class="header-center page-title">
-       <input id="post-title" type="text" class="has-content create-post post-title" placeholder="New post..." value="{{title}}" />
+       <input id="post-title" type="text" class="has-content create-post post-title" placeholder="New post..." value="{{content}}" />
        
-         <!--  <textarea class="has-content create-post" placeholder="New post..."></textarea> -->
+  <!--         <textarea id="post-title" class="has-content create-post" placeholder="New post..."></textarea> -->
       </div>
       <div class="header-right">
         {{#if postTitleHasContent}}

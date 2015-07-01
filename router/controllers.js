@@ -1,7 +1,7 @@
 HomeController = RouteController.extend({
   template:'home',
   action: function(){
-    if (Posts.find( { authorId : Meteor.userId() } ).count() === 0) {
+    if (Posts.find({authorId: Meteor.userId()}).count() === 0) {
       this.redirect('/new');
 
     } else {

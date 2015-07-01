@@ -1,44 +1,44 @@
 Template.AppLayout.helpers({
-     pageTitle: function() {
+    //  pageTitle: function() {
 
-      if(Router.current().route.getName() !== null){
-        switch(Router.current().route.getName()){
+    //   if(Router.current().route.getName() !== null){
+    //     switch(Router.current().route.getName()){
 
-          case "new_post":
-            return "New post...";
-            break;
+    //       case "new_post":
+    //         return "New post...";
+    //         break;
 
-          case "edit_post":
-            var post = Posts.findOne({ _id: Router.current().params._id });
-            // TODO: wait for post to be found before returning, else this may generate intermittent errors
-            return post.title;
-            break;
+    //       case "edit_post":
+    //         var post = Posts.findOne({ _id: Router.current().params._id });
+    //         // TODO: wait for post to be found before returning, else this may generate intermittent errors
+    //         return post.title;
+    //         break;
 
-          case "show_post":
-            var post = Posts.findOne({ _id: Router.current().params._id });
+    //       case "show_post":
+    //         var post = Posts.findOne({ _id: Router.current().params._id });
 
-            return post.title;
-            break;
+    //         return post.title;
+    //         break;
 
-          case "search":
-           var title = "#" + Session.get("page_title");
-            return  title;
-            break;
+    //       case "search":
+    //        var title = "#" + Session.get("page_title");
+    //         return  title;
+    //         break;
 
-          default :
-            return "Logd";
-            break;
-        }
+    //       default :
+    //         return "Logd";
+    //         break;
+    //     }
 
-      };
-    }
+    //   };
+    // }
 });
 
 Template.AppLayout.events({
-  "click .app-nav-toggle button": function(e,t){
-    e.preventDefault();
-    t.$(".app-container").toggleClass("toggled");
-   }
+  // "click .app-nav-toggle button": function(e,t){
+  //   e.preventDefault();
+  //   t.$(".app-container").toggleClass("toggled");
+  //  }
   //  ,
   // "click .done-editing" : function(e,t){
   //   e.preventDefault();
