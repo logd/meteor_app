@@ -1,37 +1,37 @@
-// @import "partials/variables";
-// @import "partials/layout";
-// @import "partials/colors";
-// @import "partials/typography";
-// @import "partials/forms";
-// @import "partials/lists";
+@import "partials/variables";
+@import "partials/layout";
+@import "partials/colors";
+@import "partials/typography";
+@import "partials/forms";
+@import "partials/lists";
 
 
-// // HACK - fix layout and remove
-// .home {
-//   margin-top: 3em;
-// }
+// HACK - fix layout and remove
+.home {
+  margin-top: 3em;
+}
 
 // /*  POSTS LIST
 // ____________________ */
 
 
-// .post-list-item {
-//   display: flex;
-//   flex-direction: row;
-//   align-items:center;
+.post-list-item {
+  display: flex;
+  flex-direction: row;
+  align-items:center;
   
-//   .post-title {
-//     flex: 1;
+  .post-title {
+    flex: 1;
 
-//     h2 {
-//     margin-bottom: 0;
-//    }
+    h2 {
+    margin-bottom: 0;
+   }
 
-//   }
-//   .delete-post {
-//     flex-basis: 3em;
-//   }
-// }
+  }
+  .delete-post {
+    flex-basis: 3em;
+  }
+}
 
 
     // body {

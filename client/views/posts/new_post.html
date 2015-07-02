@@ -1,19 +1,19 @@
 <template name="new_post">
-  <header class="content-header">
-    <div class="header-left">
-      {{> home_nav}}
-    </div>
-    <div class="header-center page-title">
-      <form id="post-form" class="post-form">
-        <input type="text" class="post-title has-content create-post" placeholder="New post..." value="{{title}}" /> 
-      </form>
-    </div>
-    <div class="header-right">
-      {{#if postTitleHasContent}}
-        <button class="done-button icon-button" alt="Create Post" title="Create Post">
-          <i class="fa fa-check fa-3x"></i>
-        </button>
-      {{/if}}
-    </div>
+  <header class="app-header">
+      <div class="header-left">
+        {{> home_nav}}
+      </div>
+      <div class="header-center">
+        <form id="post-form" class="post-form">
+          <input type="text" class="post-title has-content create-post" placeholder="New post..." value="{{title}}" /> 
+        </form>
+      </div>
+      <div class="ui right floated right aligned one wide column">
+        {{#if postTitleHasContent}}
+          <button class="done-button icon-button" alt="Create Post" title="Create Post">
+            <i class="fa fa-check fa-3x"></i>
+          </button>
+        {{/if}}
+      </div>
   </header>
 </template>
