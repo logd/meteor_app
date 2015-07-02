@@ -1,19 +1,19 @@
 <template name="home">
-  <header class="content-header post-header home">
-    <div class="header-left">
-    &nbsp;    
-    </div>
-    <div class="header-center page-title">
-      {{> loginButtons}} 
-    </div>
-    <div class="header-right">
-      <a href="{{pathFor 'new_post'}}" class="icon-link" title="New Post">
+<div class="ui container">
+  <header class="ui menu">
+    <div class="header item">{{> avatar user=this shape="circle"}}</div>
+    <div class="header item">{{> loginButtons}} </div>
+    <div class="right menu">
+      <a href="{{pathFor 'new_post'}}" class="ui button" title="New Post">
         <i class="fa fa-plus fa-2x"></i>
-      </a>         
+      </a>
     </div>
   </header>
-  <hr />
-  <section class="main-content posts-list">{{> posts_list}}</section>
+  <section class="column">
+    {{> posts_list}}
+  </section>
+</div>
+
 <!--   <footer class="home">
     <ul class="horizontal">
       <li>About</li>
