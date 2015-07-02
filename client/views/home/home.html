@@ -1,5 +1,5 @@
 <template name="home">
-<div class="ui container">
+<!-- <div class="ui container"> -->
   <header class="ui menu">
     <div class="header item">  {{#with currentUser}}{{> avatar user=this shape="circle"}}{{/with}}</div>
     <div class="header item">{{> loginButtons}} </div>
@@ -12,7 +12,7 @@
   <section class="column">
     {{> posts_list}}
   </section>
-</div>
+<!-- </div> -->
 
 <!--   <footer class="home">
     <ul class="horizontal">
