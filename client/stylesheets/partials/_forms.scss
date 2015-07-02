@@ -58,14 +58,15 @@ form.post-form {
      padding: .5em 1em 0 .5em;
      margin-bottom: 0;
   }
+}
 
   .main-content .post-content {
     height: 100%;
     width: 100%;
     font-size: $editor-text;
+    line-height: normal;
   }
-}
 
-.main-content .post-content {
-  // font-size: $editor-text;
-}
+// .main-content .post-content {
+//   // font-size: $editor-text;
+// }
