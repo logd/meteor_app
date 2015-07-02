@@ -1,15 +1,8 @@
-// STANDARD FONT SIZES
-// ____________________________
-
-$small-text: .7em;
-$editor-text: 2em;
-
-
 // BASE
 // ____________________________
 body {
    font-family: Arial, Helvetica, sans-serif;
-   font-size: 17px;
+   font-size: $base-font-size;
   }
 
 
@@ -19,6 +12,7 @@ body {
     display: inline;
     color: $steel-gray;
     word-wrap: break-word;
+    font-size: $header-text;
   }
 
 

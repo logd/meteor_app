@@ -28,7 +28,6 @@ form.post-form {
   height: 100%;
   
   textarea {
-    font-size: $editor-text;
     height: 100%;
     width: 100%;
     padding: .5em 1em 1em .5em;
@@ -38,15 +37,28 @@ form.post-form {
   }
   input {
     font-size: $editor-text;
-    font-weight: bold;
+    // font-weight: bold;
     color: $steel-gray;
     height: 100%;
     width: 100%;
-    padding: .5em 1em .75em .5em;
+    padding: .5em 1em .5em .5em;
+    margin-bottom: 0;
     border:none;
     outline: none;
     overflow: auto;
+
+    &.post-title {
+      font-weight: 700;
+    }
   }
+
+  h1.post-title {
+    font-size: $editor-text;
+     font-weight: 900;
+     padding: .5em 1em 0 .5em;
+     margin-bottom: 0;
+  }
+
   .main-content .post-content {
     height: 100%;
     width: 100%;
@@ -55,5 +67,5 @@ form.post-form {
 }
 
 .main-content .post-content {
-  font-size: $editor-text;
+  // font-size: $editor-text;
 }
