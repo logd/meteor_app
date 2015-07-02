@@ -18,7 +18,6 @@ msavin:mongol
 underscore
 accounts-google
 accounts-ui
-useraccounts:semantic-ui
 meteorhacks:zones
 flemay:less-autoprefixer
 fourseven:scss
@@ -27,3 +26,5 @@ chuangbo:marked
 reactive-dict
 semantic:ui
 utilities:avatar
+useraccounts:semantic-ui
+useraccounts:core

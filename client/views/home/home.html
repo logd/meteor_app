@@ -1,7 +1,7 @@
 <template name="home">
 <div class="ui container">
   <header class="ui menu">
-    <div class="header item">{{> avatar user=this shape="circle"}}</div>
+    <div class="header item">  {{#with currentUser}}{{> avatar user=this shape="circle"}}{{/with}}</div>
     <div class="header item">{{> loginButtons}} </div>
     <div class="right menu">
       <a href="{{pathFor 'new_post'}}" class="ui button" title="New Post">
