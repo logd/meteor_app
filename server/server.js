@@ -8,7 +8,8 @@ Meteor.publish("userData", function () {
     return Meteor.users.find( {_id: this.userId},
       {fields: 
         {
-          "services.google.picture": true
+          "services.google.picture": true,
+          "services.google.name": true
         }
       });
   } else {

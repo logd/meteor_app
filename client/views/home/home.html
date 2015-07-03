@@ -1,21 +1,22 @@
 <template name="home">
 <!-- <div class="ui container"> -->
-  <header class="ui menu">
-    <div class="header item">
-
+  <header class="app-header">
+    <div class="header-left">
+     <button class="click-search icon-button" alt="Search" title="Search">
+      <i class="fa fa-search fa-2x"></i>
+      </button>
     </div>
-    <div class="header item">
+    <div class="header-center">
       <div class="ui dropdown">
-        <div class="ui avatar">{{#with currentUser}}{{> avatar user=this shape="circle"}}{{/with}}</div>
-          <i class="dropdown icon"></i>
-        <div class="menu">
-          <div class="item">Sign Out</div>
+        <div class="ui avatar">{{#with currentUser}}{{> avatar user=this shape="circle"}}{{/with}}
         </div>
+        <div class="menu">
+         {{> user_nav}}
       </div>
-      {{> loginButtons}} 
- </div>
-    <div class="right menu">
-      <a href="{{pathFor 'new_post'}}" class="ui button" title="New Post">
+      </div>
+      </div>
+    <div class="header-right">
+      <a href="{{pathFor 'new_post'}}" alt="New Post" title="New Post">
         <i class="fa fa-plus fa-2x"></i>
       </a>
     </div>
