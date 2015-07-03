@@ -1,8 +1,19 @@
 <template name="home">
 <!-- <div class="ui container"> -->
   <header class="ui menu">
-    <div class="header item">  {{#with currentUser}}{{> avatar user=this shape="circle"}}{{/with}}</div>
-    <div class="header item">{{> loginButtons}} </div>
+    <div class="header item">
+
+    </div>
+    <div class="header item">
+      <div class="ui dropdown">
+        <div class="ui avatar">{{#with currentUser}}{{> avatar user=this shape="circle"}}{{/with}}</div>
+          <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">Sign Out</div>
+        </div>
+      </div>
+      {{> loginButtons}} 
+ </div>
     <div class="right menu">
       <a href="{{pathFor 'new_post'}}" class="ui button" title="New Post">
         <i class="fa fa-plus fa-2x"></i>
