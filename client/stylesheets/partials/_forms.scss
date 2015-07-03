@@ -18,6 +18,14 @@ button {
       color: $steel-gray;
     }
   }
+  &.unstyled {
+    background-color: transparent;
+    border:none;
+
+    &:focus {
+     outline: 0;
+    }
+  }
 }
 
 
