@@ -1,18 +1,25 @@
 Template.edit_post.onRendered(function(){
     // $('.autosize').autosize();
-   this.$('#focus-hack').focus();
+   this.$('.post-content').focus();
+
 });
 
+
+
 Template.edit_post.helpers({
-  truncatedTitle: function() {
-    return Logd.posts.truncateTitle(this.title);
-  },
-  editingPostTitle: function() {
-    return Session.get('editingPostTitle');
-  },
-  editingPostContent: function() {
-    return Session.get('editingPostContent');
+  contentEditable: function() {
+    return Session.get('contentEditable');
   }
+  // ,
+  // truncatedTitle: function() {
+  //   return Logd.posts.truncateTitle(this.title);
+  // },
+  // editingPostTitle: function() {
+  //   return Session.get('editingPostTitle');
+  // },
+  // editingPostContent: function() {
+  //   return Session.get('editingPostContent');
+  // }
 });
 
 Template.edit_post.events({

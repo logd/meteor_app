@@ -5,17 +5,13 @@
        {{> home_nav}}
       </div>
       <div class="header-center page-title">
-        {{#if editingPostTitle}}
-         <input type="text" class="post-title create-post show-done" placeholder="Add a title..." value="{{title}}" /> 
-        {{else}}
         <div class="edit-post-title editable-text"><h1 class="post-title">
         {{#if truncatedTitle}}
             {{truncatedTitle}}&hellip;
           {{else}}
             {{title}}
           {{/if}}
-        </h1></div>
-        {{/if}}  
+        </h1></div> 
       </div>
       <div class="header-right">
           <button class="done-editing icon-button" alt="Done Editing" title="Done Editing">
@@ -24,13 +20,9 @@
       </div>
     </header>
     <div class="main-content">
-    {{#if editingPostContent}}
-         <textarea id="focus-hack" cols="50" class="post-content">{{content}}</textarea>
-         {{else}}
-         <div class="edit-post-content editable-text post-content">
-            {{#markdown}}{{content}}{{/markdown}}
-         </div>
-         {{/if}}
+      <div class="post-content" contenteditable="{{contentEditable}}" data-placeholder="New note...">
+        {{content}}
+      </div>
     </div>
       </form>
 </template>
