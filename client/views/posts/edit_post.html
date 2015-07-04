@@ -1,28 +1,26 @@
 <template name="edit_post">
- <form id="post-form" class="post-form">
-    <header class="app-header">
-      <div class="header-left">
-       {{> home_nav}}
-      </div>
-      <div class="header-center page-title">
-        <div class="edit-post-title editable-text"><h1 class="post-title">
-        {{#if truncatedTitle}}
+  <header class="app-header">
+    <div class="header-left">
+     {{> home_nav}}
+    </div>
+    <div class="header-center page-title">
+      <div class="edit-post-title editable-text">
+        <h1 class="post-title">
+          {{#if truncatedTitle}}
             {{truncatedTitle}}&hellip;
           {{else}}
             {{title}}
           {{/if}}
-        </h1></div> 
-      </div>
-      <div class="header-right">
-          <button class="done-editing icon-button" alt="Done Editing" title="Done Editing">
-      <i class="fa fa-check fa-3x"></i>
-        </button>
-      </div>
-    </header>
-    <div class="main-content">
-      <div class="post-content" contenteditable="{{contentEditable}}" data-placeholder="New note...">
-        {{content}}
-      </div>
+        </h1>
+      </div> 
     </div>
-      </form>
+    <div class="header-right">
+      <button class="done-editing icon-button" alt="Done Editing" title="Done Editing">
+        <i class="fa fa-check fa-3x"></i>
+      </button>
+    </div>
+  </header>
+  <div class="main-content">
+    {{> post_content}}
+  </div>
 </template>
