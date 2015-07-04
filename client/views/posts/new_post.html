@@ -1,20 +1,5 @@
 <template name="new_post">
-  <header class="app-header">
-      <div class="header-left">
-        {{> home_nav}}
-      </div>
-      <div class="header-center">
-    {{#with currentUser}}{{> avatar user=this shape="circle"}}{{/with}}
-      </div>
-      <div class="header-right">
-        {{#if hasContent}}
-          <button class="done-button icon-button" alt="Create Post" title="Create Post">
-            <i class="fa fa-check fa-3x"></i>
-          </button>
-        {{/if}}
-      </div>
-  </header>
-  <div class="main-content">
-    {{> post_content}}
-  </div>
+  <button class="new-post icon-button" alt="New Post" title="New Post">
+    <i class="fa fa-plus fa-2x"></i>
+  </button>
 </template>
