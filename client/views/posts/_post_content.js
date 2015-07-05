@@ -4,9 +4,9 @@ Template.post_content.onRendered(function(){
 });
 
 Template.post_content.helpers({
-  // contentEditable: function(){
-  //   return Session.get("contentEditable");
-  // }
+  newPost: function(){
+    return Session.get("newPost");
+  }
 })
 
 Template.post_content.events({
@@ -21,48 +21,77 @@ Template.post_content.events({
       };
   }
   ,
-
-  "input .auto-save": function(event,template){
-    // Session.set('saving', 'Saving...');
-    // var pauseTimer = Meteor.setTimeout(saveChanges(), 2000);
-
-    Logd.posts.saveChanges(event, Router.current().params._id);
+  "keyup .create-on-return": function(e,t){
+    console.log(e.target.value);
     
 
-  // Save whenever the user pauses typing for 2 seconds or more
-  // on keyup, reset and start new pauseTimer
-  // if pauseTimer ends, save changes
+    if(e.which === 13){
+      console.log("you hit return");
+      var postContent = e.target.value;
+      var postTitle = Logd.posts.getFirstLine(postContent);
+      var postTags = Logd.tags.getHashTags(postContent);
 
-  // var typingPause = 2000;
+      var postAttributes = {
+        title: postTitle,
+        content: postContent,
+        tags: postTags
+      };
 
-  // // Save every 5 seconds if typing continuously
-  // var autoSave = Meteor.setInterval(saveChanges(), 5000);
-  // Meteor.clearInterval(autoSave);
+      Meteor.call('createPost', postAttributes, function(error, result){
 
+        if (error){
+          alert(error.reason);
+        }  else {
+           Session.set("newPost", false);
+           Router.go('edit_post', { _id: result._id });
+        }
 
-    // Logd.posts.autoSave(content);
-    // var code = event.keyCode || event.which;
-
-    // if(code === 13 && Logd.posts.hasContent(postContent)){
-    //   var postTitle = Logd.tags.getFirstLine(postContent);
-    //   var postTags = Logd.tags.getHashTags(postContent);
-
-    //   var postAttributes = {
-    //     new_post: false,
-    //     title: postTitle,
-    //     content: postContent,
-    //     tags: postTags
-    //   };
-
-    //   Meteor.call('postInsert', postAttributes, function(error, result){
-
-    //     if (error){
-    //       alert(error.reason);
-    //     }
-
-    //   });
-    // }
+      });
+    };
   }
+  // ,
+
+  // "input .auto-save": function(event,template){
+  //   // Session.set('saving', 'Saving...');
+  //   // var pauseTimer = Meteor.setTimeout(saveChanges(), 2000);
+
+  //   Logd.posts.saveChanges(event, Router.current().params._id);
+
+
+  // // Save whenever the user pauses typing for 2 seconds or more
+  // // on keyup, reset and start new pauseTimer
+  // // if pauseTimer ends, save changes
+
+  // // var typingPause = 2000;
+
+  // // // Save every 5 seconds if typing continuously
+  // // var autoSave = Meteor.setInterval(saveChanges(), 5000);
+  // // Meteor.clearInterval(autoSave);
+
+
+  //   // Logd.posts.autoSave(content);
+  //   // var code = event.keyCode || event.which;
+
+  //   // if(code === 13 && Logd.posts.hasContent(postContent)){
+  //   //   var postTitle = Logd.tags.getFirstLine(postContent);
+  //   //   var postTags = Logd.tags.getHashTags(postContent);
+
+  //   //   var postAttributes = {
+  //   //     new_post: false,
+  //   //     title: postTitle,
+  //   //     content: postContent,
+  //   //     tags: postTags
+  //   //   };
+
+  //   //   Meteor.call('postInsert', postAttributes, function(error, result){
+
+  //   //     if (error){
+  //   //       alert(error.reason);
+  //   //     }
+
+  //   //   });
+  //   // }
+  // }
 });
 
 

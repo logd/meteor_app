@@ -21,6 +21,7 @@ Router.route('/', {
 });
 
 // LIST POSTS LIST
+// TODO: remove this is a route, since the posts list is being rendered on the homepage?
 Router.route('/posts', {
    name: 'posts_list',
    controller: 'PostsListController'
