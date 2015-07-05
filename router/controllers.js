@@ -22,7 +22,6 @@ LoginController = RouteController.extend({
 NewPostController = RouteController.extend({
   template:'new_post',
   action: function(){
-    // Session.set('contentEditable', "true");
     Session.set('hasContent', false);
     this.render();
   }
@@ -54,16 +53,6 @@ EditPostController = RouteController.extend({
     return Posts.findOne({ _id: this.params._id });
   },
   action: function(){
-
-    // Session.set('contentEditable', "true");
-
-    // if(Session.get('editingPostTitle') === false){
-    //   Session.set('editingPostContent', true);
-    // } else {
-    //   Session.set('editingPostTitle', true);
-    // }
-    // this.state.set('postTitleHasContent', true);
-    // this.state.set('editingPostContent', true);
     this.render();
   }
 });
