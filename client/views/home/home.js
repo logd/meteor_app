@@ -1,8 +1,19 @@
 Template.home.events({
   "click .new-post": function(event) {
     event.preventDefault();
-    Session.set("newPost", true);
-    Router.go('edit_post');
+    
+     var postAttributes = {
+        title: "New Post"
+      };
+
+      Meteor.call('createPost', postAttributes, function(error, result){
+        if (error){
+          alert(error.reason);
+        } else {
+
+          Router.go('edit_post', {_id: result._id});
+        };
+      });
   }
   // ,
   // "click .create-post": function(event) {

@@ -4,9 +4,9 @@ Template.post_content.onRendered(function(){
 });
 
 Template.post_content.helpers({
-  newPost: function(){
-    return Session.get("newPost");
-  }
+  // newPost: function(){
+  //   return Session.get("newPost");
+  // }
 })
 
 Template.post_content.events({

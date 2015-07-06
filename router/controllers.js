@@ -112,36 +112,20 @@ Router.route('/post/:_id', function () {
 });
 
 EditPostController = RouteController.extend({
-  template:'edit_post',
-  onBeforeAction: function (){
-
-    console.log("before action started");
-    var new_post_id;
- 
-    if (Session.get("newPost")){
-      var postAttributes = {
-        title: "New Post"
-      };
-
-      new_post_id = Meteor.call('createPost', postAttributes, function(error, result){
-        if (error){
-          alert(error.reason);
-        } else {
-           return result._id;
-        };
-      });
-    };
-
-      console.log("New post id: " + new_post_id);
-      this.params._id = new_post_id;
-      this.next();
-  },
+  template:'edit_post'
+  // ,
+  // onBeforeAction: function (){
+  //     console.log("New post id: " + new_post_id);
+  //     this.params._id = new_post_id;
+  //     this.next();
+  // }
+  ,
   waitOn: function () {
     // if (Session.get("newPost")){
     //   var new_post_id = Logd.posts.createPost();
     //   return Meteor.subscribe('posts',new_post_id);
     // } else {
-      return Meteor.subscribe('posts', this.params._id).wait();
+      return Meteor.subscribe('posts', this.params._id);
     // };     
   },
   data: function() {
