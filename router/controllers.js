@@ -72,11 +72,11 @@ LoginController = RouteController.extend({
   }
 });
 
+
+// CURRENTLY NOT IN USE 
 NewPostController = RouteController.extend({
   template:'new_post',
-  action: function(){
-    
-  // CURRENTLY NOT IN USE  
+  action: function(){ 
     this.render();
   }
 });
@@ -98,43 +98,13 @@ ShowPostController = RouteController.extend({
   }
 });
 
-Router.route('/post/:_id', function () {
-  // add the subscription handle to our waitlist
-  this.wait(Meteor.subscribe('item', this.params._id));
-
-  // this.ready() is true if all items in the wait list are ready
-
-  if (this.ready()) {
-    this.render();
-  } else {
-    this.render('Loading');
-  }
-});
-
 EditPostController = RouteController.extend({
-  template:'edit_post'
-  // ,
-  // onBeforeAction: function (){
-  //     console.log("New post id: " + new_post_id);
-  //     this.params._id = new_post_id;
-  //     this.next();
-  // }
-  ,
+  template:'edit_post',
   waitOn: function () {
-    // if (Session.get("newPost")){
-    //   var new_post_id = Logd.posts.createPost();
-    //   return Meteor.subscribe('posts',new_post_id);
-    // } else {
-      return Meteor.subscribe('posts', this.params._id);
-    // };     
+    return Meteor.subscribe('posts', this.params._id);    
   },
   data: function() {
-    //  if (Session.get("newPost")){
-    //   return Posts.findOne({ _id: new_post_id });
-    // } else {
-       return Posts.findOne({ _id: this.params._id });
-    // };
-   
+    return Posts.findOne({ _id: this.params._id });
   },
   action: function(){
     if (this.ready()) {

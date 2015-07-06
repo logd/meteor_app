@@ -19,36 +19,73 @@ Template.post_content.events({
       } else {
         Session.set('hasContent', false);
       };
+  },
+  "input .post-content": function(event){
+    // console.log("got input");
+    var postContent = event.target.value;
+    // console.log(postContent);
+    var postId = Router.current().params._id;
+    // console.log(id);
+
+    // Logd.posts.saveChanges(postContent, postId);
+
+    Meteor.setInterval(Logd.posts.saveChanges(postContent, postId), 3000);
+
+    // args: event.target.value, Router.current().params._id
+  //   };
+
+  //   Session.set("saveNotice", "Saving changes");
+
+  //   var postContent = event.target.value;
+  //   var postAttributes = {
+  //     postId: Router.current().params._id,
+  //     content: postContent,
+  //     title: Logd.posts.getFirstLine(postContent),
+  //     tags: Logd.tags.getHashTags(postContent)
+  //   };
+
+  //   Meteor.call('updatePost', postAttributes, function(error, result){
+
+  //     if (error){
+  //       alert(error.reason);
+  //     }  else {
+  //        Session.set("saveNotice", "Changes saved.");
+  //     }
+
+  //   });
+  // };
+  
   }
-  ,
-  "keyup .create-on-return": function(e,t){
-    console.log(e.target.value);
+});
+  // ,
+  // "keyup .create-on-return": function(e,t){
+  //   console.log(e.target.value);
     
 
-    if(e.which === 13){
-      console.log("you hit return");
-      var postContent = e.target.value;
-      var postTitle = Logd.posts.getFirstLine(postContent);
-      var postTags = Logd.tags.getHashTags(postContent);
+  //   if(e.which === 13){
+  //     console.log("you hit return");
+  //     var postContent = e.target.value;
+  //     var postTitle = Logd.posts.getFirstLine(postContent);
+  //     var postTags = Logd.tags.getHashTags(postContent);
 
-      var postAttributes = {
-        title: postTitle,
-        content: postContent,
-        tags: postTags
-      };
+  //     var postAttributes = {
+  //       title: postTitle,
+  //       content: postContent,
+  //       tags: postTags
+  //     };
 
-      Meteor.call('createPost', postAttributes, function(error, result){
+  //     Meteor.call('createPost', postAttributes, function(error, result){
 
-        if (error){
-          alert(error.reason);
-        }  else {
-           Session.set("newPost", false);
-           Router.go('edit_post', { _id: result._id });
-        }
+  //       if (error){
+  //         alert(error.reason);
+  //       }  else {
+  //          Session.set("newPost", false);
+  //          Router.go('edit_post', { _id: result._id });
+  //       }
 
-      });
-    };
-  }
+  //     });
+  //   };
+  // }
   // ,
 
   // "input .auto-save": function(event,template){
@@ -92,7 +129,7 @@ Template.post_content.events({
   //   //   });
   //   // }
   // }
-});
+
 
 
 // FROM SUBTITLES:

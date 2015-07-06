@@ -3,10 +3,10 @@ Template.edit_post.onRendered(function(){
 });
 
 Template.edit_post.helpers({
-  // showDone: function() {
-  //   return Session.get('hasContent');
-  // }
-  // ,
+  saveNotice: function() {
+    return Session.get('saveNotice');
+  }
+  ,
   truncatedTitle: function() {
     return Logd.posts.truncateTitle(this.title);
   }

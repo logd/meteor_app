@@ -53,3 +53,16 @@ Router.route('/search/:tags', {
 });
 
 
+// Router.route('/post/:_id', function () {
+//   // add the subscription handle to our waitlist
+//   this.wait(Meteor.subscribe('item', this.params._id));
+
+//   // this.ready() is true if all items in the wait list are ready
+
+//   if (this.ready()) {
+//     this.render();
+//   } else {
+//     this.render('Loading');
+//   }
+// });
+
