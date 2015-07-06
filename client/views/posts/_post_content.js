@@ -20,16 +20,25 @@ Template.post_content.events({
         Session.set('hasContent', false);
       };
   },
-  "input .post-content": function(event){
+  "input .post-content": function(event,template){
     // console.log("got input");
-    var postContent = event.target.value;
+    var evtTarget = event.target;
     // console.log(postContent);
     var postId = Router.current().params._id;
     // console.log(id);
 
-    // Logd.posts.saveChanges(postContent, postId);
+    Logd.posts.saveTimer.clear();
 
-    Meteor.setInterval(Logd.posts.saveChanges(postContent, postId), 3000);
+    Logd.posts.saveTimer.set(function() {
+      Logd.posts.saveChanges(evtTarget.value, postId);
+    });
+
+    // NEXT: 
+    // var saveChanges = function(){
+    //   Logd.posts.saveChanges(postContent, postId);
+    // }
+
+    // Meteor.setInterval(saveChanges, 3000);
 
     // args: event.target.value, Router.current().params._id
   //   };
