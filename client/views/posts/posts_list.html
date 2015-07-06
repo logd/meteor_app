@@ -1,23 +1,24 @@
 <template name="posts_list">
-<div class="ui relaxed divided list">
-  {{#each myPosts}}
-    <div class="item">
-       <div class="right floated content">
+  <ul>
+    {{#each myPosts}}
+      <li>
         <button class="delete icon-button">
           <i class="fa fa-times fa"></i>
         </button>
-      </div>
-      <a class="header show-post" href="{{pathFor 'show_post'}}">
-        <h2>{{title}}</h2></a>
-        <div class="ui mini horizontal divided list">
+        <a class="header show-post" href="{{pathFor 'show_post'}}">
+          <h2>{{title}}</h2>
+        </a>
+        <ul>
           {{#each tags}}
-            <div class="item">
-              <a href="#" class="tag"><span class="tag-filter">{{this}}</span></a>
-            </div>
+             <li>
+                <a href="#" class="tag"><span class="tag-filter">{{this}}</span></a>
+             </li>
           {{/each}}
-        </div>
-        <p class="meta-info">Created: {{livestamp createdAt}}</p>
-    </div>
-  {{/each}}
-</div>
+          <li class="meta-info">
+            Created: {{livestamp createdAt}}
+          </li>
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
 </template>

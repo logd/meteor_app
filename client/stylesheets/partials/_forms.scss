@@ -33,22 +33,27 @@ button {
 ____________________ */
 
 
-[contenteditable=true] {
-
-   &:focus {
-     outline: 0;
-    }
-
-
-// Display placeholder value for contenteditable bloc: http://codepen.io/flesler/pen/AEIFc
-&:empty:before {
-  content: attr(data-placeholder);
-  display: block; /* For Firefox */
-  color:$light-gray;
+.editable {
+  cursor: pointer;
 }
 
 
-}
+// [contenteditable=true] {
+
+//    &:focus {
+//      outline: 0;
+//     }
+
+
+// // Display placeholder value for contenteditable bloc: http://codepen.io/flesler/pen/AEIFc
+// &:empty:before {
+//   content: attr(data-placeholder);
+//   display: block; /* For Firefox */
+//   color:$light-gray;
+// }
+
+
+// }
 
 
 form.post-form {

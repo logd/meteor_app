@@ -1,3 +1,5 @@
+@import "partials/normalize";
+// @import "partials/h5bp";
 @import "partials/variables";
 @import "partials/layout";
 @import "partials/colors";
@@ -12,16 +14,7 @@
 }
 
 
-// /*  Generic Classes
-// ____________________ */
 
-.editable {
-  cursor: pointer;
-
-  // &:hover {
-  //   border:1 px solid $very-light-gray;
-  // }
-}
 
 // /*  POSTS LIST
 // ____________________ */
