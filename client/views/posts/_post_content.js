@@ -24,10 +24,12 @@ Template.post_content.events({
     var evtTarget = event.target;
     var postId = Router.current().params._id;
 
-    Logd.posts.saveTimer.clear();
+    if(Logd.posts.hasContent(evtTarget.value)){
+      Logd.posts.saveTimer.clear();
 
-    Logd.posts.saveTimer.set(function() {
-      Logd.posts.saveChanges(evtTarget.value, postId);
-    });
+      Logd.posts.saveTimer.set(function() {
+        Logd.posts.saveChanges(evtTarget.value, postId);
+      });
+    };    
   }
 });

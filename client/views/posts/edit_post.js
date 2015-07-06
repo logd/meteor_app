@@ -4,7 +4,9 @@ Template.edit_post.onRendered(function(){
 
 Template.edit_post.helpers({
   saveNotice: function() {
-    return Session.get('saveNotice');
+    if(Session.get("hasContent")){
+      return Session.get('saveNotice');
+    }
   }
   ,
   truncatedTitle: function() {
