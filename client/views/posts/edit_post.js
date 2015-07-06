@@ -1,23 +1,19 @@
 Template.edit_post.onRendered(function(){
+   this.$('.post-content').click();
    this.$('.post-content').focus();
 });
 
 Template.edit_post.helpers({
   showDone: function() {
     return Session.get("hasContent");
-    // if(Session.get("hasContent")){
-    //   return true;
-    // } else {
-    //   return false;
-    // }
   },
   saveNotice: function() {
     if(Session.get("hasContent")){
       return Session.get('saveNotice');
     }
   },
-  truncatedTitle: function() {
-    return Logd.posts.truncateTitle(this.title);
+  shortenedTitle: function() {
+    return Logd.posts.shortenedTitle(this.title);
   }
 });
 

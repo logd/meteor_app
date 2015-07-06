@@ -6,7 +6,11 @@
     <div class="header-center page-title">
       <div class="edit-post-title editable-text">
         <h1 class="post-title">
-         {{title}}
+          {{#if shortenedTitle}}
+            {{shortenedTitle}}&hellip;
+          {{else}}
+            {{title}}
+          {{/if}}
         </h1>
         <p class="meta-info">{{#if saveNotice}}{{saveNotice}}{{/if}}</p>
       </div> 
