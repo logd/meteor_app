@@ -10,7 +10,7 @@ Template.home.events({
         if (error){
           alert(error.reason);
         } else {
-
+          Session.set("hasContent", false);
           Router.go('edit_post', {_id: result._id});
         };
       });
