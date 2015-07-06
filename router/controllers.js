@@ -4,7 +4,38 @@ HomeController = RouteController.extend({
     this.render();
   }
 });
-  
+
+// Iron.Router.hooks.createPost = function () {
+
+//   var new_post_id = null;
+
+//   if (Session.get("newPost")){
+//     var postAttributes = {
+//       title: "New Post"
+//     };
+
+//     Meteor.call('createPost', postAttributes, function(error, result){
+//       if (error){
+//         alert(error.reason);
+//       } else {
+//          new_post_id = result._id;
+//       };
+//     });
+//   };
+
+//   console.log("New post id: " + new_post_id);
+
+//   if(new_post_id !== null){
+//     this.params._id = new_post_id;
+//   }
+
+//   this.next();
+// };
+ 
+// Router.onBeforeAction(createPost, {
+//   only: ['edit_post']
+//   // or except: ['routeOne', 'routeTwo']
+// });
 //    // 2. if the user has 1 or more posts, is there a post marked new post?  if so, redirec
 //     hasPosts : function(){
 //       var current_user_has_posts = Posts.find({authorId: Meteor.userId()}).count() === 0);
@@ -44,8 +75,8 @@ LoginController = RouteController.extend({
 NewPostController = RouteController.extend({
   template:'new_post',
   action: function(){
-    Session.set("newPost", true);
-    Session.set('hasContent', false);
+    
+  // CURRENTLY NOT IN USE  
     this.render();
   }
 });
@@ -67,16 +98,66 @@ ShowPostController = RouteController.extend({
   }
 });
 
+Router.route('/post/:_id', function () {
+  // add the subscription handle to our waitlist
+  this.wait(Meteor.subscribe('item', this.params._id));
+
+  // this.ready() is true if all items in the wait list are ready
+
+  if (this.ready()) {
+    this.render();
+  } else {
+    this.render('Loading');
+  }
+});
+
 EditPostController = RouteController.extend({
   template:'edit_post',
+  onBeforeAction: function (){
+
+    console.log("before action started");
+    var new_post_id;
+ 
+    if (Session.get("newPost")){
+      var postAttributes = {
+        title: "New Post"
+      };
+
+      new_post_id = Meteor.call('createPost', postAttributes, function(error, result){
+        if (error){
+          alert(error.reason);
+        } else {
+           return result._id;
+        };
+      });
+    };
+
+      console.log("New post id: " + new_post_id);
+      this.params._id = new_post_id;
+      this.next();
+  },
   waitOn: function () {
-    return Meteor.subscribe('posts', this.params._id); 
+    // if (Session.get("newPost")){
+    //   var new_post_id = Logd.posts.createPost();
+    //   return Meteor.subscribe('posts',new_post_id);
+    // } else {
+      return Meteor.subscribe('posts', this.params._id).wait();
+    // };     
   },
   data: function() {
-    return Posts.findOne({ _id: this.params._id });
+    //  if (Session.get("newPost")){
+    //   return Posts.findOne({ _id: new_post_id });
+    // } else {
+       return Posts.findOne({ _id: this.params._id });
+    // };
+   
   },
   action: function(){
-    this.render();
+    if (this.ready()) {
+      this.render();
+    } else {
+      this.render('Loading');
+    };
   }
 });
 

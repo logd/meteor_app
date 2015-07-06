@@ -1,18 +1,16 @@
-<!-- NOT CURRENTLY IN USE -->
-
 // Template.new_post.onRendered(function(){
 //    this.$('.post-content').focus();
 // });
 
-Template.new_post.helpers({
-  hasContent: function() {
-    return Session.get('hasContent');
-  }
-  // ,
-  // truncatedTitle: function() {
-  //   return Logd.posts.truncateTitle(this.title);
-  // }
-});
+// Template.new_post.helpers({
+//   hasContent: function() {
+//     return Session.get('hasContent');
+//   }
+//   // ,
+//   // truncatedTitle: function() {
+//   //   return Logd.posts.truncateTitle(this.title);
+//   // }
+// });
 
 // Template.new_post.events({
 //   "click .create-post": function(e,t){

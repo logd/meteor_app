@@ -1,8 +1,19 @@
-// Template.new_post_button.events({
-//   "click .new-post": function(event) {
+// Template.create_post.events({
+//   "click .create-post": function(event) {
 //     event.preventDefault();
+//     Session.set("newPost", true);
+//     Router.go('edit_post');
 
-//     Router.go('new_post');
+//     // Meteor.user().profile.new_post = true;
+
+    
+
+//     // } else {
+//     //   Router.go('edit_post', { _id: new_post._id });
+//     // };
+
+
+    
 
 //     // TODO: also match authorID against current user
 //     // also, check to match current user

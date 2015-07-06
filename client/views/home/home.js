@@ -1,7 +1,26 @@
 Template.home.events({
   "click .new-post": function(event) {
     event.preventDefault();
-    Router.go('new_post');
-
+    Session.set("newPost", true);
+    Router.go('edit_post');
   }
+  // ,
+  // "click .create-post": function(event) {
+  //  event.preventDefault();
+
+  //   Meteor.user().profile.new_post = true;
+
+  //   var postAttributes = {
+  //       title: "New Post"
+  //   };
+
+  //   Meteor.call('createPost', postAttributes, function(error, result){
+  //       if (error){
+  //         alert(error.reason);
+  //       } else {
+  //         Router.go('edit_post', { _id: result._id });
+  //       };
+  //   });
+
+  // }
 });

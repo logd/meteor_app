@@ -17,6 +17,25 @@ Meteor.publish("userData", function () {
   }
 });
 
-// Meteor.publish("tags", function(){
-//   return Tags.find();
+
+// Manage has_new_post variable
+// Accounts.onCreateUser(function(options, user) {
+
+//  if (user.profile == undefined){
+//   user.profile = {};
+//   user.profile.new_post = false;
+
+//  } else {
+//     user.profile.new_post = false;
+//  }
+//     // _.extend(user.profile, { new_post : false });
+
+
+//     // user.profile['new_post'] = false;
+//     return user;
+// });
+// Manage has_new_post variable
+// Accounts.onLogin(function(user) {
+//   if (user.profile == undefined) user.profile = {};
+//     _.extend(user.profile, { new_post : false });
 // });
