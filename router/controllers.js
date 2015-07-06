@@ -74,12 +74,12 @@ LoginController = RouteController.extend({
 
 
 // CURRENTLY NOT IN USE 
-NewPostController = RouteController.extend({
-  template:'new_post',
-  action: function(){ 
-    this.render();
-  }
-});
+// NewPostController = RouteController.extend({
+//   template:'new_post',
+//   action: function(){ 
+//     this.render();
+//   }
+// });
 
 ShowPostController = RouteController.extend({
   template:'show_post',

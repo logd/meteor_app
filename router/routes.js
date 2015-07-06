@@ -27,11 +27,11 @@ Router.route('/posts', {
    controller: 'PostsListController'
 });
 
-// NEW POST
-Router.route('/new', {
-   name: 'new_post',
-   controller: 'NewPostController'
-});
+// NEW POST - NOT IN USE
+// Router.route('/new', {
+//    name: 'new_post',
+//    controller: 'NewPostController'
+// });
 
 
 // SHOW POST
@@ -51,18 +51,3 @@ Router.route('/search/:tags', {
   name: 'search',
   controller: 'SearchController'
 });
-
-
-// Router.route('/post/:_id', function () {
-//   // add the subscription handle to our waitlist
-//   this.wait(Meteor.subscribe('item', this.params._id));
-
-//   // this.ready() is true if all items in the wait list are ready
-
-//   if (this.ready()) {
-//     this.render();
-//   } else {
-//     this.render('Loading');
-//   }
-// });
-
