@@ -4,13 +4,7 @@
        {{> home_nav}}
       </div>
       <div class="header-center page-title">
-          <h1 class=" post-title">
-          {{#if truncatedTitle}}
-            {{truncatedTitle}}&hellip;
-          {{else}}
-            {{title}}
-          {{/if}}
-          </h1>
+        {{> post_title}}
       </div>
       <div class="header-right">
         {{> post_controls}}

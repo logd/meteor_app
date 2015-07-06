@@ -6,14 +6,6 @@ Template.edit_post.onRendered(function(){
 Template.edit_post.helpers({
   showDone: function() {
     return Session.get("hasContent");
-  },
-  saveNotice: function() {
-    if(Session.get("hasContent")){
-      return Session.get('saveNotice');
-    }
-  },
-  shortenedTitle: function() {
-    return Logd.posts.shortenedTitle(this.title);
   }
 });
 
