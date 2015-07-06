@@ -31,5 +31,10 @@ Template.post_content.events({
         Logd.posts.saveChanges(evtTarget.value, postId);
       });
     };    
+  },
+  "blur .post-content": function(event,template){
+    var evtTarget = event.target;
+    var postId = Router.current().params._id;
+    Logd.posts.saveChanges(evtTarget.value, postId);  
   }
 });

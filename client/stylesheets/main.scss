@@ -11,9 +11,20 @@
   margin-top: 3em;
 }
 
-// /*  POSTS LIST
+
+// /*  Generic Classes
 // ____________________ */
 
+.editable {
+  cursor: pointer;
+
+  // &:hover {
+  //   border:1 px solid $very-light-gray;
+  // }
+}
+
+// /*  POSTS LIST
+// ____________________ */
 
 .post-list-item {
   display: flex;

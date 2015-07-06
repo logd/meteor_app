@@ -1,5 +1,5 @@
 Template.edit_post.onRendered(function(){
-   this.$('.post-content').click();
+   // this.$('.post-content').click();
    this.$('.post-content').focus();
 });
 
