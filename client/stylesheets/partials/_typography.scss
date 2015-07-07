@@ -20,6 +20,20 @@ body {
     font-size: $header-text;
   }
 
+// LINKS
+// ____________________________
+ a {
+    color: $link-color;
+
+    &:visited, &:active {
+      color: $link-color;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
 
 // INLINE TEXT
 // ____________________________

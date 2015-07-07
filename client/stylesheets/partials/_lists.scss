@@ -1,3 +1,45 @@
+
+// ITEM LIST
+// NEXT: try display table to center and fill remaining space
+// ____________________________
+
+.item-list {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  // height: 100%;
+  // display: flex;
+  // flex-direction: column;
+
+  & > li {
+    border-bottom: 1px solid $light-gray;
+    margin-bottom: .75em;
+    padding-bottom: .75em;
+
+    .list-item {
+      margin-bottom: .25em;
+
+      &.with-options {
+        padding-right: 2.5em;
+      }
+    }
+
+  &:last-child {
+     border-bottom: none;
+  }
+    .options {
+      float:right;
+      width: 1em;
+      margin-top: .25em;
+      text-align: right;
+    }
+  }
+}
+
+
+// HELPERS
+// ____________________________
+
 ul.no-bullet {
   list-style-type: none;
   margin-left: 0;
@@ -14,12 +56,3 @@ ul.horizontal {
     padding-right: 5px;
   }  
 }
-
-/*  HELPERS
-____________________ */
-
-// ul.horizontal {
-//   list-style-type: none;
-//   margin-left: 0;
-//   padding-left: 0;
-// }
