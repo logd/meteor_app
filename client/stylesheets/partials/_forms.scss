@@ -40,28 +40,33 @@ ____________________ */
     height: 100%;
     width: 100%;
     font-size: $editor-text;
+    display:table;
   }
 
-form.post-form {
+.post-form {
   height: 100%;
   width: 100%;
+  display: table-cell;
   // position: relative;
   
   textarea {
     // position: absolute;
     // top:0;
     // left:0;
-    // right:50px;
+    // right:0;
     // bottom:0;
+    display:block;
+  height: 90%;
+  width: 97%;
     box-sizing: border-box;
-      width: 83vw;
-    height: 87vh;
+    //   width: 83vw;
+    // height: 87vh;
     // height: 100%;
     // width: 100%;
-    padding: .5em 1em 1em .5em;
+    // padding: .5em 1em 1em .5em;
     border:none;
     outline: none;
-    // overflow: auto;
+    overflow: auto;
     line-height: normal;
   }
  
