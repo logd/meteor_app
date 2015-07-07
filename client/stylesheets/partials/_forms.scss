@@ -32,57 +32,37 @@ button {
 /*  POST FORM
 ____________________ */
 
-
 .editable {
   cursor: pointer;
 }
-
-
-// [contenteditable=true] {
-
-//    &:focus {
-//      outline: 0;
-//     }
-
-
-// // Display placeholder value for contenteditable bloc: http://codepen.io/flesler/pen/AEIFc
-// &:empty:before {
-//   content: attr(data-placeholder);
-//   display: block; /* For Firefox */
-//   color:$light-gray;
-// }
-
-
-// }
-
 
 form.post-form {
   height: 100%;
   
   textarea {
     height: 100%;
-    width: 100%;
+    // width: 100%;
     padding: .5em 1em 1em .5em;
     border:none;
     outline: none;
-    overflow: auto;
+    // overflow: auto;
   }
-  input {
-    font-size: $editor-text;
-    // font-weight: bold;
-    color: $steel-gray;
-    height: 100%;
-    width: 100%;
-    padding: .5em 1em .5em .5em;
-    margin-bottom: 0;
-    border:none;
-    outline: none;
-    overflow: auto;
+  // input {
+  //   font-size: $editor-text;
+  //   // font-weight: bold;
+  //   color: $steel-gray;
+  //   height: 100%;
+  //   // width: 100%;
+  //   padding: .5em 1em .5em .5em;
+  //   margin-bottom: 0;
+  //   border:none;
+  //   outline: none;
+  //   // overflow: auto;
 
-    &.post-title {
-      font-weight: 700;
-    }
-  }
+  //   &.post-title {
+  //     font-weight: 700;
+  //   }
+  // }
 
   h1.post-title {
     font-size: $editor-text;
@@ -92,11 +72,11 @@ form.post-form {
   }
 }
 
-  .main-content .post-content {
+ .post-content {
     height: 100%;
-    width: 100%;
+    // width: 100%;
     font-size: $editor-text;
-    line-height: normal;
+    // line-height: normal;
   }
 
 // .main-content .post-content {

@@ -1,4 +1,4 @@
-@import "partials/normalize";
+// @import "partials/normalize";
 // @import "partials/h5bp";
 @import "partials/variables";
 @import "partials/layout";
@@ -9,9 +9,9 @@
 
 
 // HACK - fix layout and remove
-.home {
-  margin-top: 3em;
-}
+// .home {
+//   margin-top: 3em;
+// }
 
 
 
@@ -41,15 +41,15 @@
     // body {
     //   background-color: #DADADA;
     // }
-    body > .grid {
-      height: 100%;
-    }
-    .centered-container {
-      margin: 1em;
-    }
-    .text-center {
-      text-align: center;
-    }
+    // body > .grid {
+    //   height: 100%;
+    // }
+    // .centered-container {
+    //   margin: 1em;
+    // }
+    // .text-center {
+    //   text-align: center;
+    // }
     // .image {
     //   margin-top: -100px;
     // }
