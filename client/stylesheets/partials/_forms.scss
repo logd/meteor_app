@@ -36,21 +36,38 @@ ____________________ */
   cursor: pointer;
 }
 
+ .post-content {
+    height: 100%;
+    width: 100%;
+    font-size: $editor-text;
+  }
+
 form.post-form {
   height: 100%;
   width: 100%;
+  // position: relative;
   
   textarea {
-    height: 100%;
+    // position: absolute;
+    // top:0;
+    // left:0;
+    // right:50px;
+    // bottom:0;
     box-sizing: border-box;
-    width: 100%;
+      width: 83vw;
+    height: 87vh;
+    // height: 100%;
+    // width: 100%;
     padding: .5em 1em 1em .5em;
     border:none;
     outline: none;
-    overflow: auto;
+    // overflow: auto;
     line-height: normal;
   }
-  // input {
+ 
+}
+
+ // input {
   //   font-size: $editor-text;
   //   // font-weight: bold;
   //   color: $steel-gray;
@@ -67,22 +84,13 @@ form.post-form {
   //   }
   // }
 
-  h1.post-title {
-    font-size: $editor-text;
-    line-height: $editor-line-height;
-     font-weight: 900;
-     padding: .5em 1em 0 .5em;
-     margin-bottom: 0;
-  }
-}
-
- .post-content {
-    height: 100%;
-    width: 100%;
-    font-size: $editor-text;
-    // line-height: normal;
-  }
-
+  // h1.post-title {
+  //   font-size: $editor-text;
+  //   line-height: $editor-line-height;
+  //    font-weight: 900;
+  //    padding: .5em 1em 0 .5em;
+  //    margin-bottom: 0;
+  // }
 // .main-content .post-content {
 //   // font-size: $editor-text;
 // }
