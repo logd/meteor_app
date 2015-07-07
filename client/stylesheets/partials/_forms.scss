@@ -66,6 +66,7 @@ form.post-form {
 
   h1.post-title {
     font-size: $editor-text;
+    line-height: $editor-line-height;
      font-weight: 900;
      padding: .5em 1em 0 .5em;
      margin-bottom: 0;
@@ -73,7 +74,7 @@ form.post-form {
 }
 
  .post-content {
-    height: 100%;
+    // height: 100%;
     // width: 100%;
     font-size: $editor-text;
     // line-height: normal;
