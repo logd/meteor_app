@@ -2,24 +2,14 @@ Template.posts_list.helpers({
   myPosts: function() {
     return Posts.find({authorId: Meteor.userId()}, {sort: {createdAt: -1}});
   }
-  // ,
-  // postsFilteredByTag: function(selectedTag) {
-  //   return Posts.find({ tags:selectedTag }, { sort: {createdAt: -1 }});
-  // }
-//   ,
-//   isEditable: function() {
-//     // return true or false
-//     return this._id === Template.instance().currentlyEditing.get();
-// }
-
 });
 
 Template.posts_list.events({
-  "click .delete": function() {
-
-    if (confirm("Are you sure?")) {
-       Meteor.call("deletePost", this._id);
-    }
+  "click .delete": function(event) {
+    event.preventDefault();
+    if (confirm('Really delete this post')) { 
+      Meteor.call("deletePost", this._id);
+    };
   },
    'click .editable' : function(event, template){
     // Template.instance().currentlyEditing.set(this._id);

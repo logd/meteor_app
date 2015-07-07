@@ -8,12 +8,11 @@
 //   transition: 'drop'
 // });
 
-// Meteor.startup(function () {
-//   // Session.setDefault({
-//   //   "contentIsEmpty": false,
-//   //   "isEditing": false
-//   // })
-// });
+Meteor.startup(function () {
+  Session.setDefault({
+    "disableCreate": false
+  })
+});
 
 Meteor.subscribe("posts");
 Meteor.subscribe("tags");
