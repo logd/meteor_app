@@ -1,6 +1,6 @@
 <template name="user_nav">
 {{#dropdownTrigger name="user_nav_dropdown"}}
-<button>
+<button class="unstyled">
   {{#with currentUser}}
     {{> avatar user=this shape="circle" size="small"}}
   {{/with}}
@@ -8,6 +8,8 @@
 {{/dropdownTrigger}}
 
 {{#dropdown name="user_nav_dropdown"}}
-<a href="/login">Sign Out</a>
+<button class="unstyled logout">
+  Sign Out
+</button>
 {{/dropdown}}
 </template>

@@ -10,7 +10,7 @@ Template.user_nav.helpers({
 });
 
 Template.user_nav.events({
-  "submit .logout_event": function (e,t) {
+  "click .logout": function (e,t) {
     e.preventDefault();
     Meteor.logout(function(error){
       if(error){
