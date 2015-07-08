@@ -1,18 +1,10 @@
 // @import "partials/normalize";
 // @import "partials/h5bp";
 @import "partials/variables";
-@import "partials/layout";
-@import "partials/colors";
+@import "partials/base";
 @import "partials/typography";
 @import "partials/forms";
 @import "partials/lists";
-
-
-// HACK - fix layout and remove
-// .home {
-//   margin-top: 3em;
-// }
-
 
 
 
@@ -36,24 +28,3 @@
     flex-basis: 3em;
   }
 }
-
-
-    // body {
-    //   background-color: #DADADA;
-    // }
-    // body > .grid {
-    //   height: 100%;
-    // }
-    // .centered-container {
-    //   margin: 1em;
-    // }
-    // .text-center {
-    //   text-align: center;
-    // }
-    // .image {
-    //   margin-top: -100px;
-    // }
-    // .column {
-    //   max-width: 450px;
-    // }
-

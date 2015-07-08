@@ -1,8 +1,13 @@
 <template name="user_nav">
- <div class="item">{{user_name}}</div>
- <div class="item">
-   <form class="logout_event">
-    <button class="unstyled" type="submit">Sign Out</button>
-  </form>
- </div>
+{{#dropdownTrigger name="user_nav_dropdown"}}
+<button>
+  {{#with currentUser}}
+    {{> avatar user=this shape="circle" size="small"}}
+  {{/with}}
+</button>
+{{/dropdownTrigger}}
+
+{{#dropdown name="user_nav_dropdown"}}
+<a href="/login">Sign Out</a>
+{{/dropdown}}
 </template>

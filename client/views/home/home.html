@@ -1,23 +1,5 @@
 <template name="home">
-  <header class="app-header">
-    <div class="header-left">
-     <button class="click-search icon-button" alt="Search" title="Search">
-      <i class="fa fa-search fa-2x"></i>
-      </button>
-    </div>
-    <div class="header-center">
-      <div class="ui dropdown">
-        <div class="ui avatar">{{#with currentUser}}{{> avatar user=this shape="circle"}}{{/with}}
-        </div>
-        <div class="menu">
-         {{> user_nav}}
-        </div>
-      </div>
-    </div>
-    <div class="header-right">
-    {{> create_post}}
-    </div>
-  </header>
+  {{> app_header}}
   <div class="main-content">
     {{> posts_list}}
   </div> 

@@ -1,58 +1,74 @@
-// BASE LAYOUT
+// BASE STYLES
 // 768px or smaller
 // __________________________________
 
-html, body { height: 100%; }
-body { margin: 0; padding: 0; }
+html, body {
+  height: 100%; 
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  color: $off-black;
+  background-color: $very-light-gray;
+}
 
 
 // APP CONTAINER
 // _________________________
-.app-container {
-  // width: 100%;
-  height: 100%;
-  // display: flex;
-  // flex-direction: column;
-  padding: $container-padding;
-  margin: $container-margin;
+// .app-container {
+//   width: 100%;
+//   height: 100%;
+//   padding: $container-padding;
+//   margin: $container-margin;
+//   background-color:$app-background-color;
 
-}
+// }
 
 //  CONTENT HEADER
 // _________________________
 .app-header {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction:row;
-  align-items: center;
-  justify-content: center;
-  // padding-right: 1em;
-  height: 6em;
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  height: 4em;
+  background-color: $very-light-gray;
+  border-bottom: 1px solid $light-gray;
+
+  .header-row {
+    display: table-row;
+  }
+  .header-left, .header-center, .header-right {
+    display: table-cell;
+    text-align: center;
+    vertical-align:middle;
+  }
 
   .header-left, .header-right {
     width: 3em;
   }
    .header-left {
     text-align: left;
-    padding-left: 0;
-    margin-left: 0;
+    // padding-left: 0;
+    // margin-left: 0;
   }
      .header-right {
     text-align: right;
-    padding-right: .5em;
-    margin-right: .5em;
+    // padding-right: .5em;
+    // margin-right: .5em;
 
-    a.hack {
-      margin-right: .25em;
-    }
+    // a.hack {
+    //   margin-right: .25em;
+    // }
   }
-  .header-center {
-    flex: 1;
-    text-align: center;
-    // padding-left: .5em;
-    // padding-bottom: .1em;
-    // align-self:center;
-  }
+  // .header-center {
+  //   // flex: 1;
+  //   text-align: center;
+  //   // padding-left: .5em;
+  //   // padding-bottom: .1em;
+  //   // align-self:center;
+  // }
 }
 
 //  MAIN CONTENT

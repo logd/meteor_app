@@ -10,6 +10,10 @@ button {
     border:none;
     color: $light-gray;
 
+    .fa {
+      color: $light-gray; 
+    }
+
     &:focus {
      outline: 0;
     }

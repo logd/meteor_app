@@ -1,27 +1,24 @@
 // LAYOUT
-// ________________________________________________
-$container-padding:             1.5em;
-$container-margin:                1em;
+// ________________________________________
+$container-padding:                  1.5em;
+$container-margin:                     1em;
 
 // TYPOGRAPHY
-// _________________________________________________
-
+// _________________________________________
 $font-family:  Arial, Helvetica, sans-serif;
 $base-font-size:                       14px;
 $base-line-height:                       1.4;
-
-$small-text:                                   .7em;
-$header-text:                                   2em;
-$editor-text:                                   2em;
-$editor-line-height: 2;
+$small-text:                            .7em;
+$header-text:                            2em;
+$editor-text:                            2em;
+$editor-line-height:                       2;
 
 // COLORS
-// ________________________________________________
-
-$base-color:                                   #222;
-$off-black:                                 #333333;
-$steel-gray:                                #666666;
-$light-gray:                                #D5D5D5;
-$very-light-gray:                           #F5F5F5;
-
-$link-color:                                #4183c4;
+// ____________________________________________
+$base-color:                               #222;
+$app-background-color:                  #ffffff;
+$off-black:                             #333333;
+$steel-gray:                            #666666;
+$light-gray:                            #D5D5D5;
+$very-light-gray:                       #F5F5F5;
+$link-color:                            #4183c4;
