@@ -8,10 +8,11 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  width: 100%;
+  //width: 100%;
   height: 100%;
   color: $off-black;
-  background-color: $very-light-gray;
+  background-color: $app-background-color;
+  overflow-y:hidden;
 }
 
 
@@ -52,9 +53,21 @@ body {
 
 .main-content {
   height: 100%;
-  padding-left: $app-padding + .25em;
-  padding-right:  $app-padding + .25em;
+  width: 100%;
+  padding-left: $app-padding + .5em;
+  padding-right: 2em;
+
 }
+
+//  POSTS
+// _________________________
+ .post-content {
+    height: 100%;
+    width: 100%;
+    font-size: $editor-text;
+    display:table;
+    padding: .5em .25em;
+  }
 
 
 //   Layout for 768px and wider

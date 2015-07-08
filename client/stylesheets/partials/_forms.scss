@@ -36,70 +36,19 @@ button {
 /*  POST FORM
 ____________________ */
 
-.editable {
-  cursor: pointer;
-}
-
- .post-content {
-    height: 100%;
-    width: 100%;
-    font-size: $editor-text;
-    display:table;
-  }
-
 .post-form {
   height: 100%;
   width: 100%;
   display: table-cell;
-  // position: relative;
   
   textarea {
-    // position: absolute;
-    // top:0;
-    // left:0;
-    // right:0;
-    // bottom:0;
     display:block;
-  height: 90%;
-  width: 97%;
+    height: 97%;
+    width: 95%;
     box-sizing: border-box;
-    //   width: 83vw;
-    // height: 87vh;
-    // height: 100%;
-    // width: 100%;
-    // padding: .5em 1em 1em .5em;
     border:none;
     outline: none;
     overflow: auto;
     line-height: normal;
   }
- 
 }
-
- // input {
-  //   font-size: $editor-text;
-  //   // font-weight: bold;
-  //   color: $steel-gray;
-  //   height: 100%;
-  //   // width: 100%;
-  //   padding: .5em 1em .5em .5em;
-  //   margin-bottom: 0;
-  //   border:none;
-  //   outline: none;
-  //   // overflow: auto;
-
-  //   &.post-title {
-  //     font-weight: 700;
-  //   }
-  // }
-
-  // h1.post-title {
-  //   font-size: $editor-text;
-  //   line-height: $editor-line-height;
-  //    font-weight: 900;
-  //    padding: .5em 1em 0 .5em;
-  //    margin-bottom: 0;
-  // }
-// .main-content .post-content {
-//   // font-size: $editor-text;
-// }
