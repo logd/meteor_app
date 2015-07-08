@@ -1,6 +1,11 @@
 Template.posts_list.helpers({
   myPosts: function() {
-    return Posts.find({authorId: Meteor.userId()}, {sort: {createdAt: -1}});
+    var posts = Posts.find({authorId: Meteor.userId()}, {sort: {updatedAt: -1}});
+    if(posts.length > 0){
+      return Posts.find({authorId: Meteor.userId()}, {sort: {updatedAt: -1}});
+    } else {
+      return false;
+    };
   }
 });
 

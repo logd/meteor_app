@@ -24,10 +24,8 @@ fourseven:scss
 service-configuration
 chuangbo:marked
 reactive-dict
-semantic:ui
 utilities:avatar
-useraccounts:semantic-ui
-useraccounts:core
 fastclick
 meteorhacks:fast-render
 lookback:dropdowns
+useraccounts:unstyled
