@@ -1,11 +1,14 @@
 Template.posts_list.helpers({
   myPosts: function() {
-    var posts = Posts.find({authorId: Meteor.userId()}, {sort: {updatedAt: -1}});
-    if(posts.length > 0){
-      return Posts.find({authorId: Meteor.userId()}, {sort: {updatedAt: -1}});
-    } else {
-      return false;
-    };
+    return Posts.find({authorId: Meteor.userId()}, {sort: {updatedAt: -1}});
+    // console.log(posts);
+    // var posts = Posts.find({authorId: Meteor.userId()}, {sort: {updatedAt: -1}});
+    // console.log(posts);
+    // if(posts.find().count > 0){
+    //   return Posts.find({authorId: Meteor.userId()}, {sort: {updatedAt: -1}});
+    // } else {
+    //   return false;
+    // };
   }
 });
 
