@@ -25,14 +25,12 @@ body {
 // ____________________________
  a {
     color: $link-color;
+    text-decoration: none;
 
     &:visited, &:active {
       color: $link-color;
     }
-
-    // &:hover {
-    //   text-decoration: underline;
-    // }
+    
   }
 
 

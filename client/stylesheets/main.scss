@@ -1,11 +1,17 @@
-// @import "partials/normalize";
-// @import "partials/h5bp";
+@import "partials/normalize";
+@import "partials/h5bp";
 @import "partials/variables";
 @import "partials/base";
 @import "partials/typography";
 @import "partials/forms";
 @import "partials/lists";
 
+// Avoid the descendent selector (i.e. don’t use .sidebar h3)
+// Avoid IDs as styling hooks
+// Avoid attaching classes to elements in your stylesheet (i.e. don’t do div.header or h1.title)
+// Except in some rare cases, avoid using !important
+// Use CSS Lint to check your CSS (and know that it has options and method to its madness)
+// Use CSS grids
 
 
 // /*  POSTS LIST
