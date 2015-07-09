@@ -1,0 +1,31 @@
+<!-- template name generated based on filename -->
+<template name="tag_search">
+<h1>{{page_title}}</h1>
+
+  <ul class="item-list">
+      {{#each matchingPosts}}
+      <li>
+        <div class="list-item">
+          <a class="header show-post" href="{{pathFor 'show_post'}}">
+          <h2>{{title}}</h2>
+          </a>
+          </div>
+        <ul class="meta-info horizontal">
+          {{#each tags}}
+             <li>
+                <a href="#" class="tag"><span class="tag-filter">{{this}}</span></a>
+             </li>
+          {{/each}}
+          <li class="meta-info">
+            {{livestamp createdAt}}
+          </li>
+        </ul>
+      </li>
+    {{/each}}
+  </ul>
+  {{! show if none found}}
+  <section class="content-block">
+  <p class="meta-info">No matches were found for this tag :-/</p> 
+  </section>
+  {{! /if}}
+</template>
