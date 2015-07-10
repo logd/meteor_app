@@ -3,6 +3,9 @@ Template.app_header.helpers({
     // var current_view = ;
     return LogdAppHeader[Router.current().route.getName()].headerLeft;
   },
+  headerRight: function () {
+    return LogdAppHeader[Router.current().route.getName()].headerRight;
+},
     isHomePage: function () {
      return Router.current().route.getName() === 'home';
   }, 
@@ -10,9 +13,14 @@ Template.app_header.helpers({
     var current_view = Router.current().route.getName();
     return LogdPageTitle[current_view];
   },
-  headerRight: function () {
-    return LogdAppHeader[Router.current().route.getName()].headerRight;
-},
+  shortenedTitle: function() {
+    return Logd.posts.shortenedTitle(this.title);
+  },
+    saveNotice: function() {
+    if(Session.get("hasContent")){
+      return Session.get('saveNotice');
+    }
+  },
   newPost: function () {
     return LogdButtons.newPost;
   },
@@ -22,14 +30,6 @@ Template.app_header.helpers({
       } else {
         return true;
       };
-  },
-    saveNotice: function() {
-    if(Session.get("hasContent")){
-      return Session.get('saveNotice');
-    }
-  },
-  shortenedTitle: function() {
-    return Logd.posts.shortenedTitle(this.title);
   },
     disableCreate: function(){
     if (Session.get("disableCreate")) {

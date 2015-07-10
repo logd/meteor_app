@@ -1,8 +1,8 @@
 <!-- template name generated based on filename -->
-<template name="tag_search">
-<h1>{{page_title}}</h1>
-
-  <ul class="item-list">
+<template name="tag_matches">
+{{> app_header}}
+<div class="main-content">
+    <ul class="item-list">
       {{#each matchingPosts}}
       <li>
         <div class="list-item">
@@ -23,6 +23,8 @@
       </li>
     {{/each}}
   </ul>
+</div>
+
   {{! show if none found}}
   <section class="content-block">
   <p class="meta-info">No matches were found for this tag :-/</p> 
