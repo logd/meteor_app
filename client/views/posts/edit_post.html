@@ -1,17 +1,5 @@
 <template name="edit_post">
-  <header class="app-header">
-    <div class="header-left">
-       {{> nav_button event="back-to-home" icon="chevron-left" title="Back to previous page"}}
-    </div>
-    <div class="header-center page-title">
-    {{> post_title}}
-    </div>
-    <div class="header-right">
-    {{#if showDone}}
-    <button class="icon-button done-editing" alt="Done" title="Done"><i class="fa fa-check fa-2x"></i></button>
-    {{/if}}
-    </div>
-  </header>
+  {{> app_header}}
   <div class="main-content">
     <div class="post-content">
      <form class="post-form">

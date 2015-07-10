@@ -15,6 +15,13 @@ Template.app_header.helpers({
 },
   newPost: function () {
     return LogdButtons.newPost;
+  },
+    showRightButton: function() {
+      if(Router.current().route.getName() === 'edit_post'){
+        return Session.get("hasContent");
+      } else {
+        return true;
+      };
   }
 });
 

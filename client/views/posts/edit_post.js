@@ -4,9 +4,9 @@ Template.edit_post.onRendered(function(){
 });
 
 Template.edit_post.helpers({
-  showDone: function() {
-    return Session.get("hasContent");
-  }
+  // showDone: function() {
+  //   return Session.get("hasContent");
+  // }
 });
 
 Template.edit_post.events({

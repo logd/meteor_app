@@ -12,7 +12,9 @@
       {{/if}}
       </div>
       <div class="header-right">
-       {{> nav_button event=headerRight.event icon=headerRight.icon title=headerRight.title}}  
+      {{#if showRightButton}}
+       {{> nav_button event=headerRight.event icon=headerRight.icon title=headerRight.title}} 
+       {{/if}} 
       </div>
     </div>
   </header>
