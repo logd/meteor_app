@@ -2,15 +2,13 @@
   <header class="app-header">
     <div class="header-row">
       <div class="header-left">
-        <button class="click-search icon-button" alt="Search" title="Search">
-          <i class="fa fa-search fa-2x"></i>
-        </button>
+       {{> nav_button event=headerLeft.event icon=headerLeft.icon title=headerLeft.title}}  
       </div>
       <div class="header-center">
       {{> user_nav}}
       </div>
       <div class="header-right">
-          {{> nav_buttons event="create-post" icon="plus" title="New Post"}}
+          {{> nav_button event="create-post" icon="plus" title="New Post"}}
       </div>
     </div>
   </header>

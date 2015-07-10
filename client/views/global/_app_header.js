@@ -1,4 +1,15 @@
 Template.app_header.helpers({
+  headerLeft: function () {
+    var current_view = Router.current().route.getName();
+    return LogdAppHeader.current_view.headerLeft;
+  },
+    pageTitle: function () {
+    return "Page Title";
+  },
+  headerRight: function () {
+  var current_view = Router.current().route.getName();
+  return LogdAppHeader.current_view.headerRight;
+},
   newPost: function () {
     return LogdButtons.newPost;
   }
@@ -23,5 +34,12 @@ Template.app_header.events({
         };
       });
     // };     
+  },
+  "click .back-to-home": function (e,t) {
+    e.preventDefault();
+    if (!Session.get('hasContent') && Router.current().route.getName() === 'edit_post') {
+      Meteor.call("deletePost", Router.current().params._id);
+    };
+    Router.go('home');
   }
 });
