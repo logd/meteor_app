@@ -1,14 +1,21 @@
 Template.app_header.helpers({
   headerLeft: function () {
     var current_view = Router.current().route.getName();
-    return LogdAppHeader.current_view.headerLeft;
+
+    // console.log(current_view)
+    // console.log("Header Left: " + LogdAppHeader.current_view.headerLeft)
+    return LogdAppHeader[current_view].headerLeft;
   },
-    pageTitle: function () {
-    return "Page Title";
+    currentPage: function () {
+     return Router.current().route.getName();
+  }, 
+  pageTitle: function () {
+    var current_view = Router.current().route.getName();
+    return LogdPageTitle.current_view;
   },
   headerRight: function () {
-  var current_view = Router.current().route.getName();
-  return LogdAppHeader.current_view.headerRight;
+   var current_view = Router.current().route.getName();
+    return LogdAppHeader[current_view].headerRight;
 },
   newPost: function () {
     return LogdButtons.newPost;

@@ -1,15 +1,5 @@
 <template name="show_post">
-    <header class="app-header">
-      <div class="header-left">
-        {{> nav_button event="back-to-home" icon="chevron-left" title="Back to previous page"}}
-      </div>
-      <div class="header-center page-title">
-        {{> post_title}}
-      </div>
-      <div class="header-right">
-      <button class="icon-button edit-post" alt="Edit" title="Edit"><i class="fa fa-pencil fa-2x"></i></button>
-      </div>
-    </header>
+   {{> app_header}}
     <div class="main-content">
       <div class="post-content">
         {{#markdown}}{{content}}{{/markdown}}
