@@ -14,7 +14,7 @@ Template.app_header.helpers({
 
     switch (current_view){
       case 'login':
-        return "Login";
+        return "Logd";
 
       case 'tag_matches':
         return "#" + Router.current().params.tag;
