@@ -22,6 +22,21 @@ Template.app_header.helpers({
       } else {
         return true;
       };
+  },
+    saveNotice: function() {
+    if(Session.get("hasContent")){
+      return Session.get('saveNotice');
+    }
+  },
+  shortenedTitle: function() {
+    return Logd.posts.shortenedTitle(this.title);
+  },
+    disableCreate: function(){
+    if (Session.get("disableCreate")) {
+      return "disabled";
+    } else{
+       return "";
+    };
   }
 });
 
