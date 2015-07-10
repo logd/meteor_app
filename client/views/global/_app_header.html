@@ -5,7 +5,7 @@
        {{> nav_button event=headerLeft.event icon=headerLeft.icon title=headerLeft.title}}  
       </div>
       <div class="header-center">
-      {{#if currentPage 'home'}}
+      {{#if isHomePage}}
       {{> user_nav}}
       {{else}}
         <h1 class="post-title">{{title}}</h1>

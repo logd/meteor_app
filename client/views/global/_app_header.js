@@ -1,21 +1,17 @@
 Template.app_header.helpers({
   headerLeft: function () {
-    var current_view = Router.current().route.getName();
-
-    // console.log(current_view)
-    // console.log("Header Left: " + LogdAppHeader.current_view.headerLeft)
-    return LogdAppHeader[current_view].headerLeft;
+    // var current_view = ;
+    return LogdAppHeader[Router.current().route.getName()].headerLeft;
   },
-    currentPage: function () {
-     return Router.current().route.getName();
+    isHomePage: function () {
+     return Router.current().route.getName() === 'home';
   }, 
   pageTitle: function () {
     var current_view = Router.current().route.getName();
-    return LogdPageTitle.current_view;
+    return LogdPageTitle[current_view];
   },
   headerRight: function () {
-   var current_view = Router.current().route.getName();
-    return LogdAppHeader[current_view].headerRight;
+    return LogdAppHeader[Router.current().route.getName()].headerRight;
 },
   newPost: function () {
     return LogdButtons.newPost;
@@ -42,7 +38,7 @@ Template.app_header.events({
       });
     // };     
   },
-  "click .back-to-home": function (e,t) {
+  "click .back-to-previous": function (e,t) {
     e.preventDefault();
     if (!Session.get('hasContent') && Router.current().route.getName() === 'edit_post') {
       Meteor.call("deletePost", Router.current().params._id);
