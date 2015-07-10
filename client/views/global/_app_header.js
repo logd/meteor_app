@@ -15,20 +15,16 @@ Template.app_header.helpers({
     switch (current_view){
       case 'login':
         return "Login";
-        break;
 
       case 'tag_matches':
         return "#" + Router.current().params.tag;
-        break;
 
       case 'edit_post':
         return this.title;
-        break;
 
       case 'show_post':
         return this.title;
-        break;
-
+        
       default: 
         return "Logd";
     }
