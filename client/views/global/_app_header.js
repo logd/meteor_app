@@ -24,15 +24,9 @@ Template.app_header.helpers({
 
       case 'show_post':
         return this.title;
-        
+
       default: 
         return "Logd";
-    }
-
-    if(current_view === 'tag_matches'){
-      return "#" + Router.current().params.tag;
-    } else if(current_view === 'login'){
-      
     };
   },
   shortenedTitle: function() {
