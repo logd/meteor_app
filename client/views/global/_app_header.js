@@ -11,7 +11,11 @@ Template.app_header.helpers({
   }, 
   pageTitle: function () {
     var current_view = Router.current().route.getName();
-    return LogdPageTitle[current_view];
+    if(current_view === 'tag_matches'){
+      return Router.current().params.tag;
+    } else if(current_view === 'login'){
+      return "Login";
+    };
   },
   shortenedTitle: function() {
     return Logd.posts.shortenedTitle(this.title);

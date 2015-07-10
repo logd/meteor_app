@@ -8,18 +8,19 @@
       {{#if isHomePage}}
       {{> user_nav}}
       {{else}}
-        <h1 class="post-title">
+        <h1>
+        {{pageTitle}}
           {{#if shortenedTitle}}
             {{shortenedTitle}}&hellip;
           {{else}}
             {{title}}
           {{/if}}
         </h1>
-        <p class="meta-info">
         {{#if saveNotice}}
+         <p class="meta-info">
           {{saveNotice}}
+           </p>
         {{/if}}
-        </p>
       {{/if}}
       </div>
       <div class="header-right">
