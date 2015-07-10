@@ -11,10 +11,32 @@ Template.app_header.helpers({
   }, 
   pageTitle: function () {
     var current_view = Router.current().route.getName();
+
+    switch (current_view){
+      case 'login':
+        return "Login";
+        break;
+
+      case 'tag_matches':
+        return "#" + Router.current().params.tag;
+        break;
+
+      case 'edit_post':
+        return this.title;
+        break;
+
+      case 'show_post':
+        return this.title;
+        break;
+
+      default: 
+        return "Logd";
+    }
+
     if(current_view === 'tag_matches'){
-      return Router.current().params.tag;
+      return "#" + Router.current().params.tag;
     } else if(current_view === 'login'){
-      return "Login";
+      
     };
   },
   shortenedTitle: function() {

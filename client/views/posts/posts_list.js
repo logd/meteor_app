@@ -32,14 +32,10 @@ Template.posts_list.events({
       var postContent = event.target.value;      
       Meteor.call('updatePost', postId, postContent);            
   },
-    "click .tag-search": function(e) {
+    "click .tag-matches": function(e) {
       e.preventDefault();
       var selected_tag =  $(e.target).text();
-     
-      // Session.set("tag-search", tag);
-      // var selectedTag = $(e.target).text();      
-      // console.log($(e.target).text()); 
-      Router.go('tag_search', { tag: selected_tag });          
+      Router.go('tag_matches', { tag: selected_tag });          
   },
     "click .show-post": function(e,t){
   // TODO: reference specific template rather than use global
