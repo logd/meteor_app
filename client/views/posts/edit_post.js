@@ -26,13 +26,12 @@ Template.edit_post.events({
 
       Logd.posts.saveTimer.set(function() {
 
-      var post_tags = Logd.posts.saveChanges(evtTarget.value, postId);
+      var tags = Logd.posts.saveChanges(evtTarget.value, postId);
 
       // pass this in to a Tags insert call
-      if (post_tags.length > 0) {
-         LogdTags.insertOrUpdateTags(post_tags);
+      if (tags.length > 0) {
+         LogdTags.insertOrUpdateTags(tags);
       };
-     
       
       });
     };    
