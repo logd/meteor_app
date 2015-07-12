@@ -25,7 +25,15 @@ Template.edit_post.events({
       Logd.posts.saveTimer.clear();
 
       Logd.posts.saveTimer.set(function() {
-        Logd.posts.saveChanges(evtTarget.value, postId);
+
+      var post_tags = Logd.posts.saveChanges(evtTarget.value, postId);
+
+      // pass this in to a Tags insert call
+      if (post_tags.length > 0) {
+         LogdTags.insertOrUpdateTags(post_tags);
+      };
+     
+      
       });
     };    
   },

@@ -1,7 +1,15 @@
 Meteor.publish("posts", function(){
-  return Posts.find({authorId: Meteor.userId() });
+  return Posts.find();
+});
+// TODO: Only publish posts by this author
+
+
+Meteor.publish("tags", function(){
+  return Tags.find();
 });
 
+// TODO: Only publish tags for this author:
+/// return Tags.find({authors: Meteor.userId() }); 
 
 Meteor.publish("userData", function () {
   if (this.userId) {
