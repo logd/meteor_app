@@ -2,17 +2,17 @@
   {{> app_header}}
   <div class="main-content">
   {{#if myTags}}
-      <ul class="item-list">
-        {{#each myTags}}
-          <li>
-            <div class="list-item">
-              <h2><a href="#" class="tag-matches"><span class="add-hash">{{title}}</span></a></h2>
-            </div>
-          </li>
-        {{/each}}
-      </ul>
-      {{else}}
-      <p>Sorry, looks like you currently don't have any tags :-/</p>
-      {{/if}}
+    <ul class="item-list">
+      {{#each myTags}}
+        <li>
+          <div class="list-item">
+            <h2><a href="#" class="matching-posts"><span class="add-hash">{{title}}</span></a></h2>
+          </div>
+        </li>
+      {{/each}}
+    </ul>
+    {{else}}
+    <p>Sorry, looks like you currently don't have any tags :-/</p>
+    {{/if}}
   </div>
 </template>

@@ -33,6 +33,7 @@ Template.posts_list.events({
       Meteor.call('updatePost', postId, postContent);            
   },
     "click .tag-matches": function(e) {
+      //TODO: refactor: this is the same that is used for tags_list
       e.preventDefault();
       var selected_tag =  $(e.target).text();
       Router.go('tag_matches', { tag: selected_tag });          
