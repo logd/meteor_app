@@ -25,7 +25,7 @@ Template.app_header.helpers({
         return this.title;
 
       case 'tags_list':
-        return "My Tags";
+        return "My Topics";
 
       default: 
         return "Logd";
