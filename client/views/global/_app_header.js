@@ -27,6 +27,9 @@ Template.app_header.helpers({
       case 'tags_list':
         return "My Topics";
 
+      case 'search':
+        return false;
+
       default: 
         return "Logd";
     };
@@ -95,5 +98,10 @@ Template.app_header.events({
       Meteor.call("deletePost", Router.current().params._id);
     };
     Router.go('home');
+  },
+
+  "click .search": function (e,t) {
+    e.preventDefault();
+    Router.go('search');
   }
 });

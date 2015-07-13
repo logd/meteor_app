@@ -1,4 +1,8 @@
 <template name="search">
+{{> app_header }}
+</template>
+
+<template name="foo">
 <ul class="no-bullet">
   {{#each this}}
   <h2><a class="show-post" href="{{pathFor 'show_post'}}">{{#markdown}}{{this.title}}{{/markdown}}</a></h2>
