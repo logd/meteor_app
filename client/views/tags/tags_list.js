@@ -11,3 +11,11 @@ Template.tags_list.helpers({
     // return Tags.find({ "authors.authorId": Meteor.userId() });    
   }
 });
+
+Template.tags_list.events({
+  "click .tag-matches": function(e) {
+    e.preventDefault();
+    var selected_tag =  $(e.target).text();
+    Router.go('tag_matches', { tag: selected_tag });          
+  }
+});
