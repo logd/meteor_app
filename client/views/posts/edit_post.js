@@ -21,7 +21,7 @@ Template.edit_post.events({
     var evtTarget = event.target;
     var postId = Router.current().params._id;
 
-  
+
     if(Logd.posts.hasContent(evtTarget.value)){
       Logd.posts.saveTimer.clear();
 
@@ -29,10 +29,8 @@ Template.edit_post.events({
 
       var tags = Logd.posts.saveChanges(evtTarget.value, postId);
 
-      console.log(tags);
-      // pass this in to a Tags insert call
       if (tags.length > 0) {
-         LogdTags.insertOrUpdateTags(tags);
+         LogdTags.upsertTags(tags);
       };
       
       });
