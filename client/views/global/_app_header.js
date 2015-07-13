@@ -1,6 +1,5 @@
 Template.app_header.helpers({
   headerLeft: function () {
-    // var current_view = ;
     return LogdAppHeader[Router.current().route.getName()].headerLeft;
   },
   headerRight: function () {
@@ -57,7 +56,11 @@ Template.app_header.helpers({
 });
 
 Template.app_header.events({
-  "click .create-post": function(event) {
+  "click .tags-list": function(event) {
+    event.preventDefault();
+    Router.go('tags_list');
+  },
+    "click .create-post": function(event) {
     event.preventDefault();
     // Session.set("disableCreate", true);
   
@@ -74,8 +77,9 @@ Template.app_header.events({
           // Session.set("disableCreate", false);
         };
       });
-    // };     
+    
   },
+
   "click .back-to-previous": function (e,t) {
     e.preventDefault();
     if (!Session.get('hasContent') && Router.current().route.getName() === 'edit_post') {

@@ -1,0 +1,14 @@
+<template name="tags_list">
+  {{> app_header}}
+  <div class="main-content">
+      <ul class="item-list">
+        {{#each myTags}}
+          <li>
+            <div class="list-item">
+              <h2><a href="#" class="tag">{{title}}</a></h2>
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+  </div>
+</template>
