@@ -1,16 +1,6 @@
 Template.tags_list.helpers({
   myTags: function() {
-    var my_tags = Tags.find({ "authors.authorId": Meteor.userId() }).fetch();
-    console.log(my_tags);
-
-    if(my_tags.count == 0) {
-      return false;
-      // Sesson.set("tag_title", my_tags.title);
-     
-    } else {
-       return my_tags;
-    }
-    // return Tags.find({ "authors.authorId": Meteor.userId() });    
+   return Tags.find({ "authors.authorId": Meteor.userId() }).fetch();    
   }
 });
 
