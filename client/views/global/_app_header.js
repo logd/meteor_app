@@ -4,8 +4,8 @@ Template.app_header.helpers({
   },
   headerRight: function () {
     return LogdAppHeader[Router.current().route.getName()].headerRight;
-},
-    isHomePage: function () {
+  },
+  isHomePage: function () {
      return Router.current().route.getName() === 'home';
   }, 
   pageTitle: function () {
@@ -23,6 +23,9 @@ Template.app_header.helpers({
 
       case 'show_post':
         return this.title;
+
+      case 'tags_list':
+        return "My Tags";
 
       default: 
         return "Logd";
