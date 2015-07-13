@@ -1,0 +1,16 @@
+<template name="recent_tags">
+  {{#if recentTags}}
+    <ul class="horizontal">
+      {{#each recentTags}}
+        <li>
+           <a href="#"><span class="add-hash">{{title}}</span></a>
+        </li>
+      {{/each}}
+        <li>
+        <button class="icon-button my-tags" title="View all my tags"  alt="View all my tags">
+          <i class="fa fa-ellipsis-h fa"></i>
+        </button>
+        </li>
+    </ul>
+  {{/if}}
+</template>
