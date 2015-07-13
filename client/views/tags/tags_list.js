@@ -1,6 +1,6 @@
 Template.tags_list.helpers({
   myTags: function() {
-   return Tags.find({ "authors.authorId": Meteor.userId() }).fetch();    
+   return Tags.find({ "authors.authorId": Meteor.userId() }, {sort: {title: 1}}).fetch();    
   }
 });
 
