@@ -3,33 +3,33 @@ Template.app_header.helpers({
     return LogdAppHeader[Router.current().route.getName()].headerLeft;
   },
   headerCenter: function () {
-     var current_view = Router.current().route.getName();
-    // return LogdAppHeader[Router.current().route.getName()];
 
-      switch (current_view){
+    var current_view = Router.current().route.getName();
+  
+    switch (current_view){
       case 'home':
         return "user_nav";      
 
-      // case 'login':
-      //   return "Logd";
+      case 'login':
+        return "page_title";
 
-      // case 'tag_matches':
-      //   return "#" + Router.current().params.tag;
+      case 'tag_matches':
+        return "page_title";
 
-      // case 'edit_post':
-      //   return this.title;
+      case 'edit_post':
+        return "page_title";
 
-      // case 'show_post':
-      //   return this.title;
+      case 'show_post':
+        return "page_title";
 
-      // case 'tags_list':
-      //   return "My Topics";
+      case 'tags_list':
+        return "page_title";
 
-      // case 'search':
-      //   return false;
+      case 'search':
+         return "search_form";   
 
       default: 
-        return "Logd";
+        return "page_title";
     };
   },
   headerRight: function () {
