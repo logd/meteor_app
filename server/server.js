@@ -25,6 +25,16 @@ Meteor.publish("userData", function () {
   }
 });
 
+// ServiceConfiguration.configurations.upsert(
+//   { service: "google" },
+//   {
+//     $set: {
+//       loginStyle: "redirect"
+//     }
+//   }
+// );
+
+
 
 // Manage has_new_post variable
 // Accounts.onCreateUser(function(options, user) {
