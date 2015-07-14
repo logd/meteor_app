@@ -47,8 +47,7 @@ Template.app_header.helpers({
   //     case 'login':
   //       return "Logd";
 
-  //     case 'tag_matches':
-  //       return "#" + Router.current().params.tag;
+
 
   //     case 'edit_post':
   //       return this.title;
