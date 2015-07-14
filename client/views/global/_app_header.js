@@ -80,9 +80,9 @@ Template.app_header.helpers({
       return Session.get('saveNotice');
     }
   },
-  newPost: function () {
-    return LogdButtons.newPost;
-  },
+  // newPost: function () {
+  //   return LogdButtons.newPost;
+  // },
     showRightButton: function() {
       if(Router.current().route.getName() === 'edit_post'){
         return Session.get("hasContent");
