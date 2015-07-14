@@ -1,6 +1,4 @@
 <template name="tag_matches">
-{{> app_header}}
-<div class="main-content">
     <ul class="item-list">
       {{#each matchingPosts}}
       <li>
@@ -22,9 +20,10 @@
       </li>
     {{/each}}
   </ul>
-</div>
+</template>
 
-  {{! show if none found}}
+<template name="tag_matches_tmp">
+    {{! show if none found}}
   <section class="content-block">
   <p class="meta-info">No matches were found for this tag :-/</p> 
   </section>
