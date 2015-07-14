@@ -2,38 +2,70 @@ Template.app_header.helpers({
   headerLeft: function () {
     return LogdAppHeader[Router.current().route.getName()].headerLeft;
   },
-  headerRight: function () {
-    return LogdAppHeader[Router.current().route.getName()].headerRight;
-  },
-  isHomePage: function () {
-     return Router.current().route.getName() === 'home';
-  }, 
-  pageTitle: function () {
-    var current_view = Router.current().route.getName();
+  headerCenter: function () {
+     var current_view = Router.current().route.getName();
+    // return LogdAppHeader[Router.current().route.getName()];
 
-    switch (current_view){
-      case 'login':
-        return "Logd";
+      switch (current_view){
+      case 'home':
+        return "user_nav";      
 
-      case 'tag_matches':
-        return "#" + Router.current().params.tag;
+      // case 'login':
+      //   return "Logd";
 
-      case 'edit_post':
-        return this.title;
+      // case 'tag_matches':
+      //   return "#" + Router.current().params.tag;
 
-      case 'show_post':
-        return this.title;
+      // case 'edit_post':
+      //   return this.title;
 
-      case 'tags_list':
-        return "My Topics";
+      // case 'show_post':
+      //   return this.title;
 
-      case 'search':
-        return false;
+      // case 'tags_list':
+      //   return "My Topics";
+
+      // case 'search':
+      //   return false;
 
       default: 
         return "Logd";
     };
   },
+  headerRight: function () {
+
+    return LogdAppHeader[Router.current().route.getName()].headerRight;
+  },
+  // ,
+  // isHomePage: function () {
+  //    return Router.current().route.getName() === 'home';
+  // }, 
+  // pageTitle: function () {
+  //   var current_view = Router.current().route.getName();
+
+  //   switch (current_view){
+  //     case 'login':
+  //       return "Logd";
+
+  //     case 'tag_matches':
+  //       return "#" + Router.current().params.tag;
+
+  //     case 'edit_post':
+  //       return this.title;
+
+  //     case 'show_post':
+  //       return this.title;
+
+  //     case 'tags_list':
+  //       return "My Topics";
+
+  //     case 'search':
+  //       return false;
+
+  //     default: 
+  //       return "Logd";
+  //   };
+  // },
   shortenedTitle: function() {
     var current_view = Router.current().route.getName();
     if(current_view === 'edit_post' || current_view === 'show_post' ){

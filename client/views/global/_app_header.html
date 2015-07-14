@@ -5,6 +5,24 @@
        {{> nav_button event=headerLeft.event icon=headerLeft.icon title=headerLeft.title}}  
       </div>
       <div class="header-center">
+      {{> Template.dynamic template=headerCenter}}
+      </div>
+      <div class="header-right">
+      {{#if showRightButton}}
+       {{> nav_button event=headerRight.event icon=headerRight.icon title=headerRight.title}} 
+       {{/if}} 
+      </div>
+    </div>
+  </header>
+</template>
+
+<template name="app_headerTmp">
+  <header class="app-header">
+    <div class="header-row">
+      <div class="header-left">
+       {{> nav_button event=headerLeft.event icon=headerLeft.icon title=headerLeft.title}}  
+      </div>
+      <div class="header-center">
       {{#if isHomePage}}
       {{> user_nav}}
       {{else}}
