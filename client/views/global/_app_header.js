@@ -97,10 +97,7 @@ Template.app_header.events({
 
   "click .back-to-previous": function (e,t) {
     e.preventDefault();
-    if (!Session.get('hasContent') && Router.current().route.getName() === 'edit_post') {
-      Meteor.call("deletePost", Router.current().params._id);
-    };
-    Router.go('home');
+    history.back();
   },
 
   "click .search": function (e,t) {
