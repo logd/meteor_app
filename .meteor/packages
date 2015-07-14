@@ -29,3 +29,5 @@ fastclick
 meteorhacks:fast-render
 lookback:dropdowns
 useraccounts:unstyled
+useraccounts:core
+aldeed:template-extension

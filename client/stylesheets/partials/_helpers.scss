@@ -14,6 +14,33 @@
 .hidden {
   display: none;
 }
+.full-height {
+  height: 100%;
+}
+.full-width {
+  width: 100%;
+}
+
+.display-table {
+  display: table;
+  // width: 100%;
+ 
+  .row {
+    display: table-row;
+
+    .cell {
+      display: table-cell;
+
+      &.centered > div {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      &.vertical-center {
+        vertical-align:middle;
+      }
+    }
+  }
+}
 
 // .table-vertical-middle {
 //   vertical-align: middle;
