@@ -1,0 +1,27 @@
+<template name="search_results">
+   <ul>
+        {{#esEach index="posts"}}
+            <li>{{title}}</li>
+        {{/esEach}}
+    </ul>
+
+    {{> esLoadMoreButton index="posts"}}
+
+    {{#ifEsHasNoResults index="posts"}}
+        <div class="no-results">No results found!</div>
+    {{/ifEsHasNoResults}}
+
+    {{#ifEsIsSearching index="posts"}}
+            <div>Loading...</div>
+    {{/ifEsIsSearching}}
+</template>
+
+<template name="foo">
+<ul class="no-bullet">
+  {{#each this}}
+  <h2><a class="show-post" href="{{pathFor 'show_post'}}">{{#markdown}}{{this.title}}{{/markdown}}</a></h2>
+  <li></li>
+  {{/each}}
+</ul>
+</template>
+

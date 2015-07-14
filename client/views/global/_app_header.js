@@ -25,7 +25,7 @@ Template.app_header.helpers({
       case 'tags_list':
         return "page_title";
 
-      case 'search':
+      case 'search_results':
          return "search_form";   
 
       default: 
