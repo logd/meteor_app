@@ -52,3 +52,24 @@ ____________________ */
     line-height: normal;
   }
 }
+
+
+/*  SEARCH FORM
+____________________ */
+
+.search-form {
+  margin-top: .5em;
+  margin-bottom: .5em;
+  // height: 100%;
+  // width: 100%;
+
+  input {
+    height: 2em;
+    width: 95%;
+    border:none;
+    outline: none;
+    padding-left: .5em;
+    padding-right: .5em;
+    font-size: $editor-text;
+  }
+}

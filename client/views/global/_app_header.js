@@ -36,49 +36,21 @@ Template.app_header.helpers({
 
     return LogdAppHeader[Router.current().route.getName()].headerRight;
   },
-  // ,
-  // isHomePage: function () {
-  //    return Router.current().route.getName() === 'home';
-  // }, 
-  // pageTitle: function () {
+
+  // shortenedTitle: function() {
   //   var current_view = Router.current().route.getName();
-
-  //   switch (current_view){
-  //     case 'login':
-  //       return "Logd";
-
-
-
-  //     case 'edit_post':
-  //       return this.title;
-
-  //     case 'show_post':
-  //       return this.title;
-
-  //     case 'tags_list':
-  //       return "My Topics";
-
-  //     case 'search':
-  //       return false;
-
-  //     default: 
-  //       return "Logd";
-  //   };
-  // },
-  shortenedTitle: function() {
-    var current_view = Router.current().route.getName();
-    if(current_view === 'edit_post' || current_view === 'show_post' ){
-      return Logd.posts.shortenedTitle(this.title);
-    } else {
-      return false;
-    }
+  //   if(current_view === 'edit_post' || current_view === 'show_post' ){
+  //     return Logd.posts.shortenedTitle(this.title);
+  //   } else {
+  //     return false;
+  //   }
     
-  },
-    saveNotice: function() {
-    if(Session.get("hasContent")){
-      return Session.get('saveNotice');
-    }
-  },
+  // },
+  //   saveNotice: function() {
+  //   if(Session.get("hasContent")){
+  //     return Session.get('saveNotice');
+  //   }
+  // },
   // newPost: function () {
   //   return LogdButtons.newPost;
   // },
