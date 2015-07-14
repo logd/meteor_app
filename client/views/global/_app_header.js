@@ -133,6 +133,6 @@ Template.app_header.events({
 
   "click .search": function (e,t) {
     e.preventDefault();
-    Router.go('search');
+    Router.go('search_results');
   }
 });

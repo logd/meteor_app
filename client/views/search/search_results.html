@@ -1,27 +1,17 @@
 <template name="search_results">
-   <ul>
+   <ul class="item-list">
         {{#esEach index="posts"}}
-            <li>{{title}}</li>
+            <li> <a class="show-post" href="{{pathFor 'show_post'}}"><h2>{{title}}</h2></a></li>
         {{/esEach}}
     </ul>
 
     {{> esLoadMoreButton index="posts"}}
 
     {{#ifEsHasNoResults index="posts"}}
-        <div class="no-results">No results found!</div>
+        <div class="no-results">Sorry, no matches found :-/</div>
     {{/ifEsHasNoResults}}
 
     {{#ifEsIsSearching index="posts"}}
-            <div>Loading...</div>
+      <div>Searching...</div>
     {{/ifEsIsSearching}}
 </template>
-
-<template name="foo">
-<ul class="no-bullet">
-  {{#each this}}
-  <h2><a class="show-post" href="{{pathFor 'show_post'}}">{{#markdown}}{{this.title}}{{/markdown}}</a></h2>
-  <li></li>
-  {{/each}}
-</ul>
-</template>
-
