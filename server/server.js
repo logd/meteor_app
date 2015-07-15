@@ -1,5 +1,6 @@
 Meteor.publish("posts", function(){
-  return Posts.find();
+  var currentUserId = this.userId;
+  return Posts.find({authorId: currentUserId });
 });
 // TODO: Only publish posts by this author
 
