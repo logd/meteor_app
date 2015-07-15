@@ -1,6 +1,6 @@
 Template.posts_list.helpers({
   myPosts: function() {
-    return Posts.find({authorId: Meteor.userId()}, {sort: {updatedAt: -1}});
+    return Posts.find({}, {sort: {updatedAt: -1}});
   }
 });
 
