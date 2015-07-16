@@ -5,7 +5,7 @@ Template.show_post.helpers({
 });
 
 Template.show_post.events({
-  "click .post-content, click .edit-post": function(e,t){
+  "click .post-content, click .edit-post": function(){
     Router.go('edit_post', {_id: Router.current().params._id});
   }
 });
