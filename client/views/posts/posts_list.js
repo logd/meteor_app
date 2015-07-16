@@ -1,7 +1,7 @@
 Template.posts_list.helpers({
-  myPosts: function() {
-    return Posts.find({}, {sort: {updatedAt: -1}});
-  }
+  // myPosts: function() {
+  //   return Posts.find({authorId:Meteor.userId()}, {sort: {updatedAt: -1}});
+  // }
 });
 
 Template.posts_list.events({

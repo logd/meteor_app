@@ -1,7 +1,6 @@
 <template name="posts_list">
-  {{#if myPosts}}
   <ul class="item-list">
-      {{#each myPosts}}
+      {{#each posts}}
       <li>
       <div class="options"> <button class="delete icon-button">
           <i class="fa fa-times fa"></i>
@@ -25,10 +24,11 @@
       </li>
     {{/each}}
   </ul>
-  {{else}}
-  <section class="content-block">
+</template>
+
+
+<!--   <section class="content-block">
   <p class="meta-info">Look like you don't have any posts :-/</p>
   <p class="meta-info">(Click on '+' to create a post.)</p>  
   </section>
-  {{/if}}
-</template>
+ -->
