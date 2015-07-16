@@ -2,8 +2,16 @@ Meteor.publish("posts", function(){
   var currentUserId = this.userId;
   return Posts.find({authorId: currentUserId });
 });
-// TODO: Only publish posts by this author
 
+Meteor.methods({
+  myTotalPostCount: function(){
+    var currentUserId = this.userId;
+    var totalCount = Posts.find({authorId: currentUserId }).count();
+    console.log(totalCount);
+    return totalCount;
+   
+  }
+});
 
 Meteor.publish("tags", function(){
   return Tags.find();
@@ -25,6 +33,12 @@ Meteor.publish("userData", function () {
     this.ready();
   }
 });
+
+// Meteor.publish('posts', function(){
+ 
+// });
+// TODO: Only publish posts by this author
+
 
 // ServiceConfiguration.configurations.upsert(
 //   { service: "google" },

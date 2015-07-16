@@ -1,6 +1,17 @@
 Template.posts_list.helpers({
-  // myPosts: function() {
-  //   return Posts.find({authorId:Meteor.userId()}, {sort: {updatedAt: -1}});
+  // totalPostCount: function() {
+  //   // var postCount = 0;
+
+  //   var postCount = setInterval(function () {
+  //     Meteor.call('myTotalPostCount');
+  //   }, 1000 * 10);
+
+  // // function updateCounter(err, count) {
+  // //   return count;
+  // // }
+  // console.log(postCount);
+  // return postCount;
+  //   // return Counts.get('myTotalPostsCount');
   // }
 });
 

@@ -24,6 +24,14 @@
       </li>
     {{/each}}
   </ul>
+  {{#if nextPath}}
+    <hr>
+    <p>
+    <a href="{{nextPath}}">Show More Posts...</a>
+    </p>
+    {{/if}}
+<!--   <hr>
+  <p>Total posts: {{!totalPostCount}}</p> -->
 </template>
 
 
