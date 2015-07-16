@@ -1,6 +1,7 @@
 <template name="app_header">
-<div class="header-notice">This is a flash message</div>
-  <header class="app-header">
+  <header class="app-header"> {{#if saveNotice}}
+  <div class="header-notice">{{saveNotice}}</div>
+  {{/if}}
     <div class="header-row">
       <div class="header-left">
        {{> nav_button event=headerLeft.event icon=headerLeft.icon title=headerLeft.title}}  

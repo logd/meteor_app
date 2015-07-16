@@ -1,4 +1,26 @@
 Template.app_header.helpers({
+  saveNotice: function(){
+
+    return Session.get("saveNotice");
+
+    // if(Session.get("foo")){
+    //   return "";
+    // } else {
+    //   return ".hidden";
+    // }
+
+  },
+    displayNotice: function(){
+
+    return Session.get("displayNotice");
+
+    // if(Session.get("foo")){
+    //   return "";
+    // } else {
+    //   return ".hidden";
+    // }
+
+  },
   headerLeft: function () {
     return LogdAppHeader[Router.current().route.getName()].headerLeft;
   },
