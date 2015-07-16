@@ -1,17 +1,65 @@
 Meteor.publish("posts", function(){
   var currentUserId = this.userId;
+  Counts.publish(this, 'posts-counter', Posts.find({authorId: currentUserId }));
+  
   return Posts.find({authorId: currentUserId });
 });
 
-Meteor.methods({
-  myTotalPostCount: function(){
-    var currentUserId = this.userId;
-    var totalCount = Posts.find({authorId: currentUserId }).count();
-    console.log(totalCount);
-    return totalCount;
+
+// based on http://docs.meteor.com/#/full/meteor_publish
+// Meteor.publish("posts-count", function(currentUserId){
+//   var self = this;
+//   // var currentUserId = this.userId;
+//   // check(authorId, String);
+//   var count = 0;
+//   var initializing = true;
+
+//   var handle = Posts.find({ authorId:currentUserId}).observeChanges({
+//     added: function(id) {
+//       count++;
+//       if(!initializing)
+//         self.changed("counts", authorId, {count: count });
+//     },
+//     removed: function(id){
+//       count--;
+//       self.changed("counts", authorId, {count: count });
+//     }
+//   });
+
+//   // send a self added message after observeChanges returns, then mark subscription as ready
+//   initializing = false;
+//   self.added("counts", authorId, {count: count});
+//   self.ready();
+
+//   // stop observing when client unsubs
+//   // stopping sub auto-sends removed messages
+//   self.onStop(function(){
+//     handle.stop();
+//   });
+// });
+
+// Counts.allow({
+//   insert: function(userId, doc){
+//     return !! userId;
+//   },
+//     update: function(userId, doc){
+//     return !! userId;
+//   },
+//     remove: function(userId, doc){
+//     return !! userId;
+//   }
+
+// });
+
+// Meteor.methods({
+//   myTotalPostCount: function(){
+//     var currentUserId = this.userId;
+//     var totalCount = Posts.find({authorId: currentUserId }).count();
+//     console.log(totalCount);
+//     return totalCount;
    
-  }
-});
+//   }
+// });
 
 Meteor.publish("tags", function(){
   return Tags.find();

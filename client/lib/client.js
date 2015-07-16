@@ -3,11 +3,15 @@ Meteor.startup(function () {
     "disableCreate": false
   });
 });
+// Counts = new Mongo.Collection("counts");
 
 Meteor.subscribe("posts");
 Meteor.subscribe("tags");
 Meteor.subscribe("userData");
 
+// Tracker.autorun(function() {
+//   Meteor.subscribe("posts-count", Meteor.userId());
+// });
 // UI.registerHelper('appHeaderCenter', function() {
 //   var current_view = Router.current().route.getName();
 

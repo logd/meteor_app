@@ -1,5 +1,9 @@
 Template.posts_list.helpers({
-  // totalPostCount: function() {
+  totalPostCount: function() {
+
+    return Counts.get('posts-counter');
+
+    // return Counts.findOne(Meteor.userId()).count;
   //   // var postCount = 0;
 
   //   var postCount = setInterval(function () {
@@ -12,7 +16,7 @@ Template.posts_list.helpers({
   // console.log(postCount);
   // return postCount;
   //   // return Counts.get('myTotalPostsCount');
-  // }
+  }
 });
 
 Template.posts_list.events({
