@@ -9,9 +9,12 @@ Template.page_title.helpers({
         return "#" + Router.current().params.tag;
 
       case 'edit_post':
+        console.log("edit title: " + this.title);
+        // TITLE VALUE BEING PASSED HERE IS 'UNDEFINED'
         return Logd.posts.shortenedTitle(this.title);
 
       case 'show_post':
+        console.log("show title: " + this.title);
          return Logd.posts.shortenedTitle(this.title);
 
       case 'tags_list':
@@ -20,14 +23,5 @@ Template.page_title.helpers({
       default: 
         return "Logd";
     };
-  }
-  ,
-  // shortenedTitle: function() {
-  //   return Logd.posts.shortenedTitle(this.title); 
-  // },
-    saveNotice: function() {
-    if(Session.get("hasContent")){
-      return Session.get('saveNotice');
-    }
   }
 });

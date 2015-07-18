@@ -4,34 +4,39 @@ Template.edit_post.onRendered(function(){
 });
 
 Template.edit_post.helpers({
+  hasContent: function() {
+    var postContent = $('.post-content').val();
+    Logd.posts.hasContent(postContent) ?
+        Session.set('hasContent', true) :
+        Session.set('hasContent', false);
+  }
 });
 
 Template.edit_post.events({
-  "keyup .has-content": function(event){
-     var content = event.target.value;
+  // "keyup .has-content": function(event){
+  //    var content = event.target.value;
 
-      if(Logd.posts.hasContent(content)){
-         Session.set('hasContent', true);
-  
-      } else {
-        Session.set('hasContent', false);
-      };
-  },
+  //    Logd.posts.hasContent(content) ?
+  //       Session.set('hasContent', true) :
+  //       Session.set('hasContent', false);
+  // },
   "input .post-content": function(event,template){
-    var evtTarget = event.target;
+    //ON CREATE, CONTENT IS EMPTY
+    var content = event.target.value;
     var postId = Router.current().params._id;
 
-
-    if(Logd.posts.hasContent(evtTarget.value)){
+    // on input, if post content has content,
+    // reset the save timer and save changes
+    if(Logd.posts.hasContent(content)){
       Logd.posts.saveTimer.clear();
 
       Logd.posts.saveTimer.set(function() {
 
-      var tags = Logd.posts.saveChanges(evtTarget.value, postId);
+        var tags = Logd.posts.saveChanges(content, postId);
 
-      if (tags.length > 0) {
-         LogdTags.upsertTags(tags);
-      };
+        if (tags.length > 0) {
+           LogdTags.upsertTags(tags);
+        };
       
       });
     };    

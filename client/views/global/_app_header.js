@@ -1,26 +1,4 @@
 Template.app_header.helpers({
-  saveNotice: function(){
-
-    return Session.get("saveNotice");
-
-    // if(Session.get("foo")){
-    //   return "";
-    // } else {
-    //   return ".hidden";
-    // }
-
-  },
-    displayNotice: function(){
-
-    return Session.get("displayNotice");
-
-    // if(Session.get("foo")){
-    //   return "";
-    // } else {
-    //   return ".hidden";
-    // }
-
-  },
   headerLeft: function () {
     return LogdAppHeader[Router.current().route.getName()].headerLeft;
   },
@@ -55,27 +33,29 @@ Template.app_header.helpers({
     };
   },
   headerRight: function () {
-
     return LogdAppHeader[Router.current().route.getName()].headerRight;
   },
 
-  // shortenedTitle: function() {
-  //   var current_view = Router.current().route.getName();
-  //   if(current_view === 'edit_post' || current_view === 'show_post' ){
-  //     return Logd.posts.shortenedTitle(this.title);
-  //   } else {
-  //     return false;
-  //   }
+  shortenedTitle: function() {
+
+    // DEBUG: is this the culprit here?
+    // need to maybe get the shortened title as a template helper instead
+    var current_view = Router.current().route.getName();
+    if(current_view === 'edit_post' || current_view === 'show_post' ){
+      return Logd.posts.shortenedTitle(this.title);
+    } else {
+      return false;
+    }
     
-  // },
-  //   saveNotice: function() {
-  //   if(Session.get("hasContent")){
-  //     return Session.get('saveNotice');
-  //   }
-  // },
-  // newPost: function () {
-  //   return LogdButtons.newPost;
-  // },
+  },
+    saveNotice: function() {
+    if(Session.get("hasContent")){
+      return Session.get('saveNotice');
+    }
+  },
+  newPost: function () {
+    return LogdButtons.newPost;
+  },
     showRightButton: function() {
       if(Router.current().route.getName() === 'edit_post'){
         return Session.get("hasContent");
@@ -99,7 +79,6 @@ Template.app_header.events({
   },
     "click .create-post": function(event) {
     event.preventDefault();
-    // Session.set("disableCreate", true);
   
       var postAttributes = {
         title: "New Post"
@@ -111,10 +90,13 @@ Template.app_header.events({
         } else {
           Session.set("hasContent", false);
           Router.go('edit_post', {_id: result._id});
-          // Session.set("disableCreate", false);
         };
       });
     
+  },
+    "click .edit-post": function(event) {
+      event.preventDefault();
+        Router.go('edit_post', {_id: Router.current().params._id});
   },
 
   "click .back-to-previous": function (e,t) {

@@ -13,21 +13,10 @@ body {
   color: $off-black;
   background-color: $app-background-color;
   overflow-y:hidden;
+  position: relative;
 }
 
-
-//  APP HEADER
-// _________________________
-.app-header {
-  position: relative;
-  display: table;
-  border-collapse: collapse;
-  width: 100%;
-  height: 3.5em;
-  background-color: $very-light-gray;
-  border-bottom: 1px solid $light-gray;
-
-  .header-notice {
+.header-notice {
     position: absolute;
     z-index: 101;
     top:0;
@@ -35,13 +24,26 @@ body {
     right: 40%;
     // width: 50px;
     height: 15px;
-    background: #fde073;
+    background: #FDE784;
+      opacity: .7; 
     text-align: center;
     // line-height: 2.5;
     overflow: hidden; 
     font-size: .75em;
     // @include box-shadow(0 0 5px black);
 }
+
+
+//  APP HEADER
+// _________________________
+.app-header {
+  // position: relative;
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  height: 3.5em;
+  background-color: $very-light-gray;
+  border-bottom: 1px solid $light-gray;
 
   .header-row {
     display: table-row;
