@@ -33,7 +33,7 @@ Template.page_title.helpers({
         //   return "Edit Post";
         // }
 
-        return thisPostTitle;
+        return Logd.posts.shortenedTitle(thisPostTitle);
     
       case 'show_post':
 

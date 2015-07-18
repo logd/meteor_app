@@ -30,13 +30,13 @@ Template.edit_post.events({
       Logd.posts.saveTimer.set(function() {
 
         var post = Logd.posts.saveChanges(content, postId);
-        var tags = post.tags;
+        // var tags = post.tags;
         // var title = post.title;
 
         Logd.posts.setPostTitle(postId, post.title);
 
-        if (tags.length > 0) {
-           LogdTags.upsertTags(tags);
+        if (post.tags.length > 0) {
+           LogdTags.upsertTags(post.tags);
         };
       
       });
