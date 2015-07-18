@@ -4,22 +4,19 @@ Template.edit_post.onRendered(function(){
 });
 
 Template.edit_post.helpers({
-  hasContent: function() {
-    var postContent = $('.post-content').val();
-    Logd.posts.hasContent(postContent) ?
-        Session.set('hasContent', true) :
-        Session.set('hasContent', false);
+  postContent: function() {
+   Session.set("postContent", this.content);
   }
 });
 
 Template.edit_post.events({
-  // "keyup .has-content": function(event){
-  //    var content = event.target.value;
+  "keyup .has-content": function(event){
+     var content = event.target.value;
 
-  //    Logd.posts.hasContent(content) ?
-  //       Session.set('hasContent', true) :
-  //       Session.set('hasContent', false);
-  // },
+     Logd.posts.hasContent(content) ?
+        Session.set('hasContent', true) :
+        Session.set('hasContent', false);
+  },
   "input .post-content": function(event,template){
     //ON CREATE, CONTENT IS EMPTY
     var content = event.target.value;
@@ -32,7 +29,11 @@ Template.edit_post.events({
 
       Logd.posts.saveTimer.set(function() {
 
-        var tags = Logd.posts.saveChanges(content, postId);
+        var post = Logd.posts.saveChanges(content, postId);
+        var tags = post.tags;
+        // var title = post.title;
+
+        Logd.posts.setPostTitle(postId, post.title);
 
         if (tags.length > 0) {
            LogdTags.upsertTags(tags);
@@ -42,9 +43,9 @@ Template.edit_post.events({
     };    
   },
   "blur .post-content": function(event,template){
-    var evtTarget = event.target;
+    var content = event.target.value;
     var postId = Router.current().params._id;
-    Logd.posts.saveChanges(evtTarget.value, postId);  
+    Logd.posts.saveChanges(content, postId);  
   },
   "click .done-editing": function(e,t){
     e.preventDefault();

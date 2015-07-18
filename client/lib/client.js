@@ -2,6 +2,7 @@ Meteor.startup(function () {
   Session.setDefault({
     "disableCreate": false
   });
+  // postInfo = new ReactiveDict('postDict');
 });
 
 Meteor.subscribe("posts");

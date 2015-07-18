@@ -34,20 +34,8 @@ Template.app_header.helpers({
   },
   headerRight: function () {
     return LogdAppHeader[Router.current().route.getName()].headerRight;
-  },
-
-  shortenedTitle: function() {
-
-    // DEBUG: is this the culprit here?
-    // need to maybe get the shortened title as a template helper instead
-    var current_view = Router.current().route.getName();
-    if(current_view === 'edit_post' || current_view === 'show_post' ){
-      return Logd.posts.shortenedTitle(this.title);
-    } else {
-      return false;
-    }
-    
-  },
+  }
+  ,
     saveNotice: function() {
     if(Session.get("hasContent")){
       return Session.get('saveNotice');
@@ -89,6 +77,8 @@ Template.app_header.events({
           alert(error.reason);
         } else {
           Session.set("hasContent", false);
+          Logd.posts.setPostTitle(result._id,result.title);
+
           Router.go('edit_post', {_id: result._id});
         };
       });
@@ -97,6 +87,10 @@ Template.app_header.events({
     "click .edit-post": function(event) {
       event.preventDefault();
         Router.go('edit_post', {_id: Router.current().params._id});
+  },
+      "click .done-editing": function(event) {
+      event.preventDefault();
+      Router.go('show_post', {_id: Router.current().params._id});
   },
 
   "click .back-to-previous": function (e,t) {
