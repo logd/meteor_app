@@ -4,6 +4,8 @@ Template.app_header.helpers({
   },
   headerCenter: function () {
 
+    // TODO: Create a global 'current_view' helper
+
     var current_view = Router.current().route.getName();
   
     switch (current_view){
@@ -94,7 +96,22 @@ Template.app_header.events({
 
   "click .back-to-previous": function (e,t) {
     e.preventDefault();
-    history.back();
+
+    var current_view = Router.current().route.getName();
+  
+      switch (current_view){
+        case 'show_post':
+          Router.go('home');
+          break;    
+
+        case 'edit_post':
+          Router.go('home');
+          break;   
+
+        default: 
+          history.back();
+      };
+
   },
 
   "click .search": function (e,t) {
