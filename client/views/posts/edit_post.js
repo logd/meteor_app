@@ -33,6 +33,10 @@ Template.edit_post.events({
         // var tags = post.tags;
         // var title = post.title;
 
+        // console.log("edit_post post.title from saveChanges: " + post.title)
+        // console.log("edit_post postId: " + postId);
+        
+
         Logd.posts.setPostTitle(postId, post.title);
 
         if (post.tags.length > 0) {

@@ -34,8 +34,7 @@ Template.app_header.helpers({
   },
   headerRight: function () {
     return LogdAppHeader[Router.current().route.getName()].headerRight;
-  }
-  ,
+  },
     saveNotice: function() {
     if(Session.get("hasContent")){
       return Session.get('saveNotice');
