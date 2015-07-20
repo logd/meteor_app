@@ -4,9 +4,9 @@ Template.edit_post.onRendered(function(){
 });
 
 Template.edit_post.helpers({
-  postContent: function() {
-   Session.set("postContent", this.content);
-  }
+  // postContent: function() {
+  //  Session.set("postContent", this.content);
+  // }
 });
 
 Template.edit_post.events({

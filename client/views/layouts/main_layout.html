@@ -1,6 +1,6 @@
 <template name="main_layout">
-  {{#if saveNotice}}
-  <div class="header-notice">{{saveNotice}}</div>
+  {{#if displaySaveNotice}}
+    <div class="header-notice">{{saveNotice}}</div>
   {{/if}}
   {{> app_header}}
   <div class="main-content">

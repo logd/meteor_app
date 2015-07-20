@@ -9,6 +9,7 @@ Template.page_title.helpers({
         return "#" + Router.current().params.tag;
 
       case 'edit_post':
+
         var thisPostTitle = Logd.posts.getPostTitle(Router.current().params._id);
         return Logd.posts.shortenedTitle(thisPostTitle);
     

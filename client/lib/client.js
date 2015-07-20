@@ -1,6 +1,7 @@
 Meteor.startup(function () {
   Session.setDefault({
-    "disableCreate": false
+    "disableCreate": false,
+    "displaySaveNotice": false
   });
   // postInfo = new ReactiveDict('postDict');
 });
