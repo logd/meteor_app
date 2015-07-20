@@ -44,6 +44,7 @@ body {
     font-size: $small-text;
   }
 
+// TODO: replace with <i class="fa fa-tag"></i> - will need to create a tag button component
   .add-hash {
     &:before {
       content: "#";

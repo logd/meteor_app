@@ -1,7 +1,19 @@
 Template.recent_tags.helpers({
   recentTags: function() {
+    var recentTagLimit = 3;
     return Tags.find({"authors.authorId": Meteor.userId()}, {sort: {"authors.lastUsed": -1}, limit: 3}).fetch();
-  }
+  },
+    moreTags: function() {
+      var thisUserTagCount = Counts.get('tags-counter');
+      console.log("tags count: " + thisUserTagCount);
+      var recentTagLimit = 3;
+
+      if (thisUserTagCount > recentTagLimit) {
+          return true;
+        } else {
+          return false;
+        }
+      }
 });
 
 Template.recent_tags.events({

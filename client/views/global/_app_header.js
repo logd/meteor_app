@@ -89,16 +89,15 @@ Template.app_header.events({
       event.preventDefault();
         Router.go('edit_post', {_id: Router.current().params._id});
   },
-      "click .done-editing": function(event) {
+    "click .done-editing": function(event) {
       event.preventDefault();
       Router.go('show_post', {_id: Router.current().params._id});
   },
+    "click .back-to-previous": function (e,t) {
+      e.preventDefault();
 
-  "click .back-to-previous": function (e,t) {
-    e.preventDefault();
-
-    var current_view = Router.current().route.getName();
-  
+      var current_view = Router.current().route.getName();
+    
       switch (current_view){
         case 'show_post':
           Router.go('home');
@@ -111,11 +110,9 @@ Template.app_header.events({
         default: 
           history.back();
       };
-
   },
-
-  "click .search": function (e,t) {
-    e.preventDefault();
-    Router.go('search_results');
-  }
+    "click .search": function (e,t) {
+      e.preventDefault();
+      Router.go('search_results');
+    }
 });

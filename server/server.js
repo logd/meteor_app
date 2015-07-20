@@ -6,7 +6,10 @@ Meteor.publish("posts", function(){
 });
 
 Meteor.publish("tags", function(){
-  return Tags.find();
+  var currentUserId = this.userId;
+  Counts.publish(this, 'tags-counter', Tags.find({"authors.authorId": currentUserId }));
+
+  return Tags.find({"authors.authorId": currentUserId});
 });
 
 // TODO: Only publish tags for this author:
