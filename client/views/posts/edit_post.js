@@ -18,7 +18,7 @@ Template.edit_post.events({
         Session.set('hasContent', false);
   },
   "input .post-content": function(event,template){
-    //ON CREATE, CONTENT IS EMPTY
+    //On create, content is empty...
     var content = event.target.value;
     var postId = Router.current().params._id;
 
@@ -27,15 +27,9 @@ Template.edit_post.events({
     if(Logd.posts.hasContent(content)){
       Logd.posts.saveTimer.clear();
 
-      Logd.posts.saveTimer.set(function() {
+      var autoSave = function() {
 
-        var post = Logd.posts.saveChanges(content, postId);
-        // var tags = post.tags;
-        // var title = post.title;
-
-        // console.log("edit_post post.title from saveChanges: " + post.title)
-        // console.log("edit_post postId: " + postId);
-        
+        var post = Logd.posts.saveChanges(content, postId);       
 
         Logd.posts.setPostTitle(postId, post.title);
 
@@ -43,7 +37,9 @@ Template.edit_post.events({
            LogdTags.upsertTags(post.tags);
         };
       
-      });
+      };
+
+      Logd.posts.saveTimer.set(autoSave);
     };    
   },
   "blur .post-content": function(event,template){

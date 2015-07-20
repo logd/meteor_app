@@ -1,11 +1,11 @@
 Template.recent_tags.helpers({
   recentTags: function() {
-    return Tags.find({"authors.authorId": Meteor.userId()}, {sort: {"authors.lastUsed": -1}, limit: LOGD_CONTSTANTS.RECENT_TAGS_LIMIT}).fetch();
+    return Tags.find({"authors.authorId": Meteor.userId()}, {sort: {"authors.lastUsed": -1}, limit: LOGD_CONSTANTS.RECENT_TAGS_LIMIT}).fetch();
   },
     moreTags: function() {
       var thisUserTagCount = Counts.get('tags-counter');
 
-      if (thisUserTagCount > LOGD_CONTSTANTS.RECENT_TAGS_LIMIT) {
+      if (thisUserTagCount > LOGD_CONSTANTS.RECENT_TAGS_LIMIT) {
           return true;
         } else {
           return false;
