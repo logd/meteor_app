@@ -5,7 +5,6 @@ Template.app_header.helpers({
   headerCenter: function () {
 
     // TODO: Create a global 'current_view' helper
-
     var current_view = Router.current().route.getName();
   
     switch (current_view){

@@ -1,14 +1,11 @@
 Template.recent_tags.helpers({
   recentTags: function() {
-    var recentTagLimit = 3;
-    return Tags.find({"authors.authorId": Meteor.userId()}, {sort: {"authors.lastUsed": -1}, limit: 3}).fetch();
+    return Tags.find({"authors.authorId": Meteor.userId()}, {sort: {"authors.lastUsed": -1}, limit: RECENT_TAGS_LIMIT}).fetch();
   },
     moreTags: function() {
       var thisUserTagCount = Counts.get('tags-counter');
-      console.log("tags count: " + thisUserTagCount);
-      var recentTagLimit = 3;
 
-      if (thisUserTagCount > recentTagLimit) {
+      if (thisUserTagCount > RECENT_TAGS_LIMIT) {
           return true;
         } else {
           return false;
@@ -24,7 +21,7 @@ Template.recent_tags.events({
       Router.go('tag_matches', { tag: selected_tag });          
   },
     "click .tags-list": function(event) {
-    event.preventDefault();
-    Router.go('tags_list');
+      event.preventDefault();
+      Router.go('tags_list');
   }
 });
