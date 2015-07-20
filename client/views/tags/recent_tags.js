@@ -6,11 +6,11 @@ Template.recent_tags.helpers({
       var thisUserTagCount = Counts.get('tags-counter');
 
       if (thisUserTagCount > LOGD_CONSTANTS.RECENT_TAGS_LIMIT) {
-          return true;
-        } else {
-          return false;
-        }
-      }
+        return true;
+      } else {
+        return false;
+      };
+    }
 });
 
 Template.recent_tags.events({

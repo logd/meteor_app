@@ -22,23 +22,28 @@ Template.edit_post.events({
     var content = event.target.value;
     var postId = Router.current().params._id;
 
+    // set up autoSaving of post data, updating displayed post title, and adding any new tags to db
+    var autoSave = function() {
+
+      // this actually saves to the db and returns a post object
+      var post = Logd.posts.saveChanges(content, postId);
+
+      // reactively updated the displayed post title
+      Logd.posts.setPostTitle(postId, post.title);
+
+      // if tags were found, add new ones to db
+      if (post.tags.length > 0) {
+         LogdTags.upsertTags(post.tags);
+      };
+    };
+
     // on input, if post content has content,
-    // reset the save timer and save changes
     if(Logd.posts.hasContent(content)){
+
+      // reset the save timer
       Logd.posts.saveTimer.clear();
 
-      var autoSave = function() {
-
-        var post = Logd.posts.saveChanges(content, postId);       
-
-        Logd.posts.setPostTitle(postId, post.title);
-
-        if (post.tags.length > 0) {
-           LogdTags.upsertTags(post.tags);
-        };
-      
-      };
-
+      // run autoSave as per saveTimer
       Logd.posts.saveTimer.set(autoSave);
     };    
   },
