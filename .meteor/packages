@@ -34,3 +34,5 @@ aldeed:template-extension
 tmeasday:publish-counts
 accounts-facebook
 splendido:accounts-meld
+splendido:accounts-emails-field
+accounts-password
