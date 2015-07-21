@@ -40,6 +40,7 @@ ____________________ */
   height: 100%;
   width: 100%;
   display: table-cell;
+
   
   textarea {
     display:block;
@@ -50,6 +51,11 @@ ____________________ */
     outline: none;
     overflow: auto;
     line-height: normal;
+    font-size: $editor-text;
+
+    &:focus {
+      font-size: $editor-text;
+    }
   }
 }
 
