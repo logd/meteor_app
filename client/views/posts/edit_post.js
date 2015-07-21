@@ -17,7 +17,7 @@ Template.edit_post.events({
         Session.set('hasContent', true) :
         Session.set('hasContent', false);
   },
-  "input .post-content": function(event,template){
+  "input .post-form textarea": function(event,template){
     //On create, content is empty...
     var content = event.target.value;
     var postId = Router.current().params._id;
