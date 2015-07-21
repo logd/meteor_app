@@ -1,6 +1,6 @@
 Meteor.publish("posts", function(){
   var currentUserId = this.userId;
-  Counts.publish(this, 'posts-counter', Posts.find({authorId: currentUserId }));
+  Counts.publish(this, 'posts-counter', Posts.find({authorId: currentUserId, newPost:false }));
   
   return Posts.find({authorId: currentUserId });
 });

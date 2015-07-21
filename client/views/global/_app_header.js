@@ -46,7 +46,7 @@ Template.app_header.helpers({
   },
     showRightButton: function() {
       if(Router.current().route.getName() === 'edit_post'){
-        
+
         return Session.get("hasContent");
       } else {
         return true;
@@ -70,7 +70,8 @@ Template.app_header.events({
     event.preventDefault();
   
       var postAttributes = {
-        title: "New Post"
+        title: "New Post",
+        newPost: true
       };
 
       Meteor.call('createPost', postAttributes, function(error, result){
@@ -104,6 +105,14 @@ Template.app_header.events({
           break;    
 
         case 'edit_post':
+          // delete a new post that was abandoned
+          if(Session.get("hasContent") === false){
+            var postId = Router.current().params._id;
+            Meteor.call('deletePost', postId, function (error, result) {
+              if (error){ alert(error.reason);} 
+            });
+          };
+
           Router.go('home');
           break;   
 

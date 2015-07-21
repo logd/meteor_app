@@ -1,7 +1,11 @@
-Template.edit_post.onRendered(function(){
-   // this.$('.post-content').click();
-   this.$('.post-content').focus();
-});
+// Template.edit_post.onRendered(function(){
+//   Session.set("postContent", Template.currentData().content);
+// });
+
+// Template.edit_post.onDestroyed(function(){
+//    Session.set("postContent", null);
+// });
+
 
 Template.edit_post.helpers({
   // postContent: function() {
@@ -10,8 +14,11 @@ Template.edit_post.helpers({
 });
 
 Template.edit_post.events({
-  "keyup .has-content": function(event){
+  "keyup .has-content": function(event, template){ 
      var content = event.target.value;
+     var contentTest = template.content;
+     console.log("post content: " + Session.get("postContent"));
+
 
      Logd.posts.hasContent(content) ?
         Session.set('hasContent', true) :
@@ -47,7 +54,7 @@ Template.edit_post.events({
       Logd.posts.saveTimer.set(autoSave);
     };    
   },
-  "blur .post-content": function(event,template){
+  "blur .post-form textarea": function(event,template){
     var content = event.target.value;
     var postId = Router.current().params._id;
     Logd.posts.saveChanges(content, postId);  
