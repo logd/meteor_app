@@ -46,6 +46,7 @@ Template.app_header.helpers({
   },
     showRightButton: function() {
       if(Router.current().route.getName() === 'edit_post'){
+        
         return Session.get("hasContent");
       } else {
         return true;
