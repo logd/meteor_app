@@ -8,7 +8,7 @@
 Template.myAtSocial.replaces("atSocial");
 
 Template.atSocial.helpers({
-  socialButtonLabel: function() {
-    return "Google";
+  socialButtonLabel: function() {   
+    return LgdTxtHelpers.capitalizeFirstLetter(this._id);
   }
 });
