@@ -2,10 +2,10 @@
 // 768px or smaller
 // __________________________________
 
-// input[type="text"]:focus,
-// textarea:focus {
-//     -webkit-text-size-adjust: 100%;
-// }
+input[type="text"]:focus,
+textarea:focus {
+    -webkit-text-size-adjust: 100%;
+}
 
 html, body {
   height: 100%; 
@@ -22,7 +22,9 @@ body {
 }
 
 .app-container {
-overflow:hidden;   
+  overflow:hidden;
+  width: 100%;
+  height: 100%; 
 }
 
 .header-notice {
@@ -50,7 +52,7 @@ overflow:hidden;
   display: table;
   border-collapse: collapse;
   width: 100%;
-  height: 3.5em;
+  height: $app-header-height;
   background-color: $very-light-gray;
   border-bottom: 1px solid $light-gray;
 
@@ -87,36 +89,14 @@ overflow:hidden;
 
 }
 
-//  POSTS
-// _________________________
- .post-content {
-    height: 100%;
-    width: 100%;
-    font-size: $editor-text;
-    display:table;
-    padding: .5em .25em;
-
-    ul {
-      margin-left: 1em;
-      padding-left: 0;
-
-      li {
-      line-height: normal;
-      
-    }
-
-    } 
-  }
-
-
 //   Layout for 768px and wider
 //______________________________
 
 @media all and (min-width: 768px) {
 
   .app-container {
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
     // padding-left: 250px;
     max-width: 1200px;
     margin: 0 auto;

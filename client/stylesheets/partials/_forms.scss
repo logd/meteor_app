@@ -39,23 +39,32 @@ ____________________ */
 .post-form {
   height: 100%;
   width: 100%;
-  display: table-cell;
-
-  
+    
   textarea {
-    display:block;
-    height: 300px;
-    width: 300px;
+    // display:block;
+    // position: fixed;
+    // top:$app-header-height + 1em;
+    // bottom:0;
+    // left:0;
+    // right:0;
     box-sizing: border-box;
+    // padding-top: 1em;
     border:none;
     outline: none;
     overflow: auto;
     line-height: normal;
-    font-size: $editor-text;
+    width:95%;
+    font-size: 18px;
+    // height: 100%;
 
-    &:focus {
-      font-size: $editor-text;
-    }
+    // &:focus {
+    //   height: 50px;
+    // -webkit-text-size-adjust: 100%;
+    // }
+
+    // &:focus {
+    //   font-size: $editor-text;
+    // }
   }
 }
 

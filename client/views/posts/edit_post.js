@@ -1,6 +1,6 @@
-// Template.edit_post.onRendered(function(){
-//   Session.set("postContent", Template.currentData().content);
-// });
+Template.edit_post.onRendered(function(){
+ $('.auto-size').autosize();
+});
 
 // Template.edit_post.onDestroyed(function(){
 //    Session.set("postContent", null);

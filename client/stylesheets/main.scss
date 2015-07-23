@@ -4,9 +4,10 @@
 @import "partials/mixins";
 @import "partials/base";
 @import "partials/typography";
+@import "partials/markdown";
 @import "partials/forms";
-@import "partials/lists";
-@import "partials/useraccounts";
+// @import "partials/lists";
+// @import "partials/useraccounts";
 
 // Avoid the descendent selector (i.e. don’t use .sidebar h3)
 // Avoid IDs as styling hooks
@@ -19,20 +20,20 @@
 // /*  POSTS LIST
 // ____________________ */
 
-.post-list-item {
-  display: flex;
-  flex-direction: row;
-  align-items:center;
+// .post-list-item {
+//   display: flex;
+//   flex-direction: row;
+//   align-items:center;
   
-  .post-title {
-    flex: 1;
+//   .post-title {
+//     flex: 1;
 
-    h2 {
-    margin-bottom: 0;
-   }
+//     h2 {
+//     margin-bottom: 0;
+//    }
 
-  }
-  .delete-post {
-    flex-basis: 3em;
-  }
-}
+//   }
+//   .delete-post {
+//     flex-basis: 3em;
+//   }
+// }
