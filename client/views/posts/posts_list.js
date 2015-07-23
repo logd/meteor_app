@@ -12,19 +12,16 @@ Template.posts_list.helpers({
 });
 
 Template.posts_list.events({
+  "click .create-post": function(event) {
+    event.preventDefault();
+    LogdPosts.createPost();  
+  },
   "click .delete": function(event) {
     event.preventDefault();
     if (confirm('Really delete this post')) { 
       Meteor.call("deletePost", this._id);
     };
   },
-  //  'click .editable' : function(event, template){
-  //   // Template.instance().currentlyEditing.set(this._id);
- 
-  // },
-  //   "click .done": function(event,template) {
-  //   // Template.instance().currentlyEditing.set(null);
-  // },
     "keyup .update-post-content": function(event) {
       var postContent = event.target.value;      
       Meteor.call('updatePost', postId, postContent);            

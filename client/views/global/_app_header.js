@@ -68,22 +68,7 @@ Template.app_header.events({
   },
     "click .create-post": function(event) {
     event.preventDefault();
-  
-      var postAttributes = {
-        title: "New Post",
-        newPost: true
-      };
-
-      Meteor.call('createPost', postAttributes, function(error, result){
-        if (error){
-          alert(error.reason);
-        } else {
-          Session.set("hasContent", false);
-          Logd.posts.setPostTitle(result._id,result.title);
-
-          Router.go('edit_post', {_id: result._id});
-        };
-      });
+    LogdPosts.createPost();
     
   },
     "click .edit-post": function(event) {
