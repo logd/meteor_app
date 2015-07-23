@@ -1,9 +1,11 @@
 <template name="main_layout">
-  {{#if displaySaveNotice}}
+<div class="app-container">
+   {{#if displaySaveNotice}}
     <div class="header-notice">{{saveNotice}}</div>
   {{/if}}
   {{> app_header}}
   <div class="main-content">
   {{> yield}}
   </div>
+</div>
  </template>

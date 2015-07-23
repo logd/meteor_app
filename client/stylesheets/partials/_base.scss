@@ -2,6 +2,11 @@
 // 768px or smaller
 // __________________________________
 
+// input[type="text"]:focus,
+// textarea:focus {
+//     -webkit-text-size-adjust: 100%;
+// }
+
 html, body {
   height: 100%; 
 }
@@ -14,6 +19,10 @@ body {
   background-color: $app-background-color;
   overflow-y:hidden;
   position: relative;
+}
+
+.app-container {
+overflow:hidden;   
 }
 
 .header-notice {
