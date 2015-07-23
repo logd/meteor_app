@@ -28,3 +28,8 @@ Meteor.publish("userData", function () {
     this.ready();
   }
 });
+
+
+Meteor.startup(function(){
+  // console.log("Http basic auth: " + Meteor.settings.basicAuth.username);
+});

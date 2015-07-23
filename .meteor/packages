@@ -36,4 +36,4 @@ accounts-facebook
 splendido:accounts-meld
 splendido:accounts-emails-field
 accounts-password
-jabbslad:basic-auth
+kit:basic-auth
