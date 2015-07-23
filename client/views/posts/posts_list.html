@@ -1,4 +1,5 @@
 <template name="posts_list">
+{{#if displayPostsList}}
   <ul class="item-list">
       {{#each posts}}
       <li>
@@ -30,6 +31,10 @@
     <p>
     <a href="{{nextPath}}">Show More Posts...</a>
     </p>
+    {{/if}}
+    {{else}}
+     <p class="meta-info">Look like you don't have any posts :-/</p>
+     <p class="meta-info"></p>
     {{/if}}
 <!--   <hr>
   <p>Total posts: {{totalPostCount}}</p> -->

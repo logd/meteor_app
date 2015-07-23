@@ -6,8 +6,8 @@
 @import "partials/typography";
 @import "partials/markdown";
 @import "partials/forms";
-// @import "partials/lists";
-// @import "partials/useraccounts";
+@import "partials/lists";
+@import "partials/useraccounts";
 
 // Avoid the descendent selector (i.e. don’t use .sidebar h3)
 // Avoid IDs as styling hooks
