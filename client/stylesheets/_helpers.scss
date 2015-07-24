@@ -1,10 +1,9 @@
-// /*  LAYOUT
+//  LAYOUT
 // ____________________ */
-
 .centered {
   text-align:center;
   display: inline-block;
-  width: 50px;
+  // width: 50px;
 }
 .hidden {
   display: none;
@@ -17,15 +16,7 @@
 }
 
 
-// /*  FORMS
-// ____________________ */
-
-.editable {
-  cursor: pointer;
-}
-
-
-// /*  CSS TABLES
+//  CSS TABLES
 // ____________________ */
 .display-table {
   display: table;

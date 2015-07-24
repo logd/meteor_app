@@ -1,0 +1,69 @@
+// GLOBAL
+// __________________________________
+
+html {
+  color: $base-color;
+}
+
+body {
+  color: $off-black;
+  background-color: $app-background-color;
+}
+
+// APP HEADER
+// ____________________________
+.app-header {
+  background-color: $very-light-gray;
+  border-bottom: 1px solid $light-gray;
+}
+
+// HEADINGS
+// ____________________________
+header h1 {
+  color: $gray;
+}
+
+// ICONS
+// ____________________________
+.icon-link {
+  color: $light-gray;
+  &:visited, &:active {
+    color: $light-gray;
+  }
+  &:hover {
+    color: $steel-gray;
+  }
+}
+
+
+// LINKS
+// ____________________________
+ a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:visited, &:active {
+      color: $link-color;
+    }
+    
+  }
+
+// TEXT - SELECTION
+// ____________________________
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    // background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    // background: #b3d4fc;
+    text-shadow: none;
+}

@@ -1,40 +1,92 @@
-@import "partials/normalize";
-@import "partials/h5bp";
-@import "partials/variables";
-@import "partials/mixins";
-@import "partials/base";
-@import "partials/typography";
-@import "partials/markdown";
-@import "partials/post_content";
+// CORE
+@import "normalize";
+@import "variables";
+@import "helpers";
+@import "mixins";  // Review to see if I need/use these
+
+// LAYOUT
+@import "layout_global";
+
+// COMPONENTS
 @import "partials/forms";
 @import "partials/lists";
-@import "partials/useraccounts";
-
-// Avoid the descendent selector (i.e. don’t use .sidebar h3)
-// Avoid IDs as styling hooks
-// Avoid attaching classes to elements in your stylesheet (i.e. don’t do div.header or h1.title)
-// Except in some rare cases, avoid using !important
-// Use CSS Lint to check your CSS (and know that it has options and method to its madness)
-// Use CSS grids
+@import "components/notices";
 
 
-// /*  POSTS LIST
-// ____________________ */
+@import "partials/post_content";
 
-// .post-list-item {
-//   display: flex;
-//   flex-direction: row;
-//   align-items:center;
-  
-//   .post-title {
-//     flex: 1;
 
-//     h2 {
-//     margin-bottom: 0;
-//    }
+// VENDOR
+@import "vendor/useraccounts";
 
-//   }
-//   .delete-post {
-//     flex-basis: 3em;
-//   }
+// THEME
+@import "colors";
+@import "typography";
+@import "partials/markdown";
+
+
+// WHERE DOES THIS GO?
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+// @media only screen and (min-width: 35em) {
+//     /* Style adjustments for viewports that meet the condition */
 // }
+
+// @media print,
+//        (-webkit-min-device-pixel-ratio: 1.25),
+//        (min-resolution: 1.25dppx),
+//        (min-resolution: 120dpi) {
+//     /* Style adjustments for high resolution devices */
+// }
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}

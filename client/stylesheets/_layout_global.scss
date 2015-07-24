@@ -1,11 +1,16 @@
-// BASE STYLES
-// 768px or smaller
+// GLOBAL
 // __________________________________
 
-input[type="text"]:focus,
-textarea:focus {
-    -webkit-text-size-adjust: 100%;
+/* apply a natural box layout model to all elements, but allowing components to change 
+http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*/
+html {
+  box-sizing: border-box;
 }
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 
 html, body {
   height: 100%; 
@@ -15,33 +20,16 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  color: $off-black;
-  background-color: $app-background-color;
   overflow-y:hidden;
   position: relative;
 }
 
+// APP CONTAINER
+// __________________________________
 .app-container {
   overflow:hidden;
   width: 100%;
   height: 100%; 
-}
-
-.header-notice {
-    position: absolute;
-    z-index: 101;
-    top:0;
-    left: 40%;
-    right: 40%;
-    // width: 50px;
-    height: 15px;
-    background: #FDE784;
-      opacity: .7; 
-    text-align: center;
-    // line-height: 2.5;
-    overflow: hidden; 
-    font-size: .75em;
-    // @include box-shadow(0 0 5px black);
 }
 
 
@@ -53,8 +41,6 @@ body {
   border-collapse: collapse;
   width: 100%;
   height: $app-header-height;
-  background-color: $very-light-gray;
-  border-bottom: 1px solid $light-gray;
 
   .header-row {
     display: table-row;
@@ -96,9 +82,6 @@ body {
 @media all and (min-width: 768px) {
 
   .app-container {
-    // display: flex;
-    // flex-direction: row;
-    // padding-left: 250px;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -126,8 +109,7 @@ body {
   }
 
 
-  .user-nav {
-    // TODO: what is default for "self flex"?
-    display: block;
-  }
+  // .user-nav {
+  //   display: block;
+  // }
 }

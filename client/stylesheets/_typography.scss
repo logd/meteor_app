@@ -1,8 +1,7 @@
-// BASE
+// GLOBAL
 // ____________________________
 
 html {
-  color: $base-color;
   font-size: $base-font-size;
   line-height: $base-line-height;
 }
@@ -14,27 +13,16 @@ body {
 // HEADINGS
 // ____________________________
  header h1 {
-    display: inline;
+    display: inline; //LAYOUT
     color: $gray;
     word-wrap: break-word;
     font-size: $header-text;
-    // margin-bottom: 0;
-  }
-
-// LINKS
-// ____________________________
- a {
-    color: $link-color;
-    text-decoration: none;
-
-    &:visited, &:active {
-      color: $link-color;
-    }
-    
   }
 
 
-// INLINE TEXT
+
+
+// TEXT
 // ____________________________
 
   .meta-info {
@@ -55,12 +43,6 @@ body {
   cursor: pointer;
 }
 
-.icon-link {
-  color: $light-gray;
-  &:visited, &:active {
-    color: $light-gray;
-  }
-  &:hover {
-    color: $steel-gray;
-  }
-}
+
+
+
