@@ -1,6 +1,5 @@
-// GLOBAL
-// ____________________________
-
+/*  GLOBAL
+____________________ */
 html {
   font-size: $base-font-size;
   line-height: $base-line-height;
@@ -9,17 +8,8 @@ body {
    font-family: $font-family;
 }
 
-// EDITOR
-// ____________________________
-.editor {  
-  textarea {
-    line-height: normal;
-    font-size: 18px;
-  }
-}
-
-// SEARCH FORM
-// ____________________________
+/*  SEARCH FORM
+____________________ */
 .search-form {
   input {
     font-size: $editor-text;
@@ -27,8 +17,8 @@ body {
 }
 
 
-// HEADINGS
-// ____________________________
+/*  HEADINGS
+____________________ */
  header h1 {
     display: inline; //LAYOUT
     color: $gray;
@@ -36,11 +26,8 @@ body {
     font-size: $header-text;
   }
 
-
-
-
-// TEXT HELPERS
-// ____________________________
+/*  TEXT HELPERS
+____________________ */
 
 .editable {
   cursor: pointer;
@@ -59,12 +46,25 @@ body {
   cursor: pointer;
 }
 
+/*  EDITOR
+____________________ */
+.editor {
+  margin-top: 1em; // LAYOUT
+  padding: 0 1em;
 
-//  MARKDOWN
-// _________________________
- .markdown {
-   margin-top: 1em;
-   // border:1px solid $light-gray;
+  textarea {
+    font-size: $post-text;
+    line-height:$post-line-height;
+  }
+}
+
+/*  VIEWER (MARKDOWN)
+____________________ */
+
+.viewer {
+  font-size: $post-text;
+  line-height:$post-line-height;
+   margin-top: 1em;  // LAYOUT
    height:90%;
    overflow-x:auto;
    text-wrap:normal;
