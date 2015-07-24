@@ -1,6 +1,5 @@
-// GLOBAL
-// __________________________________
-
+/*  GLOBAL
+____________________ */
 html {
   color: $base-color;
 }
@@ -10,8 +9,8 @@ body {
   background-color: $app-background-color;
 }
 
-// APP HEADER
-// ____________________________
+/*  APP HEADER
+____________________ */
 .app-header {
   background-color: $very-light-gray;
   border-bottom: 1px solid $light-gray;
@@ -49,14 +48,14 @@ ____________________ */
 }
 
 
-// HEADINGS
-// ____________________________
+/*  HEADINGS
+____________________ */
 header h1 {
   color: $gray;
 }
 
-// ICONS
-// ____________________________
+/*  ICONS
+____________________ */
 .icon-link {
   color: $light-gray;
   &:visited, &:active {
@@ -68,17 +67,23 @@ header h1 {
 }
 
 
-// LINKS
-// ____________________________
- a {
-    color: $link-color;
-    text-decoration: none;
+/*  LINKS
+____________________ */
+a {
+  color: $link-color;
+  text-decoration: none;
 
-    &:visited, &:active {
-      color: $link-color;
-    }
-    
+  &:visited, &:active {
+    color: $link-color;
   }
+  
+}
+
+/*  INFO TEXT
+____________________ */
+  .meta-info {
+  color: $light-gray;
+}
 
 // TEXT - SELECTION
 // ____________________________
