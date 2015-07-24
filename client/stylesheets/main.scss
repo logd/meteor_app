@@ -1,28 +1,24 @@
 // CORE
-@import "normalize";
-@import "variables";
-@import "helpers";
-@import "mixins";  // Review to see if I need/use these
+@import "core/normalize";
+@import "core/variables";
+@import "core/helpers";
 
-// LAYOUT
-@import "layout_global";
+// LAYOUT - MOBILE FIRST
+@import "layout/base_layout";
+@import "layout/medium_size_screens";
+
 
 // COMPONENTS
-@import "partials/forms";
-@import "partials/lists";
+@import "components/forms";
+@import "components/lists";
 @import "components/notices";
-
-
-@import "partials/post_content";
-
 
 // VENDOR
 @import "vendor/useraccounts";
 
 // THEME
-@import "colors";
-@import "typography";
-@import "partials/markdown";
+@import "theme/colors";
+@import "theme/text";
 
 
 // WHERE DOES THIS GO?
@@ -47,46 +43,12 @@
  * A better looking default horizontal rule
  */
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
+// hr {
+//     display: block;
+//     height: 1px;
+//     border: 0;
+//     border-top: 1px solid #ccc;
+//     margin: 1em 0;
+//     padding: 0;
+// }
 
-
-
-/*
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
-
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
-
-textarea {
-    resize: vertical;
-}

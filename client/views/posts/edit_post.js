@@ -24,7 +24,7 @@ Template.edit_post.events({
         Session.set('hasContent', true) :
         Session.set('hasContent', false);
   },
-  "input .post-form textarea": function(event,template){
+  "input .editor textarea": function(event,template){
     //On create, content is empty...
     var content = event.target.value;
     var postId = Router.current().params._id;
@@ -54,7 +54,7 @@ Template.edit_post.events({
       Logd.posts.saveTimer.set(autoSave);
     };    
   },
-  "blur .post-form textarea": function(event,template){
+  "blur .editor textarea": function(event,template){
     var content = event.target.value;
     var postId = Router.current().params._id;
     Logd.posts.saveChanges(content, postId);  

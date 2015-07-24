@@ -1,0 +1,60 @@
+/*  INPUT FIELDS
+____________________ */
+
+input[type="text"]:focus,
+textarea:focus {
+    -webkit-text-size-adjust: 100%;
+}
+
+/*  BUTTONS
+____________________ */
+.btn, button {
+  cursor: pointer;
+}
+
+/*  EDITOR
+____________________ */
+.editor {
+  height: 100%;
+  width: 100%;
+    
+  textarea {
+    box-sizing: border-box;
+    padding-top: 1em;
+    border:none;
+    outline: none;
+    overflow: auto;
+    width:95%;
+    resize: vertical;
+  }
+}
+
+
+/*  SEARCH FORM
+____________________ */
+
+.search-form {
+  margin-top: .5em;
+  margin-bottom: .5em;
+
+  input {
+    height: 2em;
+    width: 95%;
+    border:none;
+    outline: none;
+    padding-left: .5em;
+    padding-right: .5em;
+  }
+}
+
+
+// /*
+//  * Remove default fieldset styles.
+//  */
+
+// fieldset {
+//     border: 0;
+//     margin: 0;
+//     padding: 0;
+// }
+

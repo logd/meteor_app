@@ -1,0 +1,107 @@
+// GLOBAL
+// ____________________________
+
+html {
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+body {
+   font-family: $font-family;
+}
+
+// EDITOR
+// ____________________________
+.editor {  
+  textarea {
+    line-height: normal;
+    font-size: 18px;
+  }
+}
+
+// SEARCH FORM
+// ____________________________
+.search-form {
+  input {
+    font-size: $editor-text;
+  }
+}
+
+
+// HEADINGS
+// ____________________________
+ header h1 {
+    display: inline; //LAYOUT
+    color: $gray;
+    word-wrap: break-word;
+    font-size: $header-text;
+  }
+
+
+
+
+// TEXT HELPERS
+// ____________________________
+
+.editable {
+  cursor: pointer;
+}
+  .meta-info {
+    color: $light-gray;
+  }
+  p.meta-info {
+    font-size: $small-text;
+  }
+
+// TODO: replace with <i class="fa fa-tag"></i> - will need to create a tag button component
+  .add-hash {
+    &:before {
+      content: "#";
+    }
+  }
+
+.editable-text {
+  cursor: pointer;
+}
+
+
+//  MARKDOWN
+// _________________________
+ .markdown {
+    // height: 100%;
+    width:auto;
+    text-wrap:normal;
+    // font-size: $editor-text;
+    // padding: .5em .25em;
+    padding: 1em;
+    margin-right: 1em;
+
+    ul {
+      margin-left: 1em;
+      padding-left: 0;
+
+      li {
+      line-height: normal;
+    }
+
+    pre  {
+        width: 99%;
+  overflow: auto;
+  border: 1px solid #aaa;
+  padding: 0;
+  margin: 0;
+  //     overflow: auto;
+  //     margin-right: 2em;
+  //     background-color: $steel-gray;
+  //     padding: .5em;
+  //     white-space: pre-wrap;                 /* CSS3 browsers  */
+  // white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
+  // white-space: -pre-wrap;                /* Opera 4 thru 6 */
+  // white-space: -o-pre-wrap;              /* Opera 7 and up */
+  // word-wrap: break-word;                 /* IE 5.5+ and up */
+    }
+  } 
+}
+
+
+
+

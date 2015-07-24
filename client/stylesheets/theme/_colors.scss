@@ -17,6 +17,38 @@ body {
   border-bottom: 1px solid $light-gray;
 }
 
+/*  BUTTONS
+____________________ */
+
+.btn, button {
+  &.icon-button {
+    background-color: transparent;
+    border:none;
+    color: $light-gray;
+
+    .fa {
+      color: $light-gray; 
+    }
+
+    &:focus {
+     outline: 0;
+    }
+
+    i:hover {
+      color: $steel-gray;
+    }
+  }
+  &.unstyled {
+    background-color: transparent;
+    border:none;
+
+    &:focus {
+     outline: 0;
+    }
+  }
+}
+
+
 // HEADINGS
 // ____________________________
 header h1 {

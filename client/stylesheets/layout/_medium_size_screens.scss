@@ -1,0 +1,37 @@
+//   Layout for 768px and wider
+//______________________________
+
+@media all and (min-width: 768px) {
+
+  .app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .app-nav-container {
+    position: static;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+
+    .app-nav {
+      position: relative;
+      padding: 10px;
+      width: 200px;
+    }
+  }
+
+  .content-container {
+    position: static;
+    width: 100%;
+  
+    .app-nav-toggle {
+      display: none;
+    }
+  }
+
+
+  // .user-nav {
+  //   display: block;
+  // }
+}

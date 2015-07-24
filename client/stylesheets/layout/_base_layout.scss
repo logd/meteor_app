@@ -1,5 +1,5 @@
-// GLOBAL
-// __________________________________
+/*  GLOBAL
+____________________ */
 
 /* apply a natural box layout model to all elements, but allowing components to change 
 http://www.paulirish.com/2012/box-sizing-border-box-ftw/
@@ -10,8 +10,6 @@ html {
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-
 html, body {
   height: 100%; 
 }
@@ -24,8 +22,8 @@ body {
   position: relative;
 }
 
-// APP CONTAINER
-// __________________________________
+/*  APP CONTAINER
+____________________ */
 .app-container {
   overflow:hidden;
   width: 100%;
@@ -33,8 +31,8 @@ body {
 }
 
 
-//  APP HEADER
-// _________________________
+/*  APP HEADER
+____________________ */
 .app-header {
   // position: relative;
   display: table;
@@ -64,8 +62,8 @@ body {
   }
 }
 
-//  MAIN CONTENT
-// _________________________
+/*  MAIN CONTENT
+____________________ */
 
 .main-content {
   height: 100%;
@@ -73,43 +71,4 @@ body {
   padding-left: $app-padding + .5em;
   padding-right: 2em;
   margin-right: 50px;
-
-}
-
-//   Layout for 768px and wider
-//______________________________
-
-@media all and (min-width: 768px) {
-
-  .app-container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .app-nav-container {
-    position: static;
-    width: 250px;
-    margin: 0;
-    padding: 0;
-
-    .app-nav {
-      position: relative;
-      padding: 10px;
-      width: 200px;
-    }
-  }
-
-  .content-container {
-    position: static;
-    width: 100%;
-  
-    .app-nav-toggle {
-      display: none;
-    }
-  }
-
-
-  // .user-nav {
-  //   display: block;
-  // }
 }
