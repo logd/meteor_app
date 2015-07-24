@@ -8,15 +8,6 @@ body {
    font-family: $font-family;
 }
 
-/*  SEARCH FORM
-____________________ */
-.search-form {
-  input {
-    font-size: $editor-text;
-  }
-}
-
-
 /*  HEADINGS
 ____________________ */
  header h1 {
@@ -25,26 +16,6 @@ ____________________ */
     word-wrap: break-word;
     font-size: $header-text;
   }
-
-/*  TEXT HELPERS
-____________________ */
-
-.editable {
-  cursor: pointer;
-}
-.meta-info {
-  font-size: $small-text;
-}
-// TODO: replace with <i class="fa fa-tag"></i> - will need to create a tag button component
-  .add-hash {
-    &:before {
-      content: "#";
-    }
-  }
-
-.editable-text {
-  cursor: pointer;
-}
 
 /*  EDITOR
 ____________________ */
@@ -85,6 +56,34 @@ ____________________ */
   } 
 }
 
+/*  SEARCH FORM
+____________________ */
+.search-form {
+  input {
+    font-size: $editor-text;
+  }
+}
+
+
+/*  HELPERS
+____________________ */
+
+.editable {
+  cursor: pointer;
+}
+.meta-info {
+  font-size: $small-text;
+}
+// TODO: replace with <i class="fa fa-tag"></i> - will need to create a tag button component
+  .add-hash {
+    &:before {
+      content: "#";
+    }
+  }
+
+.editable-text {
+  cursor: pointer;
+}
 
 
 
