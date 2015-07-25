@@ -45,14 +45,14 @@ Template.edit_post.events({
     };
 
     // on input, if post content has content,
-    if(Logd.posts.hasContent(content)){
+    // if(Logd.posts.hasContent(content)){
 
-      // reset the save timer
-      Logd.posts.saveTimer.clear();
+    //   // reset the save timer
+    //   Logd.posts.saveTimer.clear();
 
-      // run autoSave as per saveTimer
-      Logd.posts.saveTimer.set(autoSave);
-    };    
+    //   // run autoSave as per saveTimer
+    //   Logd.posts.saveTimer.set(autoSave);
+    // };    
   },
   "blur .editor textarea": function(event,template){
     var content = event.target.value;

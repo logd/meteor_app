@@ -41,9 +41,9 @@ Template.app_header.helpers({
       return Session.get('saveNotice');
     }
   },
-  newPost: function () {
-    return LogdButtons.newPost;
-  },
+  // newPost: function () {
+  //   return LogdButtons.newPost;
+  // },
     showRightButton: function() {
       if(Router.current().route.getName() === 'edit_post'){
 
@@ -66,10 +66,10 @@ Template.app_header.events({
     event.preventDefault();
     Router.go('tags_list');
   },
-    "click .create-post": function(event) {
-    event.preventDefault();
-    LogdPosts.createPost();
-    
+   "click .create-post": function(event) {
+     event.preventDefault();
+     LogdPosts.createPost();
+
   },
     "click .edit-post": function(event) {
       event.preventDefault();

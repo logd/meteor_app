@@ -9,13 +9,9 @@ Template.page_title.helpers({
         return "#" + Router.current().params.tag;
 
       case 'edit_post':
-        // console.log("edit post id from route: " + Router.current().params._id);       
-
-        var thisPostTitle = Logd.posts.getPostTitle(Router.current().params._id);
-
-        // console.log("edit post id from route: " + Router.current().params._id);
-
-        return Logd.posts.shortenedTitle(thisPostTitle);
+        var post = Posts.findOne({_id: Router.current().params._id });
+        var pageTitle = LogdPageTitles.shortenedTitle(post.title);
+        return pageTitle;
     
       case 'show_post':
         var thisPostTitle = Logd.posts.getPostTitle(Router.current().params._id);
