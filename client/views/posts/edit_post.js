@@ -7,11 +7,11 @@ Template.edit_post.onRendered(function(){
 // });
 
 
-Template.edit_post.helpers({
-  // postTitle: function() {
-  //   Session.set("postTitle", this.title);
-  // }
-});
+// Template.edit_post.helpers({
+//   // postTitle: function() {
+//   //   Session.set("postTitle", this.title);
+//   // }
+// });
 
 Template.edit_post.events({
   "keyup .has-content": function(event, template){ 
