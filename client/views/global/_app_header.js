@@ -18,10 +18,10 @@ Template.app_header.helpers({
         return "page_title";
 
       case 'edit_post':
-        return "page_title";
+        return "post_title";
 
       case 'show_post':
-        return "page_title";
+        return "post_title";
 
       case 'tags_list':
         return "page_title";

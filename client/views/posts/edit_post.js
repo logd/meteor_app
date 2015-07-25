@@ -8,8 +8,8 @@ Template.edit_post.onRendered(function(){
 
 
 Template.edit_post.helpers({
-  // postContent: function() {
-  //  Session.set("postContent", this.content);
+  // postTitle: function() {
+  //   Session.set("postTitle", this.title);
   // }
 });
 

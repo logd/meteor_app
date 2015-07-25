@@ -8,14 +8,13 @@ Template.page_title.helpers({
       case 'tag_matches':
         return "#" + Router.current().params.tag;
 
-      case 'edit_post':
-        var post = Posts.findOne({_id: Router.current().params._id });
-        var pageTitle = LogdPageTitles.shortenedTitle(post.title);
-        return pageTitle;
+      // case 'edit_post':
+      //   var postId = Router.current().params._id;
+      //   return LogdPageTitles.getPageTitle(postId);
     
-      case 'show_post':
-        var thisPostTitle = Logd.posts.getPostTitle(Router.current().params._id);
-        return Logd.posts.shortenedTitle(thisPostTitle);
+      // case 'show_post':
+      //   var postId = Router.current().params._id;
+      //   return LogdPageTitles.getPageTitle(postId);
 
       case 'tags_list':
         return "My Topics";
@@ -25,3 +24,5 @@ Template.page_title.helpers({
     };
   }
 });
+
+
