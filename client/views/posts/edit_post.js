@@ -15,7 +15,6 @@ Template.edit_post.onRendered(function(){
 
 Template.edit_post.events({
   "input .editor textarea": function(event,template){
-    // 1. get current content and post id
 
     var postContent = event.target.value;
 
@@ -28,7 +27,7 @@ Template.edit_post.events({
     var autoSave = function() {
       Session.set("displaySaveNotice", true);
       Session.set("saveNotice", "Saving changes...");
-      console.log("autoSave postAttributes: " + postAttributes);
+      // console.log("autoSave postAttributes: " + postAttributes);
 
       Meteor.call('updatePost', postAttributes, function(error, result){
 
@@ -36,18 +35,17 @@ Template.edit_post.events({
           alert(error.reason);
         } else {
 
-          console.log("returned result: " + result.tags);
-
-          // if tags were found, add new ones to db
+          // console.log("returned result: " + result.tags);
           if (result.tags.length > 0){
              LogdTags.upsertTags(result.tags);
           };
   
-           Session.set("saveNotice", "Changes saved.");
+          Session.set("saveNotice", "Changes saved.");
 
            setTimeout(function() {
             Session.set("displaySaveNotice", false);
           }, 2000);
+           
         };
       });
     };
