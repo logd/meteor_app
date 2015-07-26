@@ -27,8 +27,11 @@ Template.edit_post.events({
 
 
     if(LogdPosts.hasContent(postContent)){
+      Session.set("hasContent", true);
       LogdPosts.autoSaveTimer.resetTimer();
       LogdPosts.autoSaveTimer.startTimer(postAttributes);
+    } else {
+      Session.set("hasContent", false);
     };
 
   },
