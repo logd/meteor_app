@@ -26,19 +26,29 @@ Template.edit_post.onRendered(function(){
 // });
 
 
-// Template.edit_post.helpers({
-//   // postTitle: function() {
-//   //   Session.set("postTitle", this.title);
-//   // }
-// });
+Template.edit_post.helpers({
+  // postContent: function() {
+  //   if (LogdPosts.hasContent(this.content)) {
+  //     Session.set("hasContent", true);
+  //   } else{
+  //     Session.set("hasContent", false);
+  //   };
+  // }
+});
 
 Template.edit_post.events({
+  "keyup .has-content": function(event){
+    if(LogdPosts.hasContent(event.target.value)){
+      Session.set("hasContent", true);
+    } else {
+      Session.set("hasContent", false);
+    };
+  },
   "input .editor textarea": function(event,instance){
      var postAttributes = {
         postId: Router.current().params._id,
         content: event.target.value
       };
-
 
     // on input, start 1.5s timer
     Meteor.setTimeout(function() {
