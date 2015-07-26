@@ -24,8 +24,6 @@ Template.edit_post.events({
       tags: LogdTags.getTags(postContent)
     };
    
-
-
     if(LogdPosts.hasContent(postContent)){
       Session.set("hasContent", true);
       LogdPosts.autoSaveTimer.resetTimer();
