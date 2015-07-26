@@ -24,42 +24,24 @@ Template.edit_post.events({
       tags: LogdTags.getTags(postContent)
     };
    
-    var autoSave = function() {
-      Session.set("displaySaveNotice", true);
-      Session.set("saveNotice", "Saving changes...");
-      // console.log("autoSave postAttributes: " + postAttributes);
 
-      Meteor.call('updatePost', postAttributes, function(error, result){
 
-        if (error){
-          alert(error.reason);
-        } else {
-
-          // console.log("returned result: " + result.tags);
-          if (result.tags.length > 0){
-             LogdTags.upsertTags(result.tags);
-          };
-  
-          Session.set("saveNotice", "Changes saved.");
-
-           setTimeout(function() {
-            Session.set("displaySaveNotice", false);
-          }, 2000);
-           
-        };
-      });
-    };
-
-    if(LogdPosts.hasContent(postAttributes.content)){
+    if(LogdPosts.hasContent(postContent)){
       LogdPosts.autoSaveTimer.resetTimer();
-      LogdPosts.autoSaveTimer.startTimer(autoSave);
+      LogdPosts.autoSaveTimer.startTimer(postAttributes);
     };
 
   },
-  "blur .editor textarea": function(event,template){
-    var content = event.target.value;
-    var postId = Router.current().params._id;
-    // Logd.posts.saveChanges(content, postId);  
+  "blur .editor textarea": function(event){
+    var postContent = event.target.value;
+
+    var postAttributes = {
+      postId: Router.current().params._id,
+      content: postContent,
+      tags: LogdTags.getTags(postContent)
+    };
+   
+    LogdPosts.updatePost(postAttributes);  
   },
   "click .done-editing": function(e,t){
     e.preventDefault();
