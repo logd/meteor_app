@@ -9,20 +9,25 @@ ____________________ */
     background-color:white;
     border: 1px solid $light-gray;
 
-    &:hover {
-      border-color:$gray;
-    }
     i {
       color: $light-gray;
     }
-    
+
     &.icon-only i {
       color: $link-color;
     }
-  }
 
-  .icon-left {
-    margin-right: .3em;
+    &:hover {
+      border-color:$gray;
+        
+      i {
+          color: $gray;
+      }
+    }
+
+    .icon-left {
+      margin-right: .3em;
+    }
   }
 }
 
