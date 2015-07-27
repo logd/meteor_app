@@ -15,6 +15,11 @@ ____________________ */
     color: $gray;
     word-wrap: break-word;
     font-size: $header-text;
+
+    &.large-header {
+      font-size: $large-text;
+      color: $steel-gray;
+    }
   }
  h2 {
   margin-bottom: 0;

@@ -14,6 +14,15 @@ Template.page_title.helpers({
       default: 
         return "Logd";
     };
+  },
+  largeHeader: function(){
+
+    if (Router.current().route.getName() == "login") {
+      return true;
+    } else{
+      return false;
+    };
+    
   }
 });
 

@@ -62,6 +62,7 @@ ____________________ */
   margin-left: auto;
   margin-right: auto;
   width: 30em;
+  padding-top: 2em;
 
   .at-title, .at-oauth {
     text-align: center;
@@ -88,7 +89,8 @@ ____________________ */
   }
 
   h3 {
-      font-size: 1.5em;
+      font-size: $medium-text;
+      color: $steel-gray;
   }
 
   button {
