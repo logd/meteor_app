@@ -13,11 +13,11 @@ ____________________ */
       color: $light-gray;
     }
 
-    &.icon-only i {
+    &.icon-only i, &.icon-only:hover i {
       color: $link-color;
     }
 
-    &:hover {
+    &:hover  {
       border-color:$gray;
         
       i {
