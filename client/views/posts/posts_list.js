@@ -1,6 +1,13 @@
 Template.posts_list.helpers({
   totalPostCount: function() {
-    return Counts.get('posts-counter');
+    var postCount = Counts.get('posts-counter');
+
+    if(postCount == 1){
+      return "1 post";
+    } else {
+      return postCount + " posts";
+    }
+    // return Counts.get('posts-counter');
   },
   displayPostsList: function() {
     if (Counts.get('posts-counter') > 0){

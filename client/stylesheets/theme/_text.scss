@@ -76,19 +76,20 @@ ____________________ */
 .editable {
   cursor: pointer;
 }
+// .editable-text {
+//   cursor: pointer;
+// }
 .meta-info {
   font-size: $small-text;
 }
 // TODO: replace with <i class="fa fa-tag"></i> - will need to create a tag button component
-  .add-hash {
-    &:before {
-      content: "#";
-    }
+.add-hash {
+  &:before {
+    content: "#";
   }
-
-.editable-text {
-  cursor: pointer;
 }
+
+
 
 
 

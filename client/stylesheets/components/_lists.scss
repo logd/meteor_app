@@ -35,13 +35,17 @@
        border-bottom: none;
     }
     .options {
-        float:right;
-        width: 1em;
-        margin-top: .25em;
-        margin-right: 1em;
-        //text-align: right;
-      }
+      float:right;
+      width: 1em;
+      margin-top: .25em;
+      margin-right: 1em;
+      //text-align: right;
+    }
   }
+}
+
+.list-summary {
+  text-align: center;
 }
 
 
