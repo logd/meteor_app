@@ -5,25 +5,16 @@
 
 .item-list {
   list-style-type: none;
-  // display: table;
   margin-left: 0;
   padding-left: 0;
   padding-right: 0;
-  //margin-right: 3.5em;
-  // height: auto;
-  //width: 100%;
-  //float: left;
-  // display: flex;
-  // flex-direction: column;
 
   & > li {
-    // display: table-cell;
     border-bottom: 1px solid $light-gray;
     margin-bottom: .75em;
     padding-bottom: .75em;
 
     .list-item {
-      // display: block;
       margin-bottom: .25em;
 
       &.with-options {
@@ -39,7 +30,6 @@
       width: 1em;
       margin-top: .25em;
       margin-right: 1em;
-      //text-align: right;
     }
   }
 }

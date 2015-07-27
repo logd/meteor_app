@@ -16,7 +16,6 @@ html, body {
 body {
   margin: 0;
   padding: 0;
-  // width: 100%;
   overflow-y:hidden;
   position: relative;
 }
@@ -33,7 +32,6 @@ ____________________ */
 /*  APP HEADER
 ____________________ */
 .app-header {
-  // position: relative;
   display: table;
   border-collapse: collapse;
   width: 100%;
@@ -69,5 +67,4 @@ ____________________ */
   width: 100%;
   padding-left: $app-padding;
   padding-right: $app-padding;
-  // margin-right: 50px;
 }
