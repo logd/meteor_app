@@ -1,0 +1,59 @@
+/*  BUTTONS
+____________________ */
+
+.btn {
+  padding: .35em  .5em;
+  border-radius: .35em;
+
+  &.tag-btn {
+    background-color:white;
+    border: 1px solid $light-gray;
+
+    &:hover {
+      border-color:$gray;
+    }
+    i {
+      color: $light-gray;
+    }
+    
+    &.icon-only i {
+      color: $link-color;
+    }
+  }
+
+  .icon-left {
+    margin-right: .3em;
+  }
+}
+
+/*  BUTTONS
+____________________ */
+
+button {
+  &.icon-button {
+    background-color: transparent;
+    border:none;
+    color: $light-gray;
+
+    .fa {
+      color: $light-gray; 
+    }
+
+    &:focus {
+     outline: 0;
+    }
+
+    i:hover {
+      color: $steel-gray;
+    }
+  }
+  &.unstyled {
+    background-color: transparent;
+    border:none;
+
+    &:focus {
+     outline: 0;
+    }
+  }
+}
+

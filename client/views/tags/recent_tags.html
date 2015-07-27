@@ -3,12 +3,12 @@
     <ul class="horizontal">
       {{#each recentTags}}
         <li>
-           <a href="#"  class="tag-matches"><span class="add-hash">{{title}}</span></a>
+           <a href="#" class="btn tag-btn tag-matches"><i class="icon-left fa fa-tag"></i>{{title}}</a>
         </li>
       {{/each}}
       {{#if moreTags}}
         <li>
-         <a href="#" title="View all my tags"  alt="View all my tags" class="tags-list"> <i class="fa fa-tags"></i></a>
+         <a href="#" title="View all my tags"  alt="View all my tags" class="btn tag-btn icon-only tags-list"> <i class="fa fa-tags"></i></a>
         </li>
         {{/if}}
     </ul>
