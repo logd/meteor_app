@@ -73,10 +73,10 @@ ____________________ */
     text-align: center;
   }
   .at-pwd-form {
-    margin-top: $form-spacing;
+    margin-top: $form-spacing + 1em;
   }
   .at-input {
-    margin-bottom: $form-spacing;
+    margin-bottom: $form-spacing - .25em;
     font-size: $large-text;
     label {
       display: none;
