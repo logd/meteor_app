@@ -37,14 +37,14 @@ Template.edit_post.helpers({
 });
 
 Template.edit_post.events({
-  "keyup .has-content": function(event){
+  "keyup .has-content": _.throttle(function(event){
     if(LogdPosts.hasContent(event.target.value)){
       Session.set("hasContent", true);
     } else {
       Session.set("hasContent", false);
     };
-  },
-  "input .editor textarea": function(event,instance){
+  }, 200),
+  "input .editor textarea": _.throttle(function(event,instance){
      var postAttributes = {
         postId: Router.current().params._id,
         content: event.target.value
@@ -79,7 +79,7 @@ Template.edit_post.events({
     LogdPosts.saveOnPauseTimer.resetTimer(); 
     LogdPosts.saveOnPauseTimer.startTimer(postAttributes);
     
-  },
+  }, 200),
   "blur .editor textarea": function(event){
     var postContent = event.target.value;
 

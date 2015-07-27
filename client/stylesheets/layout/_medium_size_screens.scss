@@ -1,34 +1,34 @@
 //   Layout for 768px and wider
 //______________________________
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 40.5) {
 
   .app-container {
     max-width: 1200px;
     margin: 0 auto;
   }
 
-  .app-nav-container {
-    position: static;
-    width: 250px;
-    margin: 0;
-    padding: 0;
+  // .app-nav-container {
+  //   position: static;
+  //   width: 250px;
+  //   margin: 0;
+  //   padding: 0;
 
-    .app-nav {
-      position: relative;
-      padding: 10px;
-      width: 200px;
-    }
-  }
+  //   .app-nav {
+  //     position: relative;
+  //     padding: 10px;
+  //     width: 200px;
+  //   }
+  // }
 
-  .content-container {
-    position: static;
-    width: 100%;
+  // .content-container {
+  //   position: static;
+  //   width: 100%;
   
-    .app-nav-toggle {
-      display: none;
-    }
-  }
+  //   .app-nav-toggle {
+  //     display: none;
+  //   }
+  // }
 
 
   // .user-nav {
