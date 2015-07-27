@@ -1,19 +1,12 @@
 
 Template.edit_post.onCreated(function(){
 
-  // get the current template instance
-  // var instance = this;
- 
+  if (LogdPosts.hasContent(this.data.content)) {
+    Session.set("hasContent", true);
+  } else{
+    Session.set("hasContent", false);
+  };
 
-  // subscribe to content publication
-
-  // set a local instance variable for the current content
-
-  // compare them every 1.5s
-
-  // if they are different, save changes
-
-  
 });
 
 
@@ -22,20 +15,6 @@ Template.edit_post.onRendered(function(){
 });
 
 
-// Template.edit_post.onDestroyed(function(){
-//    Session.set("postContent", null);
-// });
-
-
-Template.edit_post.helpers({
-  // postContent: function() {
-  //   if (LogdPosts.hasContent(this.content)) {
-  //     Session.set("hasContent", true);
-  //   } else{
-  //     Session.set("hasContent", false);
-  //   };
-  // }
-});
 
 Template.edit_post.events({
   "keyup .has-content": _.throttle(function(event){
