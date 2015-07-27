@@ -17,6 +17,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-y:hidden;
+  overflow-x:hidden;
   position: relative;
 }
 
@@ -31,11 +32,15 @@ ____________________ */
 
 /*  APP HEADER
 ____________________ */
-.app-header {
+.app-header  {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  height: $app-header-height;
+  width: 100%;
   display: table;
   border-collapse: collapse;
-  width: 100%;
-  height: $app-header-height;
+   
 
   .header-row {
     display: table-row;
@@ -57,12 +62,15 @@ ____________________ */
     text-align: right;
     padding-right: $app-padding;
   }
+
 }
+
 
 /*  MAIN CONTENT
 ____________________ */
 
 .main-content {
+  margin-top: $app-header-height + 1em;
   height: 100%;
   width: 100%;
   padding-left: $app-padding;
