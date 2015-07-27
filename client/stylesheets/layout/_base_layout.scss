@@ -70,11 +70,12 @@ ____________________ */
 ____________________ */
 
 .main-content {
-  margin-top: $app-header-height + 1em;
+  margin-top: $app-header-height;
+  // padding-top: $app-header-height + 1em;
   height: 100%;
   width: 100%;
   padding-left: $app-padding;
   padding-right: $app-padding;
   padding-bottom: $app-padding;
-  // overflow: auto;
+  overflow: auto;
 }
