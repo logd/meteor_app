@@ -17,6 +17,10 @@ Template.edit_post.onRendered(function(){
 
 
 Template.edit_post.events({
+  "focusout .editor textarea": function(){
+    // switch to show view for mobile safari: 
+    Router.go('show_post', { _id: Router.current().params._id });
+  },
   "keyup .has-content": _.throttle(function(event){
     if(LogdPosts.hasContent(event.target.value)){
       Session.set("hasContent", true);
@@ -25,6 +29,8 @@ Template.edit_post.events({
     };
   }, 200),
   "input .editor textarea": _.throttle(function(event,instance){
+
+    console.log("keypress: " + event.which);
      var postAttributes = {
         postId: Router.current().params._id,
         content: event.target.value

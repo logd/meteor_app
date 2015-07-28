@@ -37,7 +37,26 @@ Template.app_header.helpers({
     return LogdAppHeader[Router.current().route.getName()].headerRight;
   },
     saveNotice: function() {
-    if(Session.get("hasContent")){
+
+      // GOAL: if save changes was displayed, wait 2s before displaying a save notice again
+      // if save notice + pause after is currently being displayed, ignore any requests to redisplay it until done
+
+      // if (Session.get("saveNotice") === "Changes Saved."){
+      //   return Session.get('saveNotice');
+      //     Meteor.setTimeout(function() {
+      //       Session.set("displaySaveNotice", false);
+      //     }, 2000);
+      // }
+
+      // every 2 seconds set notice to ""
+      // then get 
+    // if(Session.get("hasContent")){
+      //    Meteor.setTimeout(function() {
+      //   Session.set("displaySaveNotice", false);
+      //    // Session.set("saveNotice", "");
+      // }, 2000);
+
+   if(Session.get("hasContent")){
       return Session.get('saveNotice');
     }
   },
