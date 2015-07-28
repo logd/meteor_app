@@ -25,13 +25,15 @@
       </li>
     {{/each}}
   </ul>
-  <div class="list-summary meta-info">{{totalPostCount}}</div>
   {{#if nextPath}}
-    <hr>
-    <p>
-    <a href="{{nextPath}}">Show More Posts...</a>
+<!--     <hr> -->
+    <p class="full-width centered">
+    <a class="btn white-btn wide-btn" href="{{nextPath}}">More&hellip;</a>
     </p>
+    {{else}}
+     <div class="list-summary meta-info">{{totalPostCount}}</div>
     {{/if}}
+   
     {{else}}
      <p class="meta-info">Look like you don't have any posts :-/ <a href="#" class="create-post">Create one</a> now?</p>
      <p class="meta-info"></p>
