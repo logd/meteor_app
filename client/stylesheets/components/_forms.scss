@@ -1,10 +1,10 @@
 /*  INPUT FIELDS
 ____________________ */
 
-input[type="text"]:focus,
-textarea:focus {
-    -webkit-text-size-adjust: 100%;
-}
+// input[type="text"]:focus,
+// textarea:focus {
+//     -webkit-text-size-adjust: 100%;
+// }
 
 /*  BUTTONS
 ____________________ */
@@ -62,7 +62,7 @@ ____________________ */
   margin-left: auto;
   margin-right: auto;
   width: 22em;
-  padding-top: 2em;
+  padding-top: 1em;
 
   .at-title, .at-oauth {
     text-align: center;
