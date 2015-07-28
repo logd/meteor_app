@@ -18,7 +18,8 @@ Template.edit_post.onRendered(function(){
 
 Template.edit_post.events({
   "focusout .editor textarea": function(){
-    // switch to show view for mobile safari: 
+    // scroll to top and switch to show view for mobile safari: 
+    window.scrollTo(0, 0);
     Router.go('show_post', { _id: Router.current().params._id });
   },
   "keyup .has-content": _.throttle(function(event){
