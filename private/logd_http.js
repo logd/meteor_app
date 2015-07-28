@@ -1,6 +1,6 @@
-LogdVars = {
-  "http_login": {
-    "username": "testuser",
-    "password": "sushi9000"
-  }
-};
+// LogdVars = {
+//   "http_login": {
+//     "username": "testuser",
+//     "password": "sushi9000"
+//   }
+// };
