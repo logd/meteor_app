@@ -1,3 +1,6 @@
 {
-  "enableAutoprefixer": true
+  "enableAutoprefixer": true,
+  "includePaths": [
+    ".meteor/local/build/programs/server/assets/packages/wolves_bourbon"
+  ]
 }

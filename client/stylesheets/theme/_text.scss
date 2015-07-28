@@ -78,6 +78,10 @@ ____________________ */
 /*  HELPERS
 ____________________ */
 
+.truncate-text {
+  @include ellipsis();
+}
+
 .editable {
   cursor: pointer;
 }
